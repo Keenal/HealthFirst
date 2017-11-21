@@ -23,7 +23,7 @@ public class MedicationList {
 
 	public static final int MEDICATION_LIST_ARRAY_SIZE = 50;
 	
-	private int numOfElements = 0;
+	private static int numOfElements = 0;
 	static Medication[] medications = null;
 	
 	/**
@@ -39,8 +39,14 @@ public class MedicationList {
 	 * @param medicationName = the medication name of medication object to get
 	 * @return Medication = the Medication object or null if the account is not found
 	 */
-	public Medication getMedication(String medicationName) {
-		// fix code
+	public static Medication getMedication(String medicationName) {
+		for (int i = 0; i < numOfElements; i++) {
+			if ((medications[i].getName().equalsIgnoreCase(medicationName))) {
+				return medications[i];
+			} else {
+				continue;
+			}
+		}
 		return null;
 	} // end of getMedication method
 	

@@ -1,4 +1,6 @@
 package users;
+import medicationprocessing.Medication;
+import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
 
 /**
@@ -41,11 +43,10 @@ public class Pharmacist extends User {
 	 * Allows for a prescription to be verified before being filled
 	 * @param name = The name of the medication being verified
 	 * @param patientName = the name of the patient the prescription is being filled for
-	 * @ boolean = true if the medication has been verified and false otherwise
 	 */
-	public boolean verifyMedicaton(String medicationName, Patient patientName) {
-		// insert code
-		return false;
+	public void verifyMedicaton(String medicationName, Patient patient) {
+		Medication prescriptionToVerify =  MedicationList.getMedication(medicationName);
+		patient.verifyPrescription(prescriptionToVerify);
 	} // end of verifyMedicaton class
 	
 	/* (non-Javadoc)

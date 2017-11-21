@@ -14,7 +14,7 @@ dosage and conflicts with other medications.
 @version 1.0
 
 CEN3031    "HealthFirst" SE1-Afternoon Group 1's class project
-File Name: Medication.java 
+File Name: HealthFirstTester.java 
 */
 
 

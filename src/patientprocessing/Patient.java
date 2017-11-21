@@ -1,5 +1,7 @@
 package patientprocessing;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import medicationprocessing.Medication;
 
@@ -37,8 +39,11 @@ public class Patient {
 	private String familyHistory = ""; 
 	private String currentIllness = "";
 	private String allergies = "";
-	private Medication[] activePrescriptions = null;
-	private int numOfPrescriptions = 0;
+	private Medication[] prescriptionsAwaitingVerification = null;
+	private int numOfPrescriptionsAwaitingVerification = 0;
+	private Medication[] activePrescriptionsVerified = null;
+	private int numOfPrescriptionsVerified = 0;
+	private static GregorianCalendar calendar = new GregorianCalendar();
 	
 	/**
 	 * Default constructor for the Patient class
@@ -54,7 +59,8 @@ public class Patient {
 		setFamilyHistory("");
 		setCurrentIllness("");
 		setAllergies("");
-		activePrescriptions = new Medication[PRESCRIPTION_LIST_SIZE];
+		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
+		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of default constructor
 	
 	/**
@@ -82,7 +88,8 @@ public class Patient {
 		setFamilyHistory(familyHistory);
 		setCurrentIllness(currentIllness);
 		setAllergies(allergies);
-		activePrescriptions = new Medication[PRESCRIPTION_LIST_SIZE];
+		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
+		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of parameterized constructor
 
 	/**
@@ -227,22 +234,48 @@ public class Patient {
 	} 
 	
 	/**
-	 * adds a prescription to the patients activePrescriptions array 
-	 * and increments the numOfPrescriptions instance variable by 1
+	 * adds a prescription to the patients prescriptionsAwaitingVerification array 
+	 * and increments the numOfPrescriptionsAwaitingVerification instance variable by 1
 	 * @param newPrescription = the new prescription to add
 	 */
 	public void addPrescription(Medication newPrescription) {
-		activePrescriptions[numOfPrescriptions++] = newPrescription;
+		prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
+	} // end of addPrescription method
+	
+	/**
+	 * adds a prescription to the patients activePrescriptionsVerified array 
+	 * and increments the numOfPrescriptionsVerified instance variable by 1
+	 * @param prescriptionAwaitingVerification = the prescription to verify
+	 */
+	public void verifyPrescription(Medication prescriptionAwaitingVerification) {
+		activePrescriptionsVerified[numOfPrescriptionsVerified++] = prescriptionAwaitingVerification;
 	} // end of addPrescription method
 	
 	/**
 	 * Logs the most recent time a dose of medication was given 
 	 * @param medication = the medication that was given
-	 * @param timeStamp = the time the most recent dose was given
+	 * @return nextDoseDue = the time the most recent dose was given
 	 */
-	public void logMostRecentDose(Medication medication, Calendar timeStamp) {
-		// add code
+	public Date logMostRecentDose(Medication medication) {
+		Date currentTime = calendar.getTime();
+		System.out.println(currentTime);
+		return currentTime;
 	} // end of logMostRecentDose method
+	
+	/**
+	 * Calculates when the next dose of medication is due
+	 * @param medication = the medication that was given
+	 * @return nextDoseDue = the time the most recent dose was given
+	 */
+	public Date timeNextDoseDue(Medication medication) {
+		int minHoursTillDue = medication.getMinDosageTimeHours();
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.HOUR, minHoursTillDue);
+		Date nextDoseDue = cal.getTime();
+		System.out.println(nextDoseDue);
+		return nextDoseDue;
+	} // end of logMostRecentDose method
+	
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -252,7 +285,8 @@ public class Patient {
 		return "Patient [name=" + name + ", patientID=" + patientID + ", age=" + age + ", bloodPressure="
 				+ bloodPressure + ", heartRate=" + heartRate + ", weightInLbs=" + weightInLbs + ", heightInInches="
 				+ heightInInches + ", familyHistory=" + familyHistory + ", currentIllness=" + currentIllness
-				+ ", allergies=" + allergies + ", numOfPrescriptions=" + numOfPrescriptions + "]";
+				+ ", allergies=" + allergies + ", prescriptionsAwaitingVerification=" + numOfPrescriptionsAwaitingVerification + 
+				", numOfPrescriptionsVerified=" + numOfPrescriptionsVerified + "]";
 	}
 	
 } // end of Patient class

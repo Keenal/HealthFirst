@@ -3,6 +3,8 @@ package users;
 import medicationprocessing.MedicationDatabaseManager;
 import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class HealthFirstMain {
 
@@ -34,6 +36,13 @@ public class HealthFirstMain {
 		Patient patient2 = admin1.createNewPatient("John Doe", 45, "125/85", 82, 111, 
 				65, "Mother: cancer, Father: dibeties", "Heart Attack", "none");
 		System.out.println(patient2);
+		doctor1.prescribeMedication("motrin", patient2);
+		System.out.println(patient2);
+		pharm1.verifyMedicaton("motrin", patient2);
+		System.out.println(patient2);
+		
+		Date mostRecentDose = patient2.logMostRecentDose(MedicationList.getMedication("motrin"));
+		Date nextDoseDue = patient2.timeNextDoseDue(MedicationList.getMedication("motrin"));
 		
 	}
 
