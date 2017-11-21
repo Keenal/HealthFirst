@@ -1,13 +1,17 @@
 package view;
 
 import tester.HealthFirstTester;
+//import users.User;
 import javafx.fxml.FXML;
-
 public class LoginScreenController extends HealthFirstTester {
 
 	public HealthFirstTester healthFirstTester;
 	public String user = "";
-	 
+
+	public LoginScreenController() {
+		
+	}
+	
 	/**
      * Is called by the main application to give a reference back to itself.
      * 
@@ -20,6 +24,7 @@ public class LoginScreenController extends HealthFirstTester {
     
     @FXML
     private void handleUser() { 
+    	
     	user = userType.getName();
     	System.out.println("User Type is :"+user);
     	if(user == "Doctor")
@@ -39,25 +44,31 @@ public class LoginScreenController extends HealthFirstTester {
     @FXML
     private void handleDoctor() {
     	userType.setName("Doctor");
-    	System.out.print("doctor selected");
+    	System.out.println("doctor selected");
+    	healthFirstTester.showPatientSelection();
     }
     
     @FXML
     private void handleNurse() {
     	userType.setName("Nurse");
-    	System.out.print("nurse selected");
+    	System.out.println("nurse selected");
+    	healthFirstTester.showPatientSelection();
+
     }
     
     @FXML
     private void handlePharmacist() {
     	userType.setName("Pharma");
-    	System.out.print("phama selected");
+    	System.out.println("phama selected");
+    	healthFirstTester.showPatientSelection();
+
     }
     
     @FXML
     private void handleAdministrator() {
     	userType.setName("Admin");
-    	System.out.print("admin selected");
+    	System.out.println("admin selected");
+    	healthFirstTester.showPatientSelection();
     
     }
     
