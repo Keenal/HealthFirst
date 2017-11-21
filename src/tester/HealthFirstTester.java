@@ -22,6 +22,7 @@ package tester;
 
 
 import java.io.IOException;
+
 import javafx.application.Application;
 //import javafx.collections.FXCollections;
 //import javafx.collections.ObservableList;
@@ -40,6 +41,23 @@ public class HealthFirstTester extends Application {
     public BorderPane rootLayout;
 	public User userType = new User();
 
+	
+	public static void main(String[] args) {
+		User userType = new User();
+
+            userType.setName("test");
+            System.out.println("User is : "+userType.getName());
+            launch(args);
+		/*Administrator admin = new Administrator("John");
+		System.out.println(admin);
+		Doctor doc = new Doctor("Eddy");
+		System.out.println(doc);
+		Patient steve = new Patient();
+		doc.prescribeMedication("drug A", steve);
+                Gui.graphics();*/
+	}
+	
+	// Initializes JavaFX window
 	public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("HealthFirst");
@@ -47,7 +65,7 @@ public class HealthFirstTester extends Application {
         initRootLayout();
         showPersonOverview();
         //showDoctor();
-
+        //showPatientSelection();
     }
 	
 	/**
@@ -97,42 +115,45 @@ public class HealthFirstTester extends Application {
         return primaryStage;
     }
     
-	public static void main(String[] args) {
-		User userType = new User();
-            userType.setName("test");
-            System.out.println("User is : "+userType.getName());
-            launch(args);
-		/*Administrator admin = new Administrator("John");
-		System.out.println(admin);
-		Doctor doc = new Doctor("Eddy");
-		System.out.println(doc);
-		Patient steve = new Patient();
-		doc.prescribeMedication("drug A", steve);
-                Gui.graphics();*/
-		
-		
-		
-		
-	}
+	// Display Patient Selection stage /view/PatientSelection.fxml
+	public void showPatientSelection() {
+        try {
+            //System.out.println("Patient selection saw:"+user);
+        	
+        	// Load the fxml file and create a new stage for the popup.
+            //initialize the loader
+        	FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(HealthFirstTester.class.getResource("/view/PatientSelection.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            LoginScreenController page = loader.getController();
+            page.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	public static void showDoctor() {
-		// TODO Auto-generated method stub
-		
+
+		System.out.println("Display Doctor interface with patient attached");
 	}
 
 	public static void showNurse() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Display Nurse interface with patient attached");
 	}
 
 	public static void showAdmin() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Display Admin interface with patient attached");
 	}
 
 	public static void showPharmacist() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Display Pharmacist interface with patient attached");
 	}
 
 }
