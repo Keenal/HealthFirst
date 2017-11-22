@@ -1,6 +1,8 @@
 package patientprocessing;
 import java.util.Calendar;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
 import medicationprocessing.Medication;
 
 /**
@@ -40,6 +42,28 @@ public class Patient {
 	private Medication[] activePrescriptions = null;
 	private int numOfPrescriptions = 0;
 	
+	/* 
+	 * Testing
+	 */
+	private StringProperty firstName;
+	private IntegerProperty patientID2;
+	public StringProperty getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(StringProperty firstName) {
+		this.firstName = firstName;
+	}
+
+	public IntegerProperty getPatientID2() {
+		return patientID2;
+	}
+
+	public void setPatientID2(IntegerProperty patientID2) {
+		this.patientID2 = patientID2;
+	}
+	
+
 	/**
 	 * Default constructor for the Patient class
 	 */

@@ -33,6 +33,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import users.User;
 import view.LoginScreenController;
+import view.PatientViewController;
 
 
 public class HealthFirstTester extends Application {
@@ -118,19 +119,15 @@ public class HealthFirstTester extends Application {
 	// Display Patient Selection stage /view/PatientSelection.fxml
 	public void showPatientSelection() {
         try {
-            //System.out.println("Patient selection saw:"+user);
-        	
-        	// Load the fxml file and create a new stage for the popup.
-            //initialize the loader
-        	FXMLLoader loader = new FXMLLoader();
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
             loader.setLocation(HealthFirstTester.class.getResource("/view/PatientSelection.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
-            LoginScreenController page = loader.getController();
-            page.setMainApp(this);
+            LoginScreenController controller = loader.getController();
+            controller.setMainApp(this);
             
             // Set person overview into the center of root layout.
             rootLayout.setCenter(personOverview);
-            
         } catch (IOException e) {
             e.printStackTrace();
         }
