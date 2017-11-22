@@ -208,7 +208,5 @@ public class Medication {
 				+ ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" + isOverTheCounter + ", isAntibiotic="
 				+ isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
 	}
-	
-	
-	
+
 } // end of Medication class

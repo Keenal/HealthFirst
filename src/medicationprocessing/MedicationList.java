@@ -64,7 +64,7 @@ public class MedicationList {
 	@Override
 	public String toString() {
 		String completeString = "";
-			for (int l = 0; l < this.numOfElements; l++) {
+			for (int l = 0; l < numOfElements; l++) {
 				completeString += medications[l].toString() + "\n";
 			} 
 			return completeString;

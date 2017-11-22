@@ -67,7 +67,7 @@ public class PatientAccounts {
 	 * @param patientName = the patientName of patient object to get
 	 * @return Patient = the Patient object or null if the Patient is not found
 	 */
-	public Patient searchPatient(String patientName) {
+	public static Patient searchPatient(String patientName) {
 		for (int i = 0; i < numOfElements; i++) {
 			if ((patientAccounts[i].getName().equalsIgnoreCase(patientName))) {
 				return patientAccounts[i];

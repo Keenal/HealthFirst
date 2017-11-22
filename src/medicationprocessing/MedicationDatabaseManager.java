@@ -60,10 +60,10 @@ public class MedicationDatabaseManager {
 	/**
 	 * attempts to open the file to process, and throws an exception if it can't
 	 */
-	public void openFile(String inputFileName) {
+	public void openFile(String medicationFileName) {
 		try {
 			// Attempt to open the file
-			fileIn = new Scanner(new FileInputStream(inputFileName));
+			fileIn = new Scanner(new FileInputStream(medicationFileName));
 		}
 		catch (FileNotFoundException e)
 		{

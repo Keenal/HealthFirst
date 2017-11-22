@@ -255,7 +255,7 @@ public class Patient {
 	
 	/**
 	 * attempts to find a prescription in the prescriptionsAwaitingVerification array, returns NOTFOUND constant if not found
-	 * @param precriptionToFind = the prescriptio to find
+	 * @param precriptionToFind = the prescription to find
 	 * @return int = the array index number that was found, or NOTFOUND constant if the prescription was not found
 	 */
 	private int findPrescription(Medication precriptionToFind) {
@@ -308,7 +308,7 @@ public class Patient {
 	public void verifyPrescription(Medication prescriptionAwaitingVerification) {
 		activePrescriptionsVerified[numOfPrescriptionsVerified++] = prescriptionAwaitingVerification;
 		deletePrescriptionAwaitingVerification(prescriptionAwaitingVerification);
-	} // end of addPrescription method
+	} // end of verifyPrescription method
 	
 	/* returns a nicely formatted String representing the history of the medication given to the patient
 	 * @return a formatted String

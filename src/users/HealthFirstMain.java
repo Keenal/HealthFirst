@@ -5,9 +5,6 @@ import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 public class HealthFirstMain {
 
 	public static void main(String[] args) {
@@ -16,7 +13,7 @@ public class HealthFirstMain {
 		MedicationDatabaseManager medDB = new MedicationDatabaseManager(inputFileName);
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
-		PatientAccounts patientAccounts = new PatientAccounts();
+		new PatientAccounts();
 		
 		System.out.println(medicationList);
 		
