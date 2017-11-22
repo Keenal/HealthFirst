@@ -1,9 +1,13 @@
 package users;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import medicationprocessing.Medication;
 import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
+import patientprocessing.PatientDose;
 
 /**
 This program:
@@ -25,6 +29,7 @@ File Name: Nurse.java
 */
 
 public class Nurse extends User {
+	private static GregorianCalendar calendar = new GregorianCalendar();
 	
 	/**
 	 * Default constructor for the Nurse class
@@ -44,15 +49,21 @@ public class Nurse extends User {
 	/**
 	 * Allows the Nurse to log a dose of medication
 	 * @param medicationName = The name of the medication to log
-	 * @param patient = The patient to log the medication for
-	 * @return currentTime = the time the dose was logged
+	 * @param patientID = The patientID of the Patient to log the medication for
+	 * @param doseGivenInMg = the dose given to the patient in Mg
+	 * @param doseGivenFor = The reason the dose was given to the patient
 	 */
-	public Calendar logDose(String medicationName, Patient patient) {
-		//Medication medication =  MedicationList.getMedication(medicationName);
-		Calendar currentTime = null; // fix this to get current time
-		//patient.logMostRecentDose(medication, currentTime);
-		return currentTime;
-	} // end of parameterized constructor
+	public void logDose(String medicationName, int patientID, int doseGivenInMg, String doseGivenFor) {
+		Patient patient = PatientAccounts.searchPatient(patientID);
+		Medication medicationGiven = MedicationList.getMedication(medicationName);
+		Date timeDoseLogged = calendar.getTime();
+		int minHoursTillDue = medicationGiven.getMinDosageTimeHours();
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.HOUR, minHoursTillDue);
+		Date nextDoseDue = cal.getTime();
+		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, this, doseGivenInMg, doseGivenFor);
+		patient.addDose(dose);
+	} // end of logDose method
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

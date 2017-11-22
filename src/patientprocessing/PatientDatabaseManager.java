@@ -59,11 +59,12 @@ public class PatientDatabaseManager {
 	
 	/**
 	 * attempts to open the file to process, and throws an exception if it can't
+	 * @param patientFileName = the file name of the patient database
 	 */
-	public void openFile() {
+	public void openFile(String patientFileName) {
 		try {
 			// Attempt to open the file
-			fileIn = new Scanner(new FileInputStream(getFileName()));
+			fileIn = new Scanner(new FileInputStream(patientFileName));
 		}
 		catch (FileNotFoundException e)
 		{
@@ -73,10 +74,18 @@ public class PatientDatabaseManager {
 	} // end of openFile method
 	
 	/**
-	 * processes the file (reads in the file, processes in the information to create 
+	 * processes the file input (reads in the file, processes in the information to create 
 	 * Patient objects stored in the file to populate the Patient Accounts) 
 	 */
 	public void processInput() {
+		// finish code
+	}
+	
+	/**
+	 * processes the file output (writes to the file, processes in the information to record 
+	 * Patient objects in the file for Patient database) 
+	 */
+	public void processOutput() {
 		// finish code
 	}
 	
