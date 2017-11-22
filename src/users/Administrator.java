@@ -42,6 +42,7 @@ public class Administrator extends User {
 	 * Allows the Administrator creates new patients
 	 * @param name = The name of the Patient
 	 * @param patientID = The Patients ID number
+	 * @param primaryDoctor = the patients primary doctor
 	 * @param age = The age of the patient
 	 * @param bloodPressure = The patients blood pressure
 	 * @param heartRate = The patients heart rate
@@ -51,10 +52,10 @@ public class Administrator extends User {
 	 * @param currentIllness = Any illness' that the patient currently has
 	 * @param allergies = Any allergies that the patient has
 	 */
-	public Patient createNewPatient(String name, int age, String bloodPressure,
+	public Patient createNewPatient(String name, String primaryDoctor, int age, String bloodPressure,
 			int heartRate, double weightInLbs, double heightInInches, String familyHistory, 
 			String currentIllness, String allergies) {
-		Patient patient = new Patient(name, age, bloodPressure, heartRate, weightInLbs, 
+		Patient patient = new Patient(name, primaryDoctor, age, bloodPressure, heartRate, weightInLbs, 
 				heightInInches, familyHistory, currentIllness, allergies);
 		PatientAccounts.addPatient(patient);
 		return patient;

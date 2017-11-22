@@ -29,11 +29,11 @@ public class HealthFirstMain {
 		Nurse nurse1 = new Nurse("Pat Kline");
 		System.out.println(nurse1);
 		
-		Patient patient1 = admin1.createNewPatient("Jane Doe", 40, "120/80", 67, 176, 
+		Patient patient1 = admin1.createNewPatient("Jane Doe", "Robert Smith", 40, "120/80", 67, 176, 
 				72, "Mother: none, Father: heart attack", "Cancer", "shrimp");
 		System.out.println(patient1);
 		
-		Patient patient2 = admin1.createNewPatient("John Doe", 45, "125/85", 82, 111, 
+		Patient patient2 = admin1.createNewPatient("John Doe", "Robert Smith", 45, "125/85", 82, 111, 
 				65, "Mother: cancer, Father: dibeties", "Heart Attack", "none");
 		System.out.println(patient2);
 		doctor1.prescribeMedication("motrin", patient2);

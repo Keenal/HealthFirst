@@ -32,6 +32,7 @@ public class Patient {
 	private String name = "";
 	private int patientID = 0;
 	private static int nextIDNum = 1000;
+	private String primaryDoctor = "";
 	private int age = 0;
 	private String bloodPressure = "";
 	private int heartRate = 0;
@@ -68,13 +69,13 @@ public class Patient {
 		this.patientID2 = patientID2;
 	}
 	
-
 	/**
 	 * Default constructor for the Patient class
 	 */
 	public Patient() {
 		setName("");
 		setPatientID();
+		setPrimaryDoctor("");
 		setAge(0);
 		setBloodPressure("");
 		setHeartRate(0);
@@ -91,6 +92,7 @@ public class Patient {
 	/**
 	 * Parameterized constructor for the Patient class
 	 * @param name = The name of the Patient
+	 * @param primaryDoctor = The patients primary doctor
 	 * @param age = The age of the patient
 	 * @param bloodPressure = The patients blood pressure
 	 * @param heartRate = The patients heart rate
@@ -100,11 +102,12 @@ public class Patient {
 	 * @param currentIllness = Any illness' that the patient currently has
 	 * @param allergies = Any allergies that the patient has
 	 */
-	public Patient(String name, int age, String bloodPressure,
+	public Patient(String name, String primaryDoctor, int age, String bloodPressure,
 			int heartRate, double weightInLbs, double heightInInches, String familyHistory, 
 			String currentIllness, String allergies) {
 		setName(name);
 		setPatientID();
+		setPrimaryDoctor(primaryDoctor);
 		setAge(age);
 		setBloodPressure(bloodPressure);
 		setHeartRate(heartRate);
@@ -145,6 +148,20 @@ public class Patient {
 	 */
 	public void setPatientID() {
 		this.patientID = nextIDNum++;
+	}
+	
+	/**
+	 * @return the primaryDoctor
+	 */
+	public String getPrimaryDoctor() {
+		return primaryDoctor;
+	}
+
+	/**
+	 * @param primaryDoctor the primaryDoctor to set
+	 */
+	public void setPrimaryDoctor(String primaryDoctor) {
+		this.primaryDoctor = primaryDoctor;
 	}
 
 	/**
@@ -350,7 +367,7 @@ public class Patient {
 	 */
 	@Override
 	public String toString() {
-		return "Patient [name=" + name + ", patientID=" + patientID + ", age=" + age + ", bloodPressure="
+		return "Patient [name=" + name + ", patientID=" + patientID + ", primaryDoctor=" + primaryDoctor + ", age=" + age + ", bloodPressure="
 				+ bloodPressure + ", heartRate=" + heartRate + ", weightInLbs=" + weightInLbs + ", heightInInches="
 				+ heightInInches + ", familyHistory=" + familyHistory + ", currentIllness=" + currentIllness
 				+ ", allergies=" + allergies + ", prescriptionsAwaitingVerification=" + numOfPrescriptionsAwaitingVerification + 
