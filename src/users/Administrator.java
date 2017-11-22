@@ -1,5 +1,6 @@
 package users;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
 
 /**
 This program:
@@ -55,6 +56,7 @@ public class Administrator extends User {
 			String currentIllness, String allergies) {
 		Patient patient = new Patient(name, age, bloodPressure, heartRate, weightInLbs, 
 				heightInInches, familyHistory, currentIllness, allergies);
+		PatientAccounts.addPatient(patient);
 		return patient;
 	} // end createNewPatient method
 

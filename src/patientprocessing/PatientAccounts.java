@@ -23,8 +23,8 @@ public class PatientAccounts {
 
 	public static final int PATIENT_ACCOUNTS_ARRAY_SIZE = 50;
 	
-	private int numOfElements = 0;
-	private Patient[] patientAccounts = null;
+	public static int numOfElements = 0;
+	public static Patient[] patientAccounts = null;
 	
 	/**
 	 * Default constructor for the PatientAccounts class
@@ -38,7 +38,7 @@ public class PatientAccounts {
 	 * the numOfElements instance variable by 1
 	 * @param patient = the patient to add
 	 */
-	public void addPatient(Patient patient) {
+	public static void addPatient(Patient patient) {
 		patientAccounts[numOfElements++] = patient;
 	} // end of addPatient method
 	
@@ -49,7 +49,7 @@ public class PatientAccounts {
 	 * @param patientID = the patientID of Patient object to get
 	 * @return Patient = the Patient object or null if the Patient is not found
 	 */
-	public Patient searchPatient(int patientID) {
+	public static Patient searchPatient(int patientID) {
 		for (int i = 0; i < numOfElements; i++) {
 			if ((patientAccounts[i].getPatientID() == patientID)) {
 				return patientAccounts[i];

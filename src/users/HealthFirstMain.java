@@ -3,6 +3,8 @@ package users;
 import medicationprocessing.MedicationDatabaseManager;
 import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -14,6 +16,7 @@ public class HealthFirstMain {
 		MedicationDatabaseManager medDB = new MedicationDatabaseManager(inputFileName);
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
+		PatientAccounts patientAccounts = new PatientAccounts();
 		
 		System.out.println(medicationList);
 		
@@ -41,9 +44,10 @@ public class HealthFirstMain {
 		pharm1.verifyMedicaton("motrin", patient2);
 		System.out.println(patient2);
 		
-		Date mostRecentDose = patient2.logMostRecentDose(MedicationList.getMedication("motrin"));
-		Date nextDoseDue = patient2.timeNextDoseDue(MedicationList.getMedication("motrin"));
-		
+		nurse1.logDose("motrin", patient2.getPatientID(), 600, "Inflamation");
+		nurse1.logDose("motrin", patient2.getPatientID(), 400, "Pain");
+ 
+		System.out.println(patient2.medicationHistory());
 	}
 
 }

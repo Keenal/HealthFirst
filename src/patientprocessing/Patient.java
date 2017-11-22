@@ -1,7 +1,4 @@
 package patientprocessing;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 import medicationprocessing.Medication;
 
@@ -27,6 +24,7 @@ File Name: Patient.java
 public class Patient {
 
 	private static int PRESCRIPTION_LIST_SIZE = 50;
+	private static int DOSE_GIVEN_LIST_SIZE = 100;
 	
 	private String name = "";
 	private int patientID = 0;
@@ -43,7 +41,8 @@ public class Patient {
 	private int numOfPrescriptionsAwaitingVerification = 0;
 	private Medication[] activePrescriptionsVerified = null;
 	private int numOfPrescriptionsVerified = 0;
-	private static GregorianCalendar calendar = new GregorianCalendar();
+	private PatientDose[] dosesGivenToPatient = null;
+	private int numOfDosesGiven = 0;
 	
 	/**
 	 * Default constructor for the Patient class
@@ -59,6 +58,7 @@ public class Patient {
 		setFamilyHistory("");
 		setCurrentIllness("");
 		setAllergies("");
+		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
 		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of default constructor
@@ -88,6 +88,7 @@ public class Patient {
 		setFamilyHistory(familyHistory);
 		setCurrentIllness(currentIllness);
 		setAllergies(allergies);
+		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
 		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of parameterized constructor
@@ -234,6 +235,15 @@ public class Patient {
 	} 
 	
 	/**
+	 * adds a dose to the patients dosesGivenToPatient array 
+	 * and increments the numOfDosesGiven instance variable by 1
+	 * @param doseGiven = the dose to add to the dosesGivenToPatient array
+	 */
+	public void addDose(PatientDose doseGiven) {
+		dosesGivenToPatient[numOfDosesGiven++] = doseGiven;
+	} // end of addDose method
+	
+	/**
 	 * adds a prescription to the patients prescriptionsAwaitingVerification array 
 	 * and increments the numOfPrescriptionsAwaitingVerification instance variable by 1
 	 * @param newPrescription = the new prescription to add
@@ -251,32 +261,17 @@ public class Patient {
 		activePrescriptionsVerified[numOfPrescriptionsVerified++] = prescriptionAwaitingVerification;
 	} // end of addPrescription method
 	
-	/**
-	 * Logs the most recent time a dose of medication was given 
-	 * @param medication = the medication that was given
-	 * @return nextDoseDue = the time the most recent dose was given
+	/* returns a nicely formatted String representing the history of the medication given to the patient
+	 * @return a formatted String
 	 */
-	public Date logMostRecentDose(Medication medication) {
-		Date currentTime = calendar.getTime();
-		System.out.println(currentTime);
-		return currentTime;
-	} // end of logMostRecentDose method
+	public String medicationHistory() {
+		String completeString = "";
+			for (int l = 0; l < this.numOfDosesGiven; l++) {
+				completeString += dosesGivenToPatient[l].toString() + "\n";
+			} 
+			return completeString;
+	} // end of medicationHistory method
 	
-	/**
-	 * Calculates when the next dose of medication is due
-	 * @param medication = the medication that was given
-	 * @return nextDoseDue = the time the most recent dose was given
-	 */
-	public Date timeNextDoseDue(Medication medication) {
-		int minHoursTillDue = medication.getMinDosageTimeHours();
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.HOUR, minHoursTillDue);
-		Date nextDoseDue = cal.getTime();
-		System.out.println(nextDoseDue);
-		return nextDoseDue;
-	} // end of logMostRecentDose method
-	
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
