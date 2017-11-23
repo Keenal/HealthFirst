@@ -29,7 +29,7 @@ public class Patient {
 	private static int DOSE_GIVEN_LIST_SIZE = 100;
 	private static int NOTFOUND = -1;
 	
-	private String name = "";
+	private String name;
 	private int patientID = 0;
 	private static int nextIDNum = 1000;
 	private String primaryDoctor = "";

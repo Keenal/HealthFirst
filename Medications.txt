@@ -1,3 +1,2 @@
-OverTheCounter,Motrin,put description here,600,6,8
-Narcotic,Narco,will deal with pain,400,6,8
-
+OverTheCounter,Motrin,put description here,600,6
+Narcotic,Narco,will deal with pain,400,6

@@ -53,7 +53,7 @@ public class Nurse extends User {
 	 * @param doseGivenInMg = the dose given to the patient in Mg
 	 * @param doseGivenFor = The reason the dose was given to the patient
 	 */
-	public void logDose(String medicationName, int patientID, int doseGivenInMg, String doseGivenFor) {
+	public void logDose(String medicationName, int patientID, int doseGivenInMg) {
 		Patient patient = PatientAccounts.searchPatient(patientID);
 		Medication medicationGiven = MedicationList.getMedication(medicationName);
 		Date timeDoseLogged = calendar.getTime();
@@ -61,7 +61,7 @@ public class Nurse extends User {
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.HOUR, minHoursTillDue);
 		Date nextDoseDue = cal.getTime();
-		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, this, doseGivenInMg, doseGivenFor);
+		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, this, doseGivenInMg);
 		patient.addDose(dose);
 	} // end of logDose method
 	

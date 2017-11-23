@@ -30,7 +30,6 @@ public class PatientDose {
 	Date nextDoseDue = null;
 	Nurse nurseWhoLogged = null;
 	int doseGivenInMg = 0;
-	String doseGivenFor = "";
 	
 	/**
 	 * Default constructor for the PatientDose class
@@ -41,7 +40,6 @@ public class PatientDose {
 		setNextDoseDue(null);
 		setNurseWhoLogged(null);
 		setDoseGivenInMg(0);
-		setDoseGivenFor("");
 	}
 	
 	/**
@@ -51,15 +49,13 @@ public class PatientDose {
 	 * @param nextDoseDue2 = The time the next dose is due
 	 * @param nurseWhoLogged = The Nurse who gave the dose
 	 * @param doseGivenInMg = The amount in Mg of dose given
-	 * @param doseGivenFor = The reason the dosage of medication was given
 	 */
-	public PatientDose(Medication medicationGiven, Date timeDoseLogged, Date nextDoseDue, Nurse nurseWhoLogged, int doseGivenInMg, String doseGivenFor) {
+	public PatientDose(Medication medicationGiven, Date timeDoseLogged, Date nextDoseDue, Nurse nurseWhoLogged, int doseGivenInMg) {
 		setMedicationGiven(medicationGiven);
 		setTimeDoseLogged(timeDoseLogged);
 		setNextDoseDue(nextDoseDue);
 		setNurseWhoLogged(nurseWhoLogged);
 		setDoseGivenInMg(doseGivenInMg);
-		setDoseGivenFor(doseGivenFor);
 	}
 
 	/**
@@ -132,20 +128,6 @@ public class PatientDose {
 		this.doseGivenInMg = doseGivenInMg;
 	}
 
-	/**
-	 * @return the doseGivenFor
-	 */
-	public String getDoseGivenFor() {
-		return doseGivenFor;
-	}
-
-	/**
-	 * @param doseGivenFor the doseGivenFor to set
-	 */
-	public void setDoseGivenFor(String doseGivenFor) {
-		this.doseGivenFor = doseGivenFor;
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -153,7 +135,7 @@ public class PatientDose {
 	public String toString() {
 		return "PatientDose [medicationGiven=" + medicationGiven + ", timeDoseLogged=" + timeDoseLogged
 				+ ", nextDoseDue=" + nextDoseDue + ", nurseWhoLogged=" + nurseWhoLogged + ", doseGivenInMg="
-				+ doseGivenInMg + ", doseGivenFor=" + doseGivenFor + "]";
+				+ doseGivenInMg + "]";
 	}
 	
 } // end of PatientDose class

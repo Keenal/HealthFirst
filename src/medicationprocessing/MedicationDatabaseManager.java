@@ -86,32 +86,28 @@ public class MedicationDatabaseManager {
 				String description = theTokens[2];
 				int dosageInMg = Integer.parseInt(theTokens[3]);
 				int minDosageTimeHours = Integer.parseInt(theTokens[4]);
-				int maxDosageTimeHours = Integer.parseInt(theTokens[5]);
-				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, maxDosageTimeHours, true, false, false, false);
+				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, true, false, false, false);
 				medicationList.addMedication(medication);
 			} else if (theTokens[0].equalsIgnoreCase("overthecounter")) {
 				String name = theTokens[1]; 
 				String description = theTokens[2];
 				int dosageInMg = Integer.parseInt(theTokens[3]);
 				int minDosageTimeHours = Integer.parseInt(theTokens[4]);
-				int maxDosageTimeHours = Integer.parseInt(theTokens[5]);
-				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, maxDosageTimeHours, false, true, false, false);
+				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, false, true, false, false);
 				medicationList.addMedication(medication);
 			} else if (theTokens[0].equalsIgnoreCase("antibiotic")) {
 				String name = theTokens[1]; 
 				String description = theTokens[2];
 				int dosageInMg = Integer.parseInt(theTokens[3]);
 				int minDosageTimeHours = Integer.parseInt(theTokens[4]);
-				int maxDosageTimeHours = Integer.parseInt(theTokens[5]);
-				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, maxDosageTimeHours, false, false, true, false);
+				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, false, false, true, false);
 				medicationList.addMedication(medication);
 			} else if (theTokens[0].equalsIgnoreCase("antiinflamitory")) {
 				String name = theTokens[1]; 
 				String description = theTokens[2];
 				int dosageInMg = Integer.parseInt(theTokens[3]);
 				int minDosageTimeHours = Integer.parseInt(theTokens[4]);
-				int maxDosageTimeHours = Integer.parseInt(theTokens[5]);
-				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, maxDosageTimeHours, false, false, false, true);
+				Medication medication = new Medication(name, description, dosageInMg, minDosageTimeHours, false, false, false, true);
 				medicationList.addMedication(medication);
 			}
 		}
