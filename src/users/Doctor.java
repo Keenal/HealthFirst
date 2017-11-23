@@ -46,7 +46,7 @@ public class Doctor extends User {
 	 */
 	public void prescribeMedication(String medicationName, Patient patient) {
 		Medication newPrescription =  MedicationList.getMedication(medicationName);
-		patient.addPrescription(newPrescription);
+		//patient.addPrescription(newPrescription);
 	} // end of prescribeMedication method
 
 	/* (non-Javadoc)

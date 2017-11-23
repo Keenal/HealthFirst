@@ -46,7 +46,7 @@ public class Pharmacist extends User {
 	 */
 	public void verifyMedicaton(String medicationName, Patient patient) {
 		Medication prescriptionToVerify =  MedicationList.getMedication(medicationName);
-		patient.verifyPrescription(prescriptionToVerify);
+		//patient.verifyPrescription(prescriptionToVerify);
 	} // end of verifyMedicaton class
 	
 	/* (non-Javadoc)

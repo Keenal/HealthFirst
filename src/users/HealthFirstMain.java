@@ -2,7 +2,7 @@ package users;
 
 import medicationprocessing.MedicationDatabaseManager;
 import medicationprocessing.MedicationList;
-import patientprocessing.Patient;
+//import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 
 public class HealthFirstMain {
@@ -29,7 +29,7 @@ public class HealthFirstMain {
 		Nurse nurse1 = new Nurse("Pat Kline");
 		System.out.println(nurse1);
 		
-		Patient patient1 = admin1.createNewPatient("Jane Doe", "Robert Smith", 40, "120/80", 67, 176, 
+		/*Patient patient1 = admin1.createNewPatient("Jane Doe", "Robert Smith", 40, "120/80", 67, 176, 
 				72, "Mother: none, Father: heart attack", "Cancer", "shrimp");
 		System.out.println(patient1);
 		
@@ -44,7 +44,7 @@ public class HealthFirstMain {
 		nurse1.logDose("motrin", patient2.getPatientID(), 600);
 		nurse1.logDose("motrin", patient2.getPatientID(), 400);
  
-		System.out.println(patient2.medicationHistory());
+		System.out.println(patient2.medicationHistory());*/
 	}
 
 }

@@ -7,11 +7,10 @@ import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import tester.HealthFirstTester;
 
-public class PatientViewController extends HealthFirstTester{
+public class PatientViewController {
 
-	public HealthFirstTester hft;
     @FXML
-    private TableView<Patient> personTable;
+    private TableView<Patient> patientTable;
     @FXML
     private TableColumn<Patient, String> NameColumn;
     @FXML
@@ -21,6 +20,10 @@ public class PatientViewController extends HealthFirstTester{
     @FXML
     private TableColumn<Patient, String> PrimaryDrColumn;    
 
+    //reference main app
+	public HealthFirstTester hft;
+
+    
     public PatientViewController () {
     
     }
@@ -45,6 +48,7 @@ public class PatientViewController extends HealthFirstTester{
      */
     public void setMainApp(HealthFirstTester hft) {
         this.hft = hft;
+        patientTable.setItems(hft.getPatientData());
         }  
     
    public void handleUserSelect() {

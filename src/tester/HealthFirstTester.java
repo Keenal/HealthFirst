@@ -44,14 +44,21 @@ public class HealthFirstTester extends Application {
 	private Stage primaryStage;
     public BorderPane rootLayout;
 	public User userType = new User();
+	ObservableList<Patient> patientData = FXCollections.observableArrayList();
+
+	public HealthFirstTester() {
+		patientData.add(new Patient("Jane Doe",55));
+
+	}
     
-		
-    
+	public ObservableList<Patient> getPatientData(){
+		return patientData;
+	}
+	
+	
 	public static void main(String[] args) {
 		//new PatientAccounts();
-		ObservableList<Patient> patientData = FXCollections.observableArrayList();
 
-		patientData.add(new Patient("Jane Doe",55));
 			
 			
 			//User userType = new User();
@@ -73,9 +80,9 @@ public class HealthFirstTester extends Application {
         this.primaryStage.setTitle("HealthFirst");
 
         initRootLayout();
-        //showPersonOverview();
+        showPersonOverview();
         //showDoctor();
-        showPatientSelection();
+        //showPatientSelection();
     }
 	
 	/**

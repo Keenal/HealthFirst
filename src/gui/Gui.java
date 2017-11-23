@@ -1,5 +1,5 @@
 package gui;
-
+/*
 
 import patientprocessing.Patient;
 import users.Administrator;
@@ -72,3 +72,4 @@ System.out.println(newadmin);
     }
         
     }
+*/

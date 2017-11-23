@@ -4,15 +4,20 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import medicationprocessing.Medication;
 
 
 public class Patient {
 	
+	//private static int PRESCRIPTION_LIST_SIZE = 50;
+	private static int DOSE_GIVEN_LIST_SIZE = 100;
+	//private static int NOTFOUND = -1;
+	private PatientDose[] dosesGivenToPatient = null;
+	private int numOfDosesGiven = 0;
+
 	/* 
 	 * JavaFX compliance Requirements
 	 */
-	private final StringProperty firstName = new SimpleStringProperty();;
+	private final StringProperty firstName = new SimpleStringProperty();
 	public StringProperty firstNameProperty() {
 		return firstName;
 	}
@@ -38,6 +43,8 @@ public class Patient {
 	public Patient(String first,Integer pid) {
 this.setFirstName(first);
 this.setPid(pid);
+dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
+
 	}
 	
 	
@@ -57,29 +64,29 @@ this.setPid(pid);
 	 * and increments the numOfPrescriptionsAwaitingVerification instance variable by 1
 	 * @param newPrescription = the new prescription to add
 	 */
-	public void addPrescription(Medication newPrescription) {
-		prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
-	} // end of addPrescription method
+//public void addPrescription(Medication newPrescription) {
+//	prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
+//} // end of addPrescription method
 	
 	/**
 	 * attempts to find a prescription in the prescriptionsAwaitingVerification array, returns NOTFOUND constant if not found
 	 * @param precriptionToFind = the prescription to find
 	 * @return int = the array index number that was found, or NOTFOUND constant if the prescription was not found
 	 */
-	private int findPrescription(Medication precriptionToFind) {
-		for (int indexNumber = 0; indexNumber < prescriptionsAwaitingVerification.length; indexNumber++) {
-			if (prescriptionsAwaitingVerification[indexNumber] == null) {
-				continue;
-			}
-			else if (prescriptionsAwaitingVerification[indexNumber].getName().equalsIgnoreCase(precriptionToFind.getName())) {
-				return indexNumber;
-			}
-			else { 
-				continue;
-			}
+/*private int findPrescription(Medication precriptionToFind) {
+	for (int indexNumber = 0; indexNumber < prescriptionsAwaitingVerification.length; indexNumber++) {
+		if (prescriptionsAwaitingVerification[indexNumber] == null) {
+			continue;
 		}
-		return NOTFOUND;
-	} // end of findPrescription method
+		else if (prescriptionsAwaitingVerification[indexNumber].getName().equalsIgnoreCase(precriptionToFind.getName())) {
+			return indexNumber;
+		}
+		else { 
+			continue;
+		}
+	}
+	return NOTFOUND;
+} // end of findPrescription method*/
 	
 	/**
 	 * uses findPrescription() method to find and delete an prescriptionsAwaitingVerification after it is verified
@@ -87,7 +94,7 @@ this.setPid(pid);
 	 * @param precriptionToDelete = the prescription to delete
 	 * @return boolean = true if account was found and deleted, or false if not
 	 */
-	private boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
+	/*private boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
 		int findPrescriptionResult = findPrescription(precriptionToDelete);
 		int j = 0;
 		if (findPrescriptionResult >= 0) {
@@ -107,20 +114,20 @@ this.setPid(pid);
 			return false;
 		}
 	} // end of deletePrescriptionAwaitingVerification method
-	
+	*/
 	/**
 	 * adds a prescription to the patients activePrescriptionsVerified array 
 	 * and increments the numOfPrescriptionsVerified instance variable by 1
 	 * @param prescriptionAwaitingVerification = the prescription to verify
 	 */
-	public void verifyPrescription(Medication prescriptionAwaitingVerification) {
+	/*public void verifyPrescription(Medication prescriptionAwaitingVerification) {
 		activePrescriptionsVerified[numOfPrescriptionsVerified++] = prescriptionAwaitingVerification;
 		deletePrescriptionAwaitingVerification(prescriptionAwaitingVerification);
 	} // end of verifyPrescription method
-	
+	*/
 	/* returns a nicely formatted String representing the history of the medication given to the patient
 	 * @return a formatted String
-	 */
+	 *//*
 	public String medicationHistory() {
 		String completeString = "";
 			for (int l = 0; l < this.numOfDosesGiven; l++) {
@@ -129,7 +136,7 @@ this.setPid(pid);
 			return completeString;
 	} // end of medicationHistory method
 	
-	
+	*/
 	
 	
 	
