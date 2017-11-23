@@ -1,11 +1,10 @@
 package view;
 
-import tester.HealthFirstTester;
-
 import javafx.fxml.FXML;
-public class LoginScreenController extends HealthFirstTester {
+import main.Main;
+public class LoginScreenController extends Main {
 
-	public HealthFirstTester healthFirstTester;
+	public Main healthFirstTester;
 	public String user = "";
 
 	public LoginScreenController() {
@@ -17,7 +16,7 @@ public class LoginScreenController extends HealthFirstTester {
      * 
      * @param HealthFirstTester
      */
-    public void setMainApp(HealthFirstTester HealthFirstTester) {
+    public void setMainApp(Main HealthFirstTester) {
         this.healthFirstTester = HealthFirstTester;
         }   
     

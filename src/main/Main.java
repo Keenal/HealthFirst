@@ -18,7 +18,7 @@ File Name: HealthFirstTester.java
 */
 
 
-package tester;
+package main;
 
 
 import java.io.IOException;
@@ -39,14 +39,14 @@ import view.LoginScreenController;
 import view.PatientViewController;
 
 
-public class HealthFirstTester extends Application {
+public class Main extends Application {
 
 	private Stage primaryStage;
     public BorderPane rootLayout;
 	public User userType = new User();
 	ObservableList<Patient> patientData = FXCollections.observableArrayList();
 
-	public HealthFirstTester() {
+	public Main() {
 		patientData.add(new Patient("Jane Doe",55));
 		patientData.add(new Patient("Johnny Boy",1));
 		patientData.add(new Patient("John Dough",6));
@@ -93,7 +93,7 @@ public class HealthFirstTester extends Application {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HealthFirstTester.class.getResource("/view/RootLayout.fxml"));
+            loader.setLocation(Main.class.getResource("/view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             System.out.println("Hello?");
             // Show the scene containing the root layout.
@@ -113,7 +113,7 @@ public class HealthFirstTester extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HealthFirstTester.class.getResource("/view/LoginScreen.fxml"));
+            loader.setLocation(Main.class.getResource("/view/LoginScreen.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
             LoginScreenController controller = loader.getController();
             controller.setMainApp(this);
@@ -138,7 +138,7 @@ public class HealthFirstTester extends Application {
         try {
         	// Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(HealthFirstTester.class.getResource("/view/PatientSelection.fxml"));
+            loader.setLocation(Main.class.getResource("/view/PatientSelection.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
             PatientViewController controller = loader.getController();
             controller.setMainApp(this);

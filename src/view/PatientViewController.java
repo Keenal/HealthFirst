@@ -4,12 +4,12 @@ import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import main.Main;
 import javafx.scene.control.TablePosition;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
-import tester.HealthFirstTester;
 
-public class PatientViewController extends HealthFirstTester{
+public class PatientViewController extends Main{
 
     @FXML
     private TableView<Patient> patientTable;
@@ -23,7 +23,7 @@ public class PatientViewController extends HealthFirstTester{
     private TableColumn<Patient, String> PrimaryDrColumn;    
 
     //reference main app
-	public HealthFirstTester hft;
+	public Main hft;
 	public String user;
 	Object patient;
     public PatientViewController () {
@@ -73,7 +73,7 @@ public class PatientViewController extends HealthFirstTester{
      * 
      * @param mainApp
      */
-    public void setMainApp(HealthFirstTester hft) {
+    public void setMainApp(Main hft) {
         this.hft = hft;
         patientTable.setItems(hft.getPatientData());
         }  
@@ -92,13 +92,13 @@ public class PatientViewController extends HealthFirstTester{
    	user = userType.getName();
    	System.out.println("User Type is :"+user+patient);
    	if(user == "Doctor")
-   		HealthFirstTester.showDoctor();
+   		Main.showDoctor();
    	if(user == "Nurse")
-   		HealthFirstTester.showNurse();
+   		Main.showNurse();
    	if(user == "Admin")
-   		HealthFirstTester.showAdmin();
+   		Main.showAdmin();
    	if(user == "Pharma")
-   		HealthFirstTester.showPharmacist();	
+   		Main.showPharmacist();	
    }
 	private void showPatientDetails(Patient patient) {
 		System.out.println("ShowPatientDetails called Patient is:"+patient);
