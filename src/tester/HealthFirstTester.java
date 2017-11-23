@@ -49,6 +49,7 @@ public class HealthFirstTester extends Application {
 	public HealthFirstTester() {
 		patientData.add(new Patient("Jane Doe",55));
 		patientData.add(new Patient("Johnny Boy",1));
+		patientData.add(new Patient("John Dough",6));
 	}
     
 	public ObservableList<Patient> getPatientData(){

@@ -1,8 +1,10 @@
 package view;
 
+import javafx.collections.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TablePosition;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import tester.HealthFirstTester;
@@ -23,7 +25,7 @@ public class PatientViewController extends HealthFirstTester{
     //reference main app
 	public HealthFirstTester hft;
 	public String user;
-    
+	Object patient;
     public PatientViewController () {
     
     }
@@ -41,9 +43,30 @@ public class PatientViewController extends HealthFirstTester{
         showPatientDetails(null);
         
         
-        Patient Johnny = patientTable.getSelectionModel().getSelectedItem();
-        System.out.println(Johnny);
+        //Patient Johnny = patientTable.getSelectionModel().getSelectedItem();
+        //System.out.println(Johnny);
+
+        patientTable.getSelectionModel().setCellSelectionEnabled(true);
+        ObservableList<?> selectedCells = patientTable.getSelectionModel().getSelectedCells();
+
+        selectedCells.addListener(new ListChangeListener<Object>() {
+            @Override
+            public void onChanged(Change<?> c) {
+                TablePosition<?, ?> tablePosition = (TablePosition<?, ?>) selectedCells.get(0);
+                patient = tablePosition.getRow();
+                System.out.println("Selected Value" + patient);
+            }
+        }
+        );
     }
+    
+    
+    
+
+
+    
+
+
     
     /**
      * Is called by the main application to give a reference back to itself.
@@ -67,7 +90,7 @@ public class PatientViewController extends HealthFirstTester{
    private void handleUser() { 
    	
    	user = userType.getName();
-   	System.out.println("User Type is :"+user);
+   	System.out.println("User Type is :"+user+patient);
    	if(user == "Doctor")
    		HealthFirstTester.showDoctor();
    	if(user == "Nurse")

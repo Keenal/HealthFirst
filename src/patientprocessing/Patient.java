@@ -14,6 +14,16 @@ public class Patient {
 	private PatientDose[] dosesGivenToPatient = null;
 	private int numOfDosesGiven = 0;
 
+	
+	
+	public Patient(String first,Integer pid) {
+this.setFirstName(first);
+this.setPid(pid);
+dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
+
+	}
+	
+	
 	/* 
 	 * JavaFX compliance Requirements
 	 */
@@ -40,12 +50,7 @@ public class Patient {
 	}
 	
 	
-	public Patient(String first,Integer pid) {
-this.setFirstName(first);
-this.setPid(pid);
-dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 
-	}
 	
 	
 	
