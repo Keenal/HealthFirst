@@ -24,6 +24,8 @@ package tester;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 //import javafx.collections.FXCollections;
 //import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +33,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import patientprocessing.Patient;
 import users.User;
 import view.LoginScreenController;
 import view.PatientViewController;
@@ -41,13 +44,19 @@ public class HealthFirstTester extends Application {
 	private Stage primaryStage;
     public BorderPane rootLayout;
 	public User userType = new User();
-
-	
+    
+		
+    
 	public static void main(String[] args) {
-		User userType = new User();
+		//new PatientAccounts();
+		ObservableList<Patient> patientData = FXCollections.observableArrayList();
 
-            userType.setName("test");
-            System.out.println("User is : "+userType.getName());
+		patientData.add(new Patient("Jane Doe",55));
+			
+			
+			//User userType = new User();
+            //userType.setName("test");
+            //System.out.println("User is : "+userType.getName());
             launch(args);
 		/*Administrator admin = new Administrator("John");
 		System.out.println(admin);
@@ -64,9 +73,9 @@ public class HealthFirstTester extends Application {
         this.primaryStage.setTitle("HealthFirst");
 
         initRootLayout();
-        showPersonOverview();
+        //showPersonOverview();
         //showDoctor();
-        //showPatientSelection();
+        showPatientSelection();
     }
 	
 	/**
@@ -123,7 +132,7 @@ public class HealthFirstTester extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(HealthFirstTester.class.getResource("/view/PatientSelection.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
-            LoginScreenController controller = loader.getController();
+            PatientViewController controller = loader.getController();
             controller.setMainApp(this);
             
             // Set person overview into the center of root layout.

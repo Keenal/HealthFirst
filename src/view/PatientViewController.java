@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
 import tester.HealthFirstTester;
 
 public class PatientViewController extends HealthFirstTester{
@@ -27,8 +28,14 @@ public class PatientViewController extends HealthFirstTester{
     @FXML
     private void initialize() {
         // Initialize the person table with the two columns.
-    	NameColumn.setCellValueFactory(cellData -> cellData.getValue().getFirstName());
-        patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().getPatientID2());
+    	NameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+    	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().pidProperty());
+    	//PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().getPrimaryDoctor2());
+        
+        new PatientAccounts();
+
+
+        showPatientDetails(null);
     }
     
     /**
@@ -45,8 +52,10 @@ public class PatientViewController extends HealthFirstTester{
    }
     
 	private void showPatientDetails(Patient patient) {
+		System.out.println("ShowPatientDetails called Patient is:"+patient);
 	    if (patient != null) {
 	        // Fill the labels with info from the patient object.
+	    	//Patient patient1 = null;
 	        NameColumn.setText(patient.getName());
 	        //lastNameLabel.setText(patient.getLastName());
 	        patientIDColumn.setText("NeedDrGetter");
