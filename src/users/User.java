@@ -21,13 +21,13 @@ File Name: User.java
 
 public class User {
 
-	private String name = "";
+	static String name = "";
 
 	/**
 	 * Default constructor for the User class
 	 */
 	public User() {
-		setName("");
+		
 	} // end of default constructor
 	
 	/**
@@ -49,7 +49,7 @@ public class User {
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
-		this.name = name;
+		User.name = name;
 	}
 
 	/* (non-Javadoc)

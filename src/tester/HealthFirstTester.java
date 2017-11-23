@@ -48,7 +48,7 @@ public class HealthFirstTester extends Application {
 
 	public HealthFirstTester() {
 		patientData.add(new Patient("Jane Doe",55));
-
+		patientData.add(new Patient("Johnny Boy",1));
 	}
     
 	public ObservableList<Patient> getPatientData(){
@@ -61,8 +61,8 @@ public class HealthFirstTester extends Application {
 
 			
 			
-			//User userType = new User();
-            //userType.setName("test");
+			User userType = new User();
+            userType.setName("test");
             //System.out.println("User is : "+userType.getName());
             launch(args);
 		/*Administrator admin = new Administrator("John");

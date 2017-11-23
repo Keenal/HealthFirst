@@ -27,7 +27,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Button layoutX="303.0" layoutY="112.0" mnemonicParsing="false" text="Patient X" />
+                  <Button layoutX="303.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleUser" text="Patient X" />
                   <TextField layoutX="125.0" layoutY="112.0" promptText="Search" />
                </children>
             </AnchorPane>

@@ -7,7 +7,7 @@ import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import tester.HealthFirstTester;
 
-public class PatientViewController {
+public class PatientViewController extends HealthFirstTester{
 
     @FXML
     private TableView<Patient> patientTable;
@@ -22,7 +22,7 @@ public class PatientViewController {
 
     //reference main app
 	public HealthFirstTester hft;
-
+	public String user;
     
     public PatientViewController () {
     
@@ -39,6 +39,10 @@ public class PatientViewController {
 
 
         showPatientDetails(null);
+        
+        
+        Patient Johnny = patientTable.getSelectionModel().getSelectedItem();
+        System.out.println(Johnny);
     }
     
     /**
@@ -51,10 +55,28 @@ public class PatientViewController {
         patientTable.setItems(hft.getPatientData());
         }  
     
-   public void handleUserSelect() {
-	   
-   }
+    @FXML
+    private void handleUserSelect() {
+        //dialogStage.close();
+
+    	System.out.println("handlePharmacist from LoginController");
+      hft.showPersonOverview();;
+    }
     
+   @FXML
+   private void handleUser() { 
+   	
+   	user = userType.getName();
+   	System.out.println("User Type is :"+user);
+   	if(user == "Doctor")
+   		HealthFirstTester.showDoctor();
+   	if(user == "Nurse")
+   		HealthFirstTester.showNurse();
+   	if(user == "Admin")
+   		HealthFirstTester.showAdmin();
+   	if(user == "Pharma")
+   		HealthFirstTester.showPharmacist();	
+   }
 	private void showPatientDetails(Patient patient) {
 		System.out.println("ShowPatientDetails called Patient is:"+patient);
 	    if (patient != null) {

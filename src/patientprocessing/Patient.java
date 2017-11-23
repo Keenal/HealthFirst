@@ -139,8 +139,8 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	*/
 	
 	
-	
-	
-	
-
+	@Override
+	public String toString() {
+		return "Patient [name=" + firstName + ", patientID=" + pid + "]";
+		}
 }

@@ -1,7 +1,7 @@
 package view;
 
 import tester.HealthFirstTester;
-//import users.User;
+
 import javafx.fxml.FXML;
 public class LoginScreenController extends HealthFirstTester {
 
@@ -22,20 +22,7 @@ public class LoginScreenController extends HealthFirstTester {
         }   
     
     
-    @FXML
-    private void handleUser() { 
-    	
-    	user = userType.getName();
-    	System.out.println("User Type is :"+user);
-    	if(user == "Doctor")
-    		HealthFirstTester.showDoctor();
-    	if(user == "Nurse")
-    		HealthFirstTester.showNurse();
-    	if(user == "Admin")
-    		HealthFirstTester.showAdmin();
-    	if(user == "Pharma")
-    		HealthFirstTester.showPharmacist();	
-    }
+
     @FXML
     private void handleUserSelect() {
     	
