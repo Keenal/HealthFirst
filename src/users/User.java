@@ -22,6 +22,14 @@ File Name: User.java
 public class User {
 
 	static String name = "";
+	static int pid = 0;
+	public static int getPid() {
+		return pid;
+	}
+
+	public static void setPid(int pid) {
+		User.pid = pid;
+	}
 
 	/**
 	 * Default constructor for the User class
@@ -41,14 +49,14 @@ public class User {
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 
 	/**
 	 * @param name the name to set
 	 */
-	public void setName(String name) {
+	public static void setName(String name) {
 		User.name = name;
 	}
 

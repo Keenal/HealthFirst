@@ -8,6 +8,7 @@ import main.Main;
 import javafx.scene.control.TablePosition;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
+import users.User;
 
 public class PatientViewController extends Main{
 
@@ -25,7 +26,7 @@ public class PatientViewController extends Main{
     //reference main app
 	public Main hft;
 	public String user;
-	Object patient;
+	int patient;
     public PatientViewController () {
     
     }
@@ -43,9 +44,7 @@ public class PatientViewController extends Main{
         showPatientDetails(null);
         
         
-        //Patient Johnny = patientTable.getSelectionModel().getSelectedItem();
-        //System.out.println(Johnny);
-
+     
         patientTable.getSelectionModel().setCellSelectionEnabled(true);
         ObservableList<?> selectedCells = patientTable.getSelectionModel().getSelectedCells();
 
@@ -53,11 +52,18 @@ public class PatientViewController extends Main{
             @Override
             public void onChanged(Change<?> c) {
                 TablePosition<?, ?> tablePosition = (TablePosition<?, ?>) selectedCells.get(0);
-                patient = tablePosition.getRow();
-                System.out.println("Selected Value" + patient);
+                tablePosition = patientTable.getFocusModel().getFocusedCell();
+                patient =tablePosition.getRow();
+
+                System.out.println("Patient set " + patient);
+                User.setPid(patient);
+                
             }
         }
         );
+        
+        
+
     }
     
     
@@ -83,7 +89,7 @@ public class PatientViewController extends Main{
         //dialogStage.close();
 
     	System.out.println("handlePharmacist from LoginController");
-      hft.showPersonOverview();;
+      hft.showUserSelection();;
     }
     
    @FXML
@@ -92,13 +98,13 @@ public class PatientViewController extends Main{
    	user = userType.getName();
    	System.out.println("User Type is :"+user+patient);
    	if(user == "Doctor")
-   		Main.showDoctor();
+   		hft.showDoctor();
    	if(user == "Nurse")
-   		Main.showNurse();
+   		hft.showNurse();
    	if(user == "Admin")
-   		Main.showAdmin();
+   		hft.showAdmin();
    	if(user == "Pharma")
-   		Main.showPharmacist();	
+   		hft.showPharmacist();	
    }
 	private void showPatientDetails(Patient patient) {
 		System.out.println("ShowPatientDetails called Patient is:"+patient);

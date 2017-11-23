@@ -34,22 +34,34 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
 import users.User;
 import view.LoginScreenController;
 import view.PatientViewController;
+import view.DoctorViewController;
 
 
 public class Main extends Application {
 
 	private Stage primaryStage;
-    public BorderPane rootLayout;
+    public static BorderPane rootLayout;
 	public User userType = new User();
 	ObservableList<Patient> patientData = FXCollections.observableArrayList();
+	 public Patient p3 = new Patient("John Dough",2);
 
 	public Main() {
-		patientData.add(new Patient("Jane Doe",55));
-		patientData.add(new Patient("Johnny Boy",1));
-		patientData.add(new Patient("John Dough",6));
+	    new PatientAccounts();
+
+		Patient p1 = new Patient("Jane Doe",0);
+		Patient p2 = new Patient("Johnny Boy",1);
+		patientData.add(p1);
+		patientData.add(p2);
+		patientData.add(p3);
+		System.out.println(p3);
+		
+		PatientAccounts.addPatient(p1);
+		PatientAccounts.addPatient(p2);
+		PatientAccounts.addPatient(p3);
 	}
     
 	public ObservableList<Patient> getPatientData(){
@@ -81,7 +93,7 @@ public class Main extends Application {
         this.primaryStage.setTitle("HealthFirst");
 
         initRootLayout();
-        showPersonOverview();
+        showUserSelection();
         //showDoctor();
         //showPatientSelection();
     }
@@ -109,7 +121,7 @@ public class Main extends Application {
      * Shows the LoginScreen
      * 
      */
-    public void showPersonOverview() {
+    public void showUserSelection() {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -149,23 +161,34 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-
-	public static void showDoctor() {
-
-		System.out.println("Display Doctor interface with patient attached");
+		// /view/DoctorView.fxml   DoctorViewController
+	public void showDoctor() {
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/DoctorView.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            DoctorViewController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
-	public static void showNurse() {
+	public void showNurse() {
 		// TODO Auto-generated method stub
 		System.out.println("Display Nurse interface with patient attached");
 	}
 
-	public static void showAdmin() {
+	public void showAdmin() {
 		// TODO Auto-generated method stub
 		System.out.println("Display Admin interface with patient attached");
 	}
 
-	public static void showPharmacist() {
+	public void showPharmacist() {
 		// TODO Auto-generated method stub
 		System.out.println("Display Pharmacist interface with patient attached");
 	}

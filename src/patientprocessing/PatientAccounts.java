@@ -21,7 +21,7 @@ File Name: PatientAccounts.java
 
 public class PatientAccounts {
 
-	public static final int PATIENT_ACCOUNTS_ARRAY_SIZE = 50;
+	public static final int PATIENT_ACCOUNTS_ARRAY_SIZE = 15;
 	
 	public static int numOfElements = 0;
 	public static Patient[] patientAccounts = null;
@@ -49,14 +49,15 @@ public class PatientAccounts {
 	 * @param patientID = the patientID of Patient object to get
 	 * @return Patient = the Patient object or null if the Patient is not found
 	 */
-	public static Patient searchPatient(int patientID) {
-		for (int i = 0; i < numOfElements; i++) {
-			if ((patientAccounts[i].getPatientID() == patientID)) {
+	public static  Patient searchPatient(int patientID) {
+		for (int i = 0; i < numOfElements-1; i++) {
+			if (((int)patientAccounts[i].getPatientID() == patientID)) {
 				return patientAccounts[i];
 			} else {
 				continue;
 			}
 		}
+		System.out.println("No Patient Found");
 		return null;
 	} // end of searchPatient method
 	
