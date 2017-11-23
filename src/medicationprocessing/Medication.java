@@ -25,7 +25,6 @@ public class Medication {
 	private String description = "";
 	private int dosageInMg = 0;
 	private int minDosageTimeHours = 0;
-	private int maxDosageTimeHours = 0;
 	private boolean isNarcotic = false;
 	private boolean isOverTheCounter = false;
 	private boolean isAntibiotic = false;
@@ -39,7 +38,6 @@ public class Medication {
 		setDescription("");
 		setDosageInMg(0);
 		setMinDosageTimeHours(0);
-		setMaxDosageTimeHours(0);
 		setNarcotic(false);
 		setOverTheCounter(false);
 		setAntibiotic(false);
@@ -52,20 +50,17 @@ public class Medication {
 	 * @param description = The description of the Medication
 	 * @param dosageInMg = The dosage size in Mg of the Medication
 	 * @param minDosageTimeHours = The lower end of the dosage time in hours of the Medication
-	 * @param maxDosageTimeHours = The upper ed of the dosage time in hours of the Medication
 	 * @param isNarcotic = If the Medication is a Narcotic
 	 * @param isOverTheCounter = If the Medication is an over the counter medicine
 	 * @param isAntibiotic = If the Medication is an antibiotic
 	 * @param isAntiInflamitory = If the Medication is an anti-inflamitory
 	 */
 	public Medication(String name, String description, int dosageInMg, int minDosageTimeHours,
-			int maxDosageTimeHours, boolean isNarcotic, boolean isOverTheCounter, boolean isAntibiotic, 
-			boolean isAntiInflamitory) {
+			boolean isNarcotic, boolean isOverTheCounter, boolean isAntibiotic, boolean isAntiInflamitory) {
 		setName(name);
 		setDescription(description);
 		setDosageInMg(dosageInMg);
 		setMinDosageTimeHours(minDosageTimeHours);
-		setMaxDosageTimeHours(maxDosageTimeHours);
 		setNarcotic(isNarcotic);
 		setOverTheCounter(isOverTheCounter);
 		setAntibiotic(isAntibiotic);
@@ -126,20 +121,6 @@ public class Medication {
 	 */
 	public void setMinDosageTimeHours(int minDosageTimeHours) {
 		this.minDosageTimeHours = minDosageTimeHours;
-	}
-
-	/**
-	 * @return the maxDosageTimeHours
-	 */
-	public int getMaxDosageTimeHours() {
-		return maxDosageTimeHours;
-	}
-
-	/**
-	 * @param maxDosageTimeHours the maxDosageTimeHours to set
-	 */
-	public void setMaxDosageTimeHours(int maxDosageTimeHours) {
-		this.maxDosageTimeHours = maxDosageTimeHours;
 	}
 
 	/**
@@ -204,9 +185,8 @@ public class Medication {
 	@Override
 	public String toString() {
 		return "Medication [name=" + name + ", description=" + description + ", dosageInMg=" + dosageInMg
-				+ ", minDosageTimeHours=" + minDosageTimeHours + ", maxDosageTimeHours=" + maxDosageTimeHours
-				+ ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" + isOverTheCounter + ", isAntibiotic="
-				+ isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
+				+ ", minDosageTimeHours=" + minDosageTimeHours + ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" 
+				+ isOverTheCounter + ", isAntibiotic=" + isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
 	}
 
 } // end of Medication class

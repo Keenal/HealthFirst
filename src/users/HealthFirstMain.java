@@ -41,8 +41,8 @@ public class HealthFirstMain {
 		pharm1.verifyMedicaton("motrin", patient2);
 		System.out.println(patient2);
 		
-		nurse1.logDose("motrin", patient2.getPatientID(), 600, "Inflamation");
-		nurse1.logDose("motrin", patient2.getPatientID(), 400, "Pain");
+		nurse1.logDose("motrin", patient2.getPatientID(), 600);
+		nurse1.logDose("motrin", patient2.getPatientID(), 400);
  
 		System.out.println(patient2.medicationHistory());
 	}
