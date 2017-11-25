@@ -35,9 +35,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
+import users.Administrator;
 import users.Doctor;
 import users.User;
 import view.LoginScreenController;
+import view.MedTrackController;
+import view.NurseViewController;
 import view.PatientViewController;
 import view.AddScriptController;
 import view.DoctorViewController;
@@ -50,14 +53,16 @@ public class Main extends Application {
 	public User userType = new User();
 	ObservableList<Patient> patientData = FXCollections.observableArrayList();
 	
-	public static Patient p1 = new Patient("Jane Doe",0);
-	static Patient p2 = new Patient("Johnny Boy",1);	
-	public static Patient p3 = new Patient("John Dough",2);
+	//public static Patient p1 = new ;
+	static Patient p1 = new Patient("Jane Doe",0,"Phil");
+	static Patient p2 = new Patient("Johnny Boy",1,"Eddy");	
+	static Patient p3 = new Patient("John Dough",2,"joe");
 	
 	
 	public static void main(String[] args) {
+		
 		//new PatientAccounts();
-
+		new Administrator("John");
 		new Doctor("Eddy");
 		new PatientAccounts();
 
@@ -68,17 +73,18 @@ public class Main extends Application {
 		PatientAccounts.addPatient(p2);
 		PatientAccounts.addPatient(p3);
 			
-			User userType = new User();
-            userType.setName("test");
+			
+            //userType.setName("test");
             //System.out.println("User is : "+userType.getName());
-            launch(args);
-		/*Administrator admin = new Administrator("John");
+		/*
 		System.out.println(admin);
 		
 		System.out.println(doc);
 		Patient steve = new Patient();
 		doc.prescribeMedication("drug A", steve);
                 Gui.graphics();*/
+            launch(args);
+
 	}
 
 	public Main() {
@@ -95,11 +101,12 @@ public class Main extends Application {
 	
 	
 	// Initializes JavaFX window
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("HealthFirst");
 
         initRootLayout();
+        //showMedTrack();
         //showAddAScript();
         showUserSelection();
         //showDoctor();
@@ -110,7 +117,7 @@ public class Main extends Application {
 	/**
      * Initializes the main background
      */
-    public void initRootLayout() {
+    public void initRootLayout() throws Exception{
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
@@ -204,9 +211,22 @@ public class Main extends Application {
 	}
 
 	public void showNurse() {
-		// TODO Auto-generated method stub
-		System.out.println("Display Nurse interface with patient attached");
-	}
+		// Display Patient Selection stage /view/PatientSelection.fxml
+	        try {
+	        	// Load person overview.
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/view/NurseView.fxml"));
+	            AnchorPane personOverview = (AnchorPane) loader.load();
+	            NurseViewController controller = loader.getController();
+	            controller.setMainApp(this);
+	            
+	            // Set person overview into the center of root layout.
+	            rootLayout.setCenter(personOverview);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
 
 	public void showAdmin() {
 		// TODO Auto-generated method stub
@@ -216,6 +236,22 @@ public class Main extends Application {
 	public void showPharmacist() {
 		// TODO Auto-generated method stub
 		System.out.println("Display Pharmacist interface with patient attached");
+	}
+
+	public void showMedTrack() {
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/MedTrackerView.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            MedTrackController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }		
 	}
 
 }

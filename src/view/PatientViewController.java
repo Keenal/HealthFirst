@@ -17,7 +17,7 @@ public class PatientViewController extends Main{
     @FXML
     private TableColumn<Patient, String> NameColumn;
     @FXML
-    private TableColumn<Patient, String> Number;
+    private TableColumn<Patient, Number> Number;
     @FXML
     private TableColumn<Patient, Number> patientIDColumn;
     @FXML
@@ -41,8 +41,8 @@ public class PatientViewController extends Main{
         // Initialize the person table with the two columns.
     	NameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
     	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().pidProperty());
-    	//PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().getPrimaryDoctor2());
-        
+    	PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().doctorNameProperty());
+    	//Number.setCellValueFactory(cellData -> cellData.setValue("1"));
        // new PatientAccounts();
 
 
@@ -58,8 +58,10 @@ public class PatientViewController extends Main{
             @Override
             public void onChanged(Change<?> c) {
                 TablePosition<?, ?> tablePosition = (TablePosition<?, ?>) selectedCells.get(0);
-                Object val = tablePosition.getTableColumn().getCellData(tablePosition.getRow());
+                //Object val = tablePosition.getTableColumn().getCellData(tablePosition.getRow());
+                Object val = tablePosition.getRow();
                 System.out.println("Selected Value" + val);
+                User.setPid((int)val);
             }
         });
         
@@ -124,6 +126,7 @@ public class PatientViewController extends Main{
 	        // Fill the labels with info from the patient object.
 	    	//Patient patient1 = null;
 	        NameColumn.setText(patient.getName());
+	        PrimaryDrColumn.setText(patient.getDoctor());
 	        //lastNameLabel.setText(patient.getLastName());
 	        //patientIDColumn.setText("NeedDrGetter");
 	       

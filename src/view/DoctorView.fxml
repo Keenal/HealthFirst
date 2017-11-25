@@ -85,7 +85,7 @@
       <Button layoutX="242.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleAddAScript" text="Add a prescription" />
       <Button layoutX="242.0" layoutY="393.0" mnemonicParsing="false" text="View Log History" />
       <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
-      <TextField layoutX="126.0" layoutY="113.0" promptText="patient ID" />
+      <TextField fx:id="pidFieldD" layoutX="126.0" layoutY="113.0" />
       <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#handlePatientSelect" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="34.0" layoutY="50.0" onMouseClicked="#handlePatientSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Back" />
       <Line endX="100.0" layoutX="199.0" layoutY="88.0" startX="-100.0" AnchorPane.leftAnchor="98.5" AnchorPane.rightAnchor="100.5" />

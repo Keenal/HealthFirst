@@ -13,12 +13,19 @@ public class Patient {
 	//private static int NOTFOUND = -1;
 	private PatientDose[] dosesGivenToPatient = null;
 	private int numOfDosesGiven = 0;
-
+	private static String doctor = "Phil";
 	
 	
-	public Patient(String first,Integer pid) {
+	public final String getDoctor() {
+		return doctor;
+	}
+	public static void setDoctor(String doctor) {
+		Patient.doctor = doctor;
+	}
+	public Patient(String first,Integer pid,String doctor) {
 this.setFirstName(first);
 this.setPid(pid);
+this.setDoctorName(doctor);
 dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 
 	}
@@ -36,6 +43,17 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	}
 	public final void setFirstName(String firstname) {
 		firstNameProperty().set(firstname);
+	}
+	
+	private final StringProperty doctorName = new SimpleStringProperty();
+	public StringProperty doctorNameProperty() {
+		return doctorName;
+	}
+	public final String getDoctorName() {
+		return doctorNameProperty().get();
+	}
+	public final void setDoctorName(String doctorName) {
+		doctorNameProperty().set(doctorName);
 	}
 	
 	private final IntegerProperty pid = new SimpleIntegerProperty();

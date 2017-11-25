@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MedTrackController">
+   <children>
+      <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
+      <TextField fx:id="pidFieldM" layoutX="126.0" layoutY="113.0" />
+      <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#goBack" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="34.0" layoutY="50.0" onMouseClicked="#goBack" strokeType="OUTSIDE" strokeWidth="0.0" text="Back" />
+      <Line endX="100.0" layoutX="199.0" layoutY="88.0" startX="-100.0" AnchorPane.leftAnchor="98.5" AnchorPane.rightAnchor="100.5" />
+      <Text layoutX="330.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor:" />
+      <Label fx:id="doctorLabel" layoutX="335.0" layoutY="64.0" text="Label" />
+      <TableView fx:id="detailTable" layoutX="14.0" layoutY="444.0" prefHeight="61.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="NameColumn2" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="DoseColumn2" prefWidth="75.0" text="Dosage" />
+        </columns>
+      </TableView>
+      <Button layoutX="259.0" layoutY="432.0" mnemonicParsing="false" text="History" />
+      <Button layoutX="253.0" layoutY="462.0" mnemonicParsing="false" text="Log Dose" />
+      <TableView fx:id="drugTable" fixedCellSize="1.0" layoutX="14.0" layoutY="144.0" prefHeight="173.0" prefWidth="371.0" AnchorPane.bottomAnchor="283.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="144.0">
+        <columns>
+          <TableColumn fx:id="NameColumn" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="ClassColumn" prefWidth="75.0" text="Class" />
+            <TableColumn fx:id="UsageColumn" prefWidth="75.0" text="Usage" />
+            <TableColumn fx:id="DosageColumn" prefWidth="75.0" text="Dosage" />
+            <TableColumn fx:id="NotesColumn" prefWidth="76.0" text="Notes" />
+            <TableColumn fx:id="LastColumn" prefWidth="75.0" text="Last Dose Given" />
+            <TableColumn fx:id="NextColumn" prefWidth="75.0" text="Next Dose Due" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

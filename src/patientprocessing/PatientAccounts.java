@@ -39,7 +39,11 @@ public class PatientAccounts {
 	 * @param patient = the patient to add
 	 */
 	public static void addPatient(Patient patient) {
-		patientAccounts[numOfElements++] = patient;
+		patientAccounts[numOfElements] = patient;
+		patientAccounts[numOfElements].setPid(numOfElements);
+		//System.out.println("Patient ID:"+patientAccounts[numOfElements].getPatientID());
+		numOfElements++;
+		System.out.println("Patient: "+patient+" added to position:"+numOfElements);
 	} // end of addPatient method
 	
 	/**
