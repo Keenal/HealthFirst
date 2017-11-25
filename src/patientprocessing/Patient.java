@@ -38,7 +38,7 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		firstNameProperty().set(firstname);
 	}
 	
-	private final IntegerProperty pid = new SimpleIntegerProperty();;
+	private final IntegerProperty pid = new SimpleIntegerProperty();
 	public IntegerProperty pidProperty() {
 		return pid;
 	}

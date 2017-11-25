@@ -35,9 +35,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
+import users.Doctor;
 import users.User;
 import view.LoginScreenController;
 import view.PatientViewController;
+import view.AddScriptController;
 import view.DoctorViewController;
 
 
@@ -47,32 +49,24 @@ public class Main extends Application {
     public static BorderPane rootLayout;
 	public User userType = new User();
 	ObservableList<Patient> patientData = FXCollections.observableArrayList();
-	 public Patient p3 = new Patient("John Dough",2);
-
-	public Main() {
-	    new PatientAccounts();
-
-		Patient p1 = new Patient("Jane Doe",0);
-		Patient p2 = new Patient("Johnny Boy",1);
-		patientData.add(p1);
-		patientData.add(p2);
-		patientData.add(p3);
-		System.out.println(p3);
-		
-		PatientAccounts.addPatient(p1);
-		PatientAccounts.addPatient(p2);
-		PatientAccounts.addPatient(p3);
-	}
-    
-	public ObservableList<Patient> getPatientData(){
-		return patientData;
-	}
+	
+	public static Patient p1 = new Patient("Jane Doe",0);
+	static Patient p2 = new Patient("Johnny Boy",1);	
+	public static Patient p3 = new Patient("John Dough",2);
 	
 	
 	public static void main(String[] args) {
 		//new PatientAccounts();
 
-			
+		new Doctor("Eddy");
+		new PatientAccounts();
+
+		
+		System.out.println(p3);
+		
+		PatientAccounts.addPatient(p1);
+		PatientAccounts.addPatient(p2);
+		PatientAccounts.addPatient(p3);
 			
 			User userType = new User();
             userType.setName("test");
@@ -80,12 +74,25 @@ public class Main extends Application {
             launch(args);
 		/*Administrator admin = new Administrator("John");
 		System.out.println(admin);
-		Doctor doc = new Doctor("Eddy");
+		
 		System.out.println(doc);
 		Patient steve = new Patient();
 		doc.prescribeMedication("drug A", steve);
                 Gui.graphics();*/
 	}
+
+	public Main() {
+		patientData.add(p1);
+		patientData.add(p2);
+		patientData.add(p3);
+	}
+    
+	public ObservableList<Patient> getPatientData(){
+		return patientData;
+	}
+	
+	
+	
 	
 	// Initializes JavaFX window
 	public void start(Stage primaryStage) {
@@ -93,9 +100,11 @@ public class Main extends Application {
         this.primaryStage.setTitle("HealthFirst");
 
         initRootLayout();
+        //showAddAScript();
         showUserSelection();
         //showDoctor();
         //showPatientSelection();
+       
     }
 	
 	/**
@@ -107,7 +116,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
-            System.out.println("Hello?");
+            //System.out.println("Hello?");
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -146,7 +155,7 @@ public class Main extends Application {
     }
     
 	// Display Patient Selection stage /view/PatientSelection.fxml
-	public void showPatientSelection() {
+	public  void showPatientSelection() {
         try {
         	// Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -161,6 +170,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+	// Display Patient Selection stage /view/PatientSelection.fxml
+		public  void showAddAScript() {
+	        try {
+	        	// Load person overview.
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/view/AddScriptView.fxml"));
+	            AnchorPane script = (AnchorPane) loader.load();
+	            AddScriptController controller = loader.getController();
+	            controller.setMainApp(this);
+	            
+	            // Set person overview into the center of root layout.
+	            rootLayout.setCenter(script);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
 		// /view/DoctorView.fxml   DoctorViewController
 	public void showDoctor() {
         try {

@@ -56,7 +56,7 @@ public class User {
 	/**
 	 * @param name the name to set
 	 */
-	public static void setName(String name) {
+	public void setName(String name) {
 		User.name = name;
 	}
 

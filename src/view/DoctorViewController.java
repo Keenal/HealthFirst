@@ -10,7 +10,7 @@ import patientprocessing.PatientAccounts;
 
 public class DoctorViewController extends Main {
     public Main main;
-    @FXML
+   @FXML
     private Text nameLabel;
     @FXML
     private Text bmiLabel;
@@ -27,8 +27,8 @@ public class DoctorViewController extends Main {
     }
     @FXML
     private void initialize() {
-    	System.out.println(User.getPid());
-    	System.out.println(User.getPid());
+    	//System.out.println("User pid is:" +User.getPid());
+    	//System.out.println(User.getPid());
     //System.out.println(PatientAccounts.searchPatient(User.getPid()));
     	
     showPersonDetails(p3);
@@ -49,9 +49,12 @@ public class DoctorViewController extends Main {
     @FXML
     private void handlePatientSelect() {
         //dialogStage.close();
-
-    	
-      main.showPatientSelection();
+     main.showPatientSelection();
+    }
+    @FXML
+    private void handleAddAScript() {
+        //dialogStage.close();
+     main.showAddAScript();
     }
     
 }
