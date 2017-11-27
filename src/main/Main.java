@@ -56,6 +56,7 @@ public class Main extends Application {
 	//public static Patient p1 = new ;
 	static Patient p1 = new Patient("Jane Doe",0,"Phil");
 	static Patient p2 = new Patient("Johnny Boy",1,"Eddy");	
+	
 	static Patient p3 = new Patient("John Dough",2,"joe");
 	
 	

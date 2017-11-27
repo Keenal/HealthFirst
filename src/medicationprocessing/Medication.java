@@ -11,7 +11,7 @@ dosage and conflicts with other medications.
 @author Timothy McWatters
 @author Keenal Shah
 @author Chris Ault
-@author Jimmy Le
+@author Jimmy Le.
 
 @version 1.0
 
