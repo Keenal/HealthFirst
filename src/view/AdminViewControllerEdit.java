@@ -1,6 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 //import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -31,6 +32,8 @@ public class AdminViewControllerEdit extends Main {
     private TextField heightLabel;
     @FXML
     private TextField pid;
+    @FXML
+    private Button submitBtn;
 	
     public AdminViewControllerEdit(){
     	
@@ -81,15 +84,20 @@ public class AdminViewControllerEdit extends Main {
    
     @FXML
     private void saveEdit() {
+    	//submitBtn.setText("Save Changes");
     	int age = Integer.parseInt(ageLabel.getText());
     	int hr = Integer.parseInt(hrLabel.getText());
+    
+	//Doubles
     	Double lbs = Double.parseDouble(weightLabel.getText());
     	Double in = Double.parseDouble(heightLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setAge(age);
+    //Integers
     	PatientAccounts.searchPatient(User.getPid()).setHeartRate(hr);
     	PatientAccounts.searchPatient(User.getPid()).setHeightInInches(in);
-    	PatientAccounts.searchPatient(User.getPid()).setFamilyHistory(famLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setWeightInLbs(lbs);
+    //Strings
+    	PatientAccounts.searchPatient(User.getPid()).setFamilyHistory(famLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setCurrentIllness(illLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setAllergies(allLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setBloodPressure(bpLabel.getText());

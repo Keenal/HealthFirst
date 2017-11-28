@@ -30,14 +30,12 @@ public class LoginScreenController extends Main {
     @FXML
     private void handleDoctor() {
     	userType.setName("Doctor");
-    	System.out.println("doctor selected");
     	healthFirstTester.showPatientSelection();
     }
     
     @FXML
     private void handleNurse() {
     	userType.setName("Nurse");
-    	System.out.println("nurse selected");
     	healthFirstTester.showPatientSelection();
 
     }
@@ -45,7 +43,6 @@ public class LoginScreenController extends Main {
     @FXML
     private void handlePharmacist() {
     	userType.setName("Pharma");
-    	System.out.println("phama selected");
     	healthFirstTester.showPatientSelection();
 
     }
@@ -53,7 +50,6 @@ public class LoginScreenController extends Main {
     @FXML
     private void handleAdministrator() {
     	userType.setName("Admin");
-    	System.out.println("admin selected");
     	healthFirstTester.showAdminPatientSelection();
     
     }

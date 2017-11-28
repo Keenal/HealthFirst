@@ -14,7 +14,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AdminViewControllerEdit">
    <children>
       <Text layoutX="129.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You're an awesome Administrator" AnchorPane.bottomAnchor="14.98828125" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="128.53515625" AnchorPane.topAnchor="569.05078125" />
-      <Button layoutX="162.0" layoutY="527.0" mnemonicParsing="false" onAction="#saveEdit" text="Edit Patient" />
+      <Button fx:id="submitBtn" layoutX="162.0" layoutY="527.0" mnemonicParsing="false" onAction="#saveEdit" text="Save Patient" />
       <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
       <TextField fx:id="pid" layoutX="126.0" layoutY="113.0" promptText="patient ID" />
       <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#adminReturn" radius="19.0" stroke="BLACK" strokeType="INSIDE" />

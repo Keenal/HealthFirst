@@ -65,35 +65,23 @@ public class Main extends Application {
 	public static Administrator admin1 = new Administrator("John");
 
 	public static void main(String[] args) {
+	//Create Medication DB
 		String inputFileName = "Medications.txt";
 		MedicationList medicationList = new MedicationList();
 		MedicationDatabaseManager medDB = new MedicationDatabaseManager(inputFileName);
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
+	//Create Patients
 		new PatientAccounts();
-
-		Doctor doc1 = new Doctor("Eddy");
-		new PatientAccounts();
-		
 		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
 		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
 		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
-            //userType.setName("test");
-            //System.out.println("User is : "+userType.getName());
-		/*
-		System.out.println(admin);
-		
-		System.out.println(doc);
-		Patient steve = new Patient();
-		doc.prescribeMedication("drug A", steve);
-                Gui.graphics();*/
+	//Launch Gui
             launch(args);
 
 	}
 
-	public Main() {
 
-		}
     
 	public ObservableList<Patient> getPatientData(){
 		return patientData;
@@ -104,13 +92,16 @@ public class Main extends Application {
 	
 	// Initializes JavaFX window
 	public void start(Stage primaryStage) throws Exception {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("HealthFirst");
+    //Build Bootstrap GUI
+		this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Health First");
 
         initRootLayout();
+        showUserSelection();
+
+    //Jump to screen for testing
         //showMedTrack();
         //showAddAScript();
-        showUserSelection();
         //showDoctor();
         //showPatientSelection();
        
@@ -121,12 +112,11 @@ public class Main extends Application {
      */
     public void initRootLayout() throws Exception{
         try {
-            // Load root layout from fxml file.
+        // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
-            //System.out.println("Hello?");
-            // Show the scene containing the root layout.
+        // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -141,14 +131,14 @@ public class Main extends Application {
      */
     public void showUserSelection() {
         try {
-            // Load person overview.
+        // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/LoginScreen.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
             LoginScreenController controller = loader.getController();
             controller.setMainApp(this);
             
-            // Set person overview into the center of root layout.
+        // Set person overview into the center of root layout.
             rootLayout.setCenter(personOverview);
         } catch (IOException e) {
             e.printStackTrace();

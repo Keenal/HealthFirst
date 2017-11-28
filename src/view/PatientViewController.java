@@ -61,7 +61,8 @@ public class PatientViewController extends Main{
                 TablePosition<?, ?> tablePosition = (TablePosition<?, ?>) selectedCells.get(0);
                 //Object val = tablePosition.getTableColumn().getCellData(tablePosition.getRow());
                 Object val = tablePosition.getRow();
-                System.out.println("Selected Value" + val);
+           //Debug shows selected row
+                // System.out.println("Selected Value" + val);
                 User.setPid((int)val);
             }
         });
@@ -106,7 +107,7 @@ public class PatientViewController extends Main{
    private void handleUser() { 
    	
    	user = userType.getName();
-   	System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
+   	//System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
    	if(user == "Doctor")
    		hft.showDoctor();
    	if(user == "Nurse")

@@ -45,7 +45,7 @@ public class User {
 		return pid;
 	}
 	
-	public static void setName(String name) {
+	public void setName(String name) {
 		User.name = name;
 	}
 	

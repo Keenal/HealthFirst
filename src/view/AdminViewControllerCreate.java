@@ -37,14 +37,16 @@ public class AdminViewControllerCreate extends Main {
     }
     @FXML
     private void initialize() {
-    	//System.out.println("User pid is:" +User.getPid());
-    	//System.out.println(User.getPid());
-    //System.out.println(PatientAccounts.searchPatient(User.getPid()));
 		patientData.add(admin1.createNewPatient("New Pat",PatientAccounts.numOfElements-1,"Phil"));	
 		User.setPid(PatientAccounts.numOfElements-1);
     	pid.setText("Patient ID "+User.getPid());
-
-    //showPersonDetails(PatientAccounts.searchPatient(User.getPid()));
+	//Auto fill fields that throw error when empty
+    	weightLabel.setText("0");
+    	heightLabel.setText("0");
+    	ageLabel.setText("0");
+    	hrLabel.setText("0");
+    	weightLabel.setText("0");
+    	heightLabel.setText("0");
     }
     public void setMainApp(Main main) {
         this.main = main;
@@ -69,13 +71,14 @@ public class AdminViewControllerCreate extends Main {
     	PatientAccounts.searchPatient(User.getPid()).setAge(age);
     	PatientAccounts.searchPatient(User.getPid()).setHeartRate(hr);
     	PatientAccounts.searchPatient(User.getPid()).setHeightInInches(in);
+    	if (famLabel.getText() != "")
     	PatientAccounts.searchPatient(User.getPid()).setFamilyHistory(famLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setWeightInLbs(lbs);
     	PatientAccounts.searchPatient(User.getPid()).setCurrentIllness(illLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setAllergies(allLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setBloodPressure(bpLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setName(nameLabel.getText());
-    	main.showAdmin();
+    	main.showAdminPatientSelection();
 }
     
     
