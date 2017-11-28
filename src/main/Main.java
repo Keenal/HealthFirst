@@ -54,26 +54,12 @@ public class Main extends Application {
 	ObservableList<Patient> patientData = FXCollections.observableArrayList();
 	
 	//public static Patient p1 = new ;
-	static Patient p1 = new Patient("Jane Doe",0,"Phil");
-	static Patient p2 = new Patient("Johnny Boy",1,"Eddy");	
-	
-	static Patient p3 = new Patient("John Dough",2,"joe");
 	
 	
 	public static void main(String[] args) {
 		
 		//new PatientAccounts();
-		new Administrator("John");
-		new Doctor("Eddy");
-		new PatientAccounts();
 
-		
-		System.out.println(p3);
-		
-		PatientAccounts.addPatient(p1);
-		PatientAccounts.addPatient(p2);
-		PatientAccounts.addPatient(p3);
-			
 			
             //userType.setName("test");
             //System.out.println("User is : "+userType.getName());
@@ -89,10 +75,14 @@ public class Main extends Application {
 	}
 
 	public Main() {
-		patientData.add(p1);
-		patientData.add(p2);
-		patientData.add(p3);
-	}
+		new Doctor("Eddy");
+		new PatientAccounts();
+		Administrator admin1 = new Administrator("John");
+		
+		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
+		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
+		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
+		}
     
 	public ObservableList<Patient> getPatientData(){
 		return patientData;
