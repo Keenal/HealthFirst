@@ -38,7 +38,7 @@ public class AdminPatientViewController extends Main{
     @FXML
     private void initialize() {
         // Initialize the person table with the two columns.
-    	NameColumn.setCellValueFactory(cellData -> cellData.getValue().getFirstNameProperty());
+    	NameColumn.setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
     	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().pidProperty());
     	PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().doctorNameProperty());
     	//Number.setCellValueFactory(cellData -> cellData.setValue("1"));

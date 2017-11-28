@@ -8,63 +8,95 @@ import javafx.beans.property.StringProperty;
 
 public class Patient {
 	
-	//private static int PRESCRIPTION_LIST_SIZE = 50;
+	// Constant Variables
 	private static int DOSE_GIVEN_LIST_SIZE = 100;
+	//private static int PRESCRIPTION_LIST_SIZE = 50;
 	//private static int NOTFOUND = -1;
-	private PatientDose[] dosesGivenToPatient = null;
-	private int numOfDosesGiven = 0;
+	
+	// Instance Variables
+	private StringProperty name = new SimpleStringProperty();
+	private StringProperty doctorName = new SimpleStringProperty();	
+	private IntegerProperty age = new SimpleIntegerProperty();	
+	private IntegerProperty pid = new SimpleIntegerProperty();	
 	private static String doctor = "Phil";
 	private SimpleStringProperty familyHistory;
 	
-	public final String getDoctor() {
+	// Needed for the array dosesGivenToPatient that will hold each dose of Medication given to a Patient
+	private PatientDose[] dosesGivenToPatient = null;
+	private int numOfDosesGiven = 0;
+	
+	/**
+	 * Parameterized constructor for the Patient class
+	 * @param first = The name of the Patient
+	 * @param pid = The patients identification number
+	 * @param age =The patients primary doctor
+	 */
+	public Patient(String name, Integer pid, String primaryDoctor) {
+		setName(name);
+		setPid(pid);
+		setDoctorName(primaryDoctor);
+		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
+	} // end of constructor method
+
+	//*********************** name ******************************************//
+	
+	/**
+	 * @return the StringProperty name
+	 */
+	public StringProperty getNameProperty() {
+		return name;
+	}
+	
+	/**
+	 * @return the String name
+	 */
+	public String getName() {
+		return getNameProperty().get();
+	}
+	
+	/**
+	 * @param name = the Patient's name to set
+	 */
+	public void setName(String name) {
+		getNameProperty().set(name);
+	}
+	
+	//*********************** primaryDoctor ******************************************//	
+	
+	
+	public String getDoctor() {
 		return doctor;
 	}
+	
+	public String getDoctorName() {
+		return doctorNameProperty().get();
+	}
+	
 	public static void setDoctor(String doctor) {
 		Patient.doctor = doctor;
 	}
-	public Patient(String first,Integer pid,String doctor) {
-this.setFirstName(first);
-this.setPid(pid);
-this.setDoctorName(doctor);
-dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
-
-	}
-	
-	
-	/* 
-	 * JavaFX compliance Requirements
-	 */
-	private final StringProperty firstName = new SimpleStringProperty();
-	public StringProperty getFirstNameProperty() {
-		return firstName;
-	}
-	public final String getName() {
-		return getFirstNameProperty().get();
-	}
-	public final void setFirstName(String firstname) {
-		getFirstNameProperty().set(firstname);
-	}
-	
-	private final StringProperty doctorName = new SimpleStringProperty();
 	
 	public StringProperty doctorNameProperty() {
 		return doctorName;
 	}
-	public final String getDoctorName() {
-		return doctorNameProperty().get();
-	}
+	
+
+	
 	public final void setDoctorName(String doctorName) {
 		doctorNameProperty().set(doctorName);
 	}
 
-	private IntegerProperty age = new SimpleIntegerProperty();
+	
+	
+	
 	/**
 	 * @return the age
 	 */
 	public IntegerProperty getAgeProperty() {
 		return age;
 	}
-	public final Integer getAge() {
+	
+	public Integer getAge() {
 		return getAgeProperty().getValue();
 	}
 	
@@ -75,20 +107,20 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		this.age = age;
 	}
 
-
-	private final IntegerProperty pid = new SimpleIntegerProperty();
+	
+	
+	
 	public IntegerProperty pidProperty() {
 		return pid;
 	}
+	
 	public final Integer getPatientID() {
 		return pidProperty().getValue();
 	}
+	
 	public final void setPid(Integer number) {
 		pidProperty().setValue(number);
 	}
-	
-	
-
 	
 	
 	
@@ -101,6 +133,14 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	public void addDose(PatientDose doseGiven) {
 		dosesGivenToPatient[numOfDosesGiven++] = doseGiven;
 	} // end of addDose method
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/**
 	 * adds a prescription to the patients prescriptionsAwaitingVerification array 
@@ -182,8 +222,12 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	*/
 	
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Patient [name=" + firstName + ", patientID=" + pid + "]";
-		}
-}
+		return "Patient [name=" + name + ", patientID=" + pid + "]";
+		} // end of toString method
+	
+} // end of Patient class
