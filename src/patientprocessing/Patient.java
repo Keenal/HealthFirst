@@ -14,7 +14,7 @@ public class Patient {
 	private PatientDose[] dosesGivenToPatient = null;
 	private int numOfDosesGiven = 0;
 	private static String doctor = "Phil";
-	
+	private SimpleStringProperty familyHistory;
 	
 	public final String getDoctor() {
 		return doctor;
@@ -35,17 +35,18 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	 * JavaFX compliance Requirements
 	 */
 	private final StringProperty firstName = new SimpleStringProperty();
-	public StringProperty firstNameProperty() {
+	public StringProperty getFirstNameProperty() {
 		return firstName;
 	}
 	public final String getName() {
-		return firstNameProperty().get();
+		return getFirstNameProperty().get();
 	}
 	public final void setFirstName(String firstname) {
-		firstNameProperty().set(firstname);
+		getFirstNameProperty().set(firstname);
 	}
 	
 	private final StringProperty doctorName = new SimpleStringProperty();
+	
 	public StringProperty doctorNameProperty() {
 		return doctorName;
 	}
@@ -55,7 +56,26 @@ dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	public final void setDoctorName(String doctorName) {
 		doctorNameProperty().set(doctorName);
 	}
+
+	private IntegerProperty age = new SimpleIntegerProperty();
+	/**
+	 * @return the age
+	 */
+	public IntegerProperty getAgeProperty() {
+		return age;
+	}
+	public final Integer getAge() {
+		return getAgeProperty().getValue();
+	}
 	
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(IntegerProperty age) {
+		this.age = age;
+	}
+
+
 	private final IntegerProperty pid = new SimpleIntegerProperty();
 	public IntegerProperty pidProperty() {
 		return pid;
