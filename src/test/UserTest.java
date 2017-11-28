@@ -25,13 +25,13 @@ public class UserTest {
 		
 	}
 	
-	/*
+	
 	@Test
 	public void test_toString_returnsUserName() {
-		String result = "User [name =" +  + "]";
-		assertEquals(user.toString(), result);
+		String result = user.toString();
+		assertTrue(result.contains("User [name = " + user.getName() + "]"));
 	}
-	*/
+	
 	
 	
 
