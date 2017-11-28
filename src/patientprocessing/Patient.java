@@ -169,7 +169,7 @@ public class Patient {
 	 * @param bloodPressure = the Patient's bloodPressure to set
 	 */
 	public void setBloodPressure(String bloodPressure) {
-		getPrimaryDoctorNameProperty().set(bloodPressure);
+		getBloodPressureProperty().set(bloodPressure);
 	}
 
 	//*********************** heartRate ******************************************//	
@@ -192,7 +192,7 @@ public class Patient {
 	 * @param heartRate = the Patients heartRate to set
 	 */
 	public void setHeartRate(Integer heartRate) {
-		getPatientIDProperty().setValue(heartRate);
+		getHeartRateProperty().setValue(heartRate);
 	}
 
 	//*********************** weightInLbs ******************************************//
@@ -214,7 +214,7 @@ public class Patient {
 	/**
 	 * @param weightInLbs = the Patients weightInLbs to set
 	 */
-	public void setHeartRate(Double weightInLbs) {
+	public void setWeightInLbs(Double weightInLbs) {
 		getWeightInLbsProperty().setValue(weightInLbs);
 	}
 

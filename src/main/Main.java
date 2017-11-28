@@ -48,6 +48,7 @@ import view.PharmacistViewController;
 import view.AddScriptController;
 import view.AdminPatientViewController;
 import view.AdminViewController;
+import view.AdminViewControllerCreate;
 import view.AdminViewControllerEdit;
 import view.DoctorViewController;
 
@@ -61,7 +62,8 @@ public class Main extends Application {
 	
 	//public static Patient p1 = new ;
 	
-	
+	public static Administrator admin1 = new Administrator("John");
+
 	public static void main(String[] args) {
 		String inputFileName = "Medications.txt";
 		MedicationList medicationList = new MedicationList();
@@ -72,7 +74,6 @@ public class Main extends Application {
 
 		Doctor doc1 = new Doctor("Eddy");
 		new PatientAccounts();
-		Administrator admin1 = new Administrator("John");
 		
 		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
 		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
@@ -275,7 +276,21 @@ public class Main extends Application {
             e.printStackTrace();
         }
         }
-
+	public void showAdminCreate() {
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/AdministratorViewCreate.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            AdminViewControllerCreate controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
 	public void showPharmacist() {
 		// Display Patient Selection stage /view/PatientSelection.fxml
         try {

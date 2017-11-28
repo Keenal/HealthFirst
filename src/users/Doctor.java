@@ -54,7 +54,7 @@ public class Doctor extends User {
 	 * @param medicationName = The name of the medication the Doctor is prescribing
 	 * @param patient = the patient the doctor is prescribing medication to
 	 */
-	public void prescribeMedication(String medicationName, Patient patient) {
+	public static void prescribeMedication(String medicationName, Patient patient) {
 		Medication newPrescription =  MedicationList.getMedication(medicationName);
 		patient.addPrescription(newPrescription);
 		System.out.println(medicationName + " is prescribed to "+ patient);

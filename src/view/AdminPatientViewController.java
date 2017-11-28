@@ -95,6 +95,11 @@ public class AdminPatientViewController extends Main{
       hft.showUserSelection();;
     }
     
+    @FXML
+    private void createNew() {
+        //dialogStage.close();
+      hft.showAdminCreate();
+    }
     
     /**
      * handleuser is called upon patient selection to determine 
