@@ -44,8 +44,11 @@ import view.LoginScreenController;
 import view.MedTrackController;
 import view.NurseViewController;
 import view.PatientViewController;
+import view.PharmacistViewController;
 import view.AddScriptController;
 import view.AdminPatientViewController;
+import view.AdminViewController;
+import view.AdminViewControllerEdit;
 import view.DoctorViewController;
 
 
@@ -243,13 +246,51 @@ public class Main extends Application {
 
 
 	public void showAdmin() {
-		// TODO Auto-generated method stub
-		System.out.println("Display Admin interface with patient attached");
-	}
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/AdministratorView.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            AdminViewController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
+	public void showAdminEdit() {
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/AdministratorViewEdit.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            AdminViewControllerEdit controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
 
 	public void showPharmacist() {
-		// TODO Auto-generated method stub
-		System.out.println("Display Pharmacist interface with patient attached");
+		// Display Patient Selection stage /view/PatientSelection.fxml
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/PharmacistView.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            PharmacistViewController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 	public void showMedTrack() {

@@ -9,30 +9,30 @@ import patientprocessing.Patient;
 import users.User;
 import patientprocessing.PatientAccounts;
 
-public class NurseViewController extends Main {
+public class AdminViewControllerEdit extends Main {
     public Main main;
     @FXML
-    private Text nameLabel;
+    private TextField nameLabel;
     @FXML
-    private Text ageLabel;
+    private TextField ageLabel;
     @FXML
-    private Text famLabel;
+    private TextField famLabel;
     @FXML
-    private Text illLabel;
+    private TextField illLabel;
     @FXML
-    private Text allLabel;
+    private TextField allLabel;
     @FXML
-    private Text bpLabel;
+    private TextField bpLabel;
     @FXML
-    private Text hrLabel;
+    private TextField hrLabel;
     @FXML
-    private Text weightLabel;
+    private TextField weightLabel;
     @FXML
-    private Text heightLabel;
+    private TextField heightLabel;
     @FXML
-    private TextField pidFieldN;
+    private TextField pid;
 	
-    public NurseViewController(){
+    public AdminViewControllerEdit(){
     	
     }
     @FXML
@@ -40,7 +40,7 @@ public class NurseViewController extends Main {
     	//System.out.println("User pid is:" +User.getPid());
     	//System.out.println(User.getPid());
     //System.out.println(PatientAccounts.searchPatient(User.getPid()));
-    	pidFieldN.setText("Patient ID "+User.getPid());
+    	pid.setText("Patient ID "+User.getPid());
 
     showPersonDetails(PatientAccounts.searchPatient(User.getPid()));
     }
@@ -67,16 +67,30 @@ public class NurseViewController extends Main {
     }
     
     @FXML
+    private void adminReturn() {
+    	main.showAdmin();
+    }
+    
+    @FXML
     private void handlePatientSelect() {
         //dialogStage.close();
-     main.showPatientSelection();
+     main.showAdminPatientSelection();
     }
 
-    @FXML
-    private void handleMedTracker() {
-    	main.showMedTrack();
-    	
-    }
+
    
+    @FXML
+    private void saveEdit() {
+    	int age = Integer.parseInt(ageLabel.getText());
+    	int hr = Integer.parseInt(hrLabel.getText());
+    	Double lbs = Double.parseDouble(weightLabel.getText());
+    	Double in = Double.parseDouble(heightLabel.getText());
+    	PatientAccounts.searchPatient(User.getPid()).setAge(age);
+    	PatientAccounts.searchPatient(User.getPid()).setHeartRate(hr);
+    	PatientAccounts.searchPatient(User.getPid()).setHeightInInches(in);
+    	//PatientAccounts.searchPatient(User.getPid()).set
+    	main.showAdmin();
+}
+    
     
 }

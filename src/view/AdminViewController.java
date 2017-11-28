@@ -9,7 +9,7 @@ import patientprocessing.Patient;
 import users.User;
 import patientprocessing.PatientAccounts;
 
-public class NurseViewController extends Main {
+public class AdminViewController extends Main {
     public Main main;
     @FXML
     private Text nameLabel;
@@ -30,9 +30,9 @@ public class NurseViewController extends Main {
     @FXML
     private Text heightLabel;
     @FXML
-    private TextField pidFieldN;
+    private TextField pid;
 	
-    public NurseViewController(){
+    public AdminViewController(){
     	
     }
     @FXML
@@ -40,7 +40,7 @@ public class NurseViewController extends Main {
     	//System.out.println("User pid is:" +User.getPid());
     	//System.out.println(User.getPid());
     //System.out.println(PatientAccounts.searchPatient(User.getPid()));
-    	pidFieldN.setText("Patient ID "+User.getPid());
+    	pid.setText("Patient ID "+User.getPid());
 
     showPersonDetails(PatientAccounts.searchPatient(User.getPid()));
     }
@@ -67,16 +67,22 @@ public class NurseViewController extends Main {
     }
     
     @FXML
+    private void adminEdit() {
+    	main.showAdminEdit();
+    }
+    
+    @FXML
     private void handlePatientSelect() {
         //dialogStage.close();
-     main.showPatientSelection();
+     main.showAdminPatientSelection();
     }
 
     @FXML
     private void handleMedTracker() {
     	main.showMedTrack();
-    	
     }
    
+    
+    
     
 }

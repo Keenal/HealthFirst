@@ -122,8 +122,8 @@ public class Patient {
 	/**
 	 * @param age = the Patients age to set
 	 */
-	public void setAge(IntegerProperty age) {
-		this.age = age;
+	public void setAge(Integer age) {
+		getAgeProperty().setValue(age);
 	}
 
 	//*********************** pid ******************************************//	

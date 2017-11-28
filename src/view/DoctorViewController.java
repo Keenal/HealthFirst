@@ -48,9 +48,17 @@ public class DoctorViewController extends Main {
         //patientTable.setItems(main.getPatientData());
         }  
     
-    private void showPersonDetails (Patient patient) {
-    	if (patient != null) {
-    		nameLabel.setText(patient.getName());
+    private void showPersonDetails (Patient p) {
+    	if (p != null) {
+    		nameLabel.setText(p.getName());
+    		ageLabel.setText(""+p.getAge());
+    		famLabel.setText(p.getFamilyHistory());
+    		illLabel.setText(p.getCurrentIllness());
+    		allLabel.setText(p.getAllergies());
+    		bpLabel.setText(p.getBloodPressure());
+    		hrLabel.setText(""+p.getWeightInLbs());
+    		weightLabel.setText(""+p.getWeightInLbs());
+    		heightLabel.setText(""+p.getHeightInInches());
     		//allLabel.setText(patient.getAllergies());
     		//illLabel.setText(patient.getCurrentIllness());
     	} else {
