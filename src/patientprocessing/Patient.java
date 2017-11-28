@@ -87,7 +87,7 @@ public class Patient {
 		doctorNameProperty().set(doctorName);
 	}
 
-	
+	//*********************** age ******************************************//	
 	
 	
 	/**
@@ -108,19 +108,19 @@ public class Patient {
 		this.age = age;
 	}
 
+	//*********************** pid ******************************************//	
 	
 	
-	
-	public IntegerProperty pidProperty() {
+	public IntegerProperty getPidProperty() {
 		return pid;
 	}
 	
-	public final Integer getPatientID() {
-		return pidProperty().getValue();
+	public final Integer getPid() {
+		return getPidProperty().getValue();
 	}
 	
-	public final void setPid(Integer number) {
-		pidProperty().setValue(number);
+	public final void setPid(Integer patientIdNum) {
+		getPidProperty().setValue(patientIdNum);
 	}
 	
 	

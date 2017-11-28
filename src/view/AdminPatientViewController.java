@@ -39,7 +39,7 @@ public class AdminPatientViewController extends Main{
     private void initialize() {
         // Initialize the person table with the two columns.
     	NameColumn.setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-    	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().pidProperty());
+    	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().getPidProperty());
     	PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().doctorNameProperty());
     	//Number.setCellValueFactory(cellData -> cellData.setValue("1"));
        // new PatientAccounts();

@@ -55,7 +55,7 @@ public class PatientAccounts {
 	 */
 	public static  Patient searchPatient(int patientID) {
 		for (int i = 0; i < numOfElements; i++) {
-			if (((int)patientAccounts[i].getPatientID() == patientID)) {
+			if (((int)patientAccounts[i].getPid() == patientID)) {
 				return patientAccounts[i];
 			} else {
 				continue;
