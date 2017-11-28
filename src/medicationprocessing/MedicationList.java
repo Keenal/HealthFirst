@@ -23,7 +23,7 @@ public class MedicationList {
 
 	public static final int MEDICATION_LIST_ARRAY_SIZE = 50;
 	
-	private static int numOfElements = 0;
+	public static int numOfElements = 0;
 	public static Medication[] medications = null;
 	
 	/**

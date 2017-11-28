@@ -1,13 +1,17 @@
 package view;
 
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import main.Main;
 import medicationprocessing.Medication;
 import patientprocessing.Patient;
+import patientprocessing.PatientAccounts;
 import users.Doctor;
 import users.User;
 /** Label
@@ -30,22 +34,9 @@ public class MedTrackController extends Main{
 	@FXML
 	private Label doctorLabel;
 	 @FXML
-    private TableView<Medication> drugTable;
+    private ListView<String> drugTable;
 
-    @FXML
-    private TableColumn<Medication, String> NameColumn;
-    @FXML
-    private TableColumn<Medication, String> ClassColumn;
-    @FXML
-    private TableColumn<Medication, String> UsageColumn;
-    @FXML
-    private TableColumn<Medication, String> DosageColumn;   	
-    @FXML
-    private TableColumn<Medication, String> NotesColumn;
-    @FXML
-    private TableColumn<Medication, String> LastColumn;
-    @FXML
-    private TableColumn<Medication, String> NextColumn;
+
     @FXML
     private TextField pidFieldM;
     @FXML
@@ -61,13 +52,28 @@ public class MedTrackController extends Main{
     private void initialize() {
     	doctorLabel.setText(""+Doctor.getDoctor());
     	pidFieldM.setText("Patient ID "+User.getPid());
-    System.out.println("Patient ID "+User.getPid());	
+    
+    	ArrayList<String> list = new ArrayList<String>();
+    	//for (int i=0;i<PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification.length;i++)
+    	//list.add(PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[i]);
+    	//NameColumn.
+    
+    
     }
     
     public void setMainApp(Main main) {
         this.main = main;
         //patientTable.setItems(main.getPatientData());
-        }  
+        }
+    
+    @FXML
+    private void fillMini() {
+    	
+    }
+    
+    
+    
+    
     @FXML
     private void goBack() {
     	main.showNurse();

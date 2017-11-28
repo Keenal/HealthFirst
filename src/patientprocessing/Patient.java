@@ -335,7 +335,7 @@ public class Patient {
 	 * @param precriptionToFind = the prescription to find
 	 * @return int = the array index number that was found, or NOTFOUND constant if the prescription was not found
 	 */
-	private int findPrescription(Medication precriptionToFind) {
+	public int findPrescription(Medication precriptionToFind) {
 		for (int indexNumber = 0; indexNumber < prescriptionsAwaitingVerification.length; indexNumber++) {
 			if (prescriptionsAwaitingVerification[indexNumber] == null) {
 				continue;
