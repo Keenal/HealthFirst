@@ -23,41 +23,34 @@ public class User {
 
 	static String name = "";
 	static int pid = 0;
-	public static int getPid() {
-		return pid;
-	}
-
-	public static void setPid(int pid) {
-		User.pid = pid;
-	}
-
-	/**
-	 * Default constructor for the User class
-	 */
+	
+	// default constructor
 	public User() {
 		
-	} // end of default constructor
+	}
 	
-	/**
-	 * Parameterized constructor for the User class
-	 * @param name = The name of the user
-	 */
+	// parameterized constructor
+	
 	public User(String name) {
-		setName(name);
-	} // end of parameterized constructor
+		this.name = name;
+	}
 	
-	/**
-	 * @return the name
-	 */
+	// getters and setters
+	
 	public static String getName() {
 		return name;
 	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
+	
+	public static int getPid() {
+		return pid;
+	}
+	
+	public static void setName(String name) {
 		User.name = name;
+	}
+	
+	public static void setPid(int pid) {
+		User.pid = pid;
 	}
 
 	/* (non-Javadoc)
