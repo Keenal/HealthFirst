@@ -10,24 +10,28 @@ import medicationprocessing.Medication;
 public class Patient {
 	
 	// Constant Variables
-	private static int DOSE_GIVEN_LIST_SIZE = 100;
-	//private static int PRESCRIPTION_LIST_SIZE = 50;
-	//private static int NOTFOUND = -1;
+	private static final int DOSE_GIVEN_LIST_SIZE = 100;
+	private static final int PRESCRIPTION_LIST_SIZE = 50;
+	private static final int NOTFOUND = -1;
 	
 	// Instance Variables
 	private StringProperty name = new SimpleStringProperty();
-	private StringProperty doctorName = new SimpleStringProperty();	
+	private StringProperty primaryDoctorName = new SimpleStringProperty();	
 	private IntegerProperty age = new SimpleIntegerProperty();	
-	private IntegerProperty pid = new SimpleIntegerProperty();	
-	private static String doctor = "Phil";
-	private SimpleStringProperty familyHistory;
+	private IntegerProperty patientID = new SimpleIntegerProperty();	
 	
+	// the 3 arrays needed for each Patient 
+	// 1) prescriptionsAwaitingVerification 2) activePrescriptionsVerified 3) dosesGivenToPatient
 	public Medication[] prescriptionsAwaitingVerification = null;
 	private int numOfPrescriptionsAwaitingVerification = 0;
+	
 	private Medication[] activePrescriptionsVerified = null;
 	private int numOfPrescriptionsVerified = 0;
+	
 	private PatientDose[] dosesGivenToPatient = null;
 	private int numOfDosesGiven = 0;
+	
+	//*********************** constructor ******************************************//
 	
 	/**
 	 * Parameterized constructor for the Patient class
@@ -35,10 +39,10 @@ public class Patient {
 	 * @param pid = The patients identification number
 	 * @param age =The patients primary doctor
 	 */
-	public Patient(String name, Integer pid, String primaryDoctor) {
+	public Patient(String name, Integer patientID, String primaryDoctorName) {
 		setName(name);
-		setPid(pid);
-		setDoctorName(primaryDoctor);
+		setPatientID(patientID);
+		setPrimaryDoctorName(primaryDoctorName);
 		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 	} // end of constructor method
 
@@ -67,46 +71,45 @@ public class Patient {
 	
 	//*********************** primaryDoctor ******************************************//	
 	
-	
-	public String getDoctor() {
-		return doctor;
+	/**
+	 * @return the StringProperty of primaryDoctorName
+	 */
+	public StringProperty getPrimaryDoctorNameProperty() {
+		return primaryDoctorName;
 	}
-	
-	public String getDoctorName() {
-		return doctorNameProperty().get();
-	}
-	
-	public static void setDoctor(String doctor) {
-		Patient.doctor = doctor;
-	}
-
-	
-	public StringProperty doctorNameProperty() {
-		return doctorName;
-	}
-	
-
-	
-	public final void setDoctorName(String doctorName) {
-		doctorNameProperty().set(doctorName);
-	}
-
-	//*********************** age ******************************************//	
-	
 	
 	/**
-	 * @return the age
+	 * @return the String primaryDoctorName
+	 */
+	public String getPrimaryDoctorName() {
+		return getPrimaryDoctorNameProperty().get();
+	}
+	
+	/**
+	 * @param primaryDoctorName = the Patient's primary doctors name to set
+	 */
+	public void setPrimaryDoctorName(String primaryDoctorName) {
+		getPrimaryDoctorNameProperty().set(primaryDoctorName);
+	}
+	
+	//*********************** age ******************************************//	
+	
+	/**
+	 * @return the IntegerProperty of age
 	 */
 	public IntegerProperty getAgeProperty() {
 		return age;
 	}
 	
+	/**
+	 * @return the Integer age
+	 */
 	public Integer getAge() {
 		return getAgeProperty().getValue();
 	}
 	
 	/**
-	 * @param age the age to set
+	 * @param age = the Patients age to set
 	 */
 	public void setAge(IntegerProperty age) {
 		this.age = age;
@@ -114,21 +117,28 @@ public class Patient {
 
 	//*********************** pid ******************************************//	
 	
-	
-	public IntegerProperty getPidProperty() {
-		return pid;
+	/**
+	 * @return the IntegerProperty of patientID
+	 */
+	public IntegerProperty getPatientIDProperty() {
+		return patientID;
 	}
 	
-	public final Integer getPid() {
-		return getPidProperty().getValue();
+	/**
+	 * @return the Integer patientID
+	 */
+	public final Integer getPatientID() {
+		return getPatientIDProperty().getValue();
 	}
 	
-	public final void setPid(Integer patientIdNum) {
-		getPidProperty().setValue(patientIdNum);
+	/**
+	 * @param patientID = the Patients ID to set
+	 */
+	public void setPatientID(Integer patientID) {
+		getPatientIDProperty().setValue(patientID);
 	}
 	
-	
-	
+	//*********************** working content methods ******************************************//
 	
 	/**
 	 * adds a dose to the patients dosesGivenToPatient array 
@@ -139,23 +149,26 @@ public class Patient {
 		dosesGivenToPatient[numOfDosesGiven++] = doseGiven;
 	} // end of addDose method
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * adds a prescription to the patients prescriptionsAwaitingVerification array 
 	 * and increments the numOfPrescriptionsAwaitingVerification instance variable by 1
 	 * @param newPrescription = the new prescription to add
 	 */
-public void addPrescription(Medication newPrescription) {
-	prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
-} // end of addPrescription method
+	public void addPrescription(Medication newPrescription) {
+		prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
+	} // end of addPrescription method
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Patient [name=" + name + ", patientID=" + patientID + "]";
+		} // end of toString method
+
+
+	//*********************** commented out methods ******************************************//
+
 	/**
 	 * attempts to find a prescription in the prescriptionsAwaitingVerification array, returns NOTFOUND constant if not found
 	 * @param precriptionToFind = the prescription to find
@@ -225,14 +238,5 @@ public void addPrescription(Medication newPrescription) {
 	} // end of medicationHistory method
 	
 	*/
-	
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Patient [name=" + name + ", patientID=" + pid + "]";
-		} // end of toString method
 	
 } // end of Patient class

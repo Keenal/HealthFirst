@@ -40,8 +40,8 @@ public class PatientAccounts {
 	 */
 	public static void addPatient(Patient patient) {
 		patientAccounts[numOfElements] = patient;
-		patientAccounts[numOfElements].setPid(numOfElements);
-		//System.out.println("Patient ID:"+patientAccounts[numOfElements].getPatientID());
+		patientAccounts[numOfElements].setPatientID(numOfElements);
+		//System.out.println("Patient ID:" + patientAccounts[numOfElements].getPatientID());
 		numOfElements++;
 		System.out.println("Patient: "+patient+" added to position:"+numOfElements);
 	} // end of addPatient method
@@ -55,7 +55,7 @@ public class PatientAccounts {
 	 */
 	public static  Patient searchPatient(int patientID) {
 		for (int i = 0; i < numOfElements; i++) {
-			if (((int)patientAccounts[i].getPid() == patientID)) {
+			if (((int)patientAccounts[i].getPatientID() == patientID)) {
 				return patientAccounts[i];
 			} else {
 				continue;

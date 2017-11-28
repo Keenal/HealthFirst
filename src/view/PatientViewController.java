@@ -40,8 +40,8 @@ public class PatientViewController extends Main{
     private void initialize() {
         // Initialize the person table with the two columns.
     	NameColumn.setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-    	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().getPidProperty());
-    	PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().doctorNameProperty());
+    	patientIDColumn.setCellValueFactory(cellData -> cellData.getValue().getPatientIDProperty());
+    	PrimaryDrColumn.setCellValueFactory(cellData -> cellData.getValue().getPrimaryDoctorNameProperty());
     	//Number.setCellValueFactory(cellData -> cellData.setValue("1"));
        // new PatientAccounts();
 
