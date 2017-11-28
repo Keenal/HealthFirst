@@ -35,13 +35,13 @@ public class PatientOLD {
 	private int patientID = 0;
 	private static int nextIDNum = 1000;
 	private String primaryDoctor = "";
-	private int age = 0;
-	private String bloodPressure = "";
+	private int age = 0;				//
+	private String bloodPressure = "";  //
 	private int heartRate = 0;
 	private double weightInLbs = 0.0;
 	private double heightInInches = 0.0;
-	private String familyHistory = ""; 
-	private String currentIllness = "";
+	private String familyHistory = ""; //
+	private String currentIllness = ""; //
 	private String allergies = "";
 	private Medication[] prescriptionsAwaitingVerification = null;
 	private int numOfPrescriptionsAwaitingVerification = 0;

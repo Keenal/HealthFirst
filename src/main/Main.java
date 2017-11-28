@@ -43,6 +43,7 @@ import view.MedTrackController;
 import view.NurseViewController;
 import view.PatientViewController;
 import view.AddScriptController;
+import view.AdminPatientViewController;
 import view.DoctorViewController;
 
 
@@ -51,7 +52,7 @@ public class Main extends Application {
 	private Stage primaryStage;
     public static BorderPane rootLayout;
 	public User userType = new User();
-	ObservableList<Patient> patientData = FXCollections.observableArrayList();
+	public static ObservableList<Patient> patientData = FXCollections.observableArrayList();
 	
 	//public static Patient p1 = new ;
 	
@@ -60,7 +61,13 @@ public class Main extends Application {
 		
 		//new PatientAccounts();
 
-			
+		new Doctor("Eddy");
+		new PatientAccounts();
+		Administrator admin1 = new Administrator("John");
+		
+		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
+		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
+		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
             //userType.setName("test");
             //System.out.println("User is : "+userType.getName());
 		/*
@@ -75,13 +82,7 @@ public class Main extends Application {
 	}
 
 	public Main() {
-		new Doctor("Eddy");
-		new PatientAccounts();
-		Administrator admin1 = new Administrator("John");
-		
-		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
-		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
-		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
+
 		}
     
 	public ObservableList<Patient> getPatientData(){
@@ -168,6 +169,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+	// Display Patient Selection stage /view/PatientSelection.fxml
+	public  void showAdminPatientSelection() {
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/AdminPatientSelection.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            AdminPatientViewController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }	
 	// Display Patient Selection stage /view/PatientSelection.fxml
 		public  void showAddAScript() {
 	        try {

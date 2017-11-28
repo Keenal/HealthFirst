@@ -54,7 +54,7 @@ public class LoginScreenController extends Main {
     private void handleAdministrator() {
     	userType.setName("Admin");
     	System.out.println("admin selected");
-    	healthFirstTester.showPatientSelection();
+    	healthFirstTester.showAdminPatientSelection();
     
     }
     

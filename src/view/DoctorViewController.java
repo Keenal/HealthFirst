@@ -14,7 +14,7 @@ public class DoctorViewController extends Main {
    @FXML
     private Text nameLabel;
     @FXML
-    private Text bmiLabel;
+    private Text ageLabel;
     @FXML
     private Text famLabel;
     @FXML

@@ -7,10 +7,9 @@ import javafx.scene.control.TableView;
 import main.Main;
 import javafx.scene.control.TablePosition;
 import patientprocessing.Patient;
-import patientprocessing.PatientAccounts;
 import users.User;
 
-public class PatientViewController extends Main{
+public class AdminPatientViewController extends Main{
 
     @FXML
     private TableView<Patient> patientTable;
@@ -27,7 +26,7 @@ public class PatientViewController extends Main{
 	public Main hft;
 	public String user;
 	String patient;
-    public PatientViewController () {
+    public AdminPatientViewController () {
     
     }
     
@@ -107,14 +106,9 @@ public class PatientViewController extends Main{
    	
    	user = userType.getName();
    	System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
-   	if(user == "Doctor")
-   		hft.showDoctor();
-   	if(user == "Nurse")
-   		hft.showNurse();
    	if(user == "Admin")
    		hft.showAdmin();
-   	if(user == "Pharma")
-   		hft.showPharmacist();	
+	
    }
    
 
