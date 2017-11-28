@@ -1,6 +1,8 @@
 package patientprocessing;
 
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -16,9 +18,16 @@ public class Patient {
 	
 	// Instance Variables
 	private StringProperty name = new SimpleStringProperty();
+	private IntegerProperty patientID = new SimpleIntegerProperty();
 	private StringProperty primaryDoctorName = new SimpleStringProperty();	
 	private IntegerProperty age = new SimpleIntegerProperty();	
-	private IntegerProperty patientID = new SimpleIntegerProperty();	
+	private StringProperty bloodPressure = new SimpleStringProperty();  
+	private IntegerProperty heartRate = new SimpleIntegerProperty();		
+	private DoubleProperty weightInLbs = new SimpleDoubleProperty();
+	private DoubleProperty heightInInches = new SimpleDoubleProperty();
+	private StringProperty familyHistory = new SimpleStringProperty(); 
+	private StringProperty currentIllness = new SimpleStringProperty(); 
+	private StringProperty allergies = new SimpleStringProperty();
 	
 	// the 3 arrays needed for each Patient 
 	// 1) prescriptionsAwaitingVerification 2) activePrescriptionsVerified 3) dosesGivenToPatient
@@ -44,6 +53,8 @@ public class Patient {
 		setPatientID(patientID);
 		setPrimaryDoctorName(primaryDoctorName);
 		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
+		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
+		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of constructor method
 
 	//*********************** name ******************************************//
@@ -138,6 +149,167 @@ public class Patient {
 		getPatientIDProperty().setValue(patientID);
 	}
 	
+	//*********************** bloodPressure ******************************************//
+	
+	/**
+	 * @return the StringProperty of bloodPressure
+	 */
+	public StringProperty getBloodPressureProperty() {
+		return bloodPressure;
+	}
+	
+	/**
+	 * @return the String bloodPressure
+	 */
+	public String getBloodPressure() {
+		return getBloodPressureProperty().get();
+	}
+	
+	/**
+	 * @param bloodPressure = the Patient's bloodPressure to set
+	 */
+	public void setBloodPressure(String bloodPressure) {
+		getPrimaryDoctorNameProperty().set(bloodPressure);
+	}
+
+	//*********************** heartRate ******************************************//	
+	
+	/**
+	 * @return the IntegerProperty of heartRate
+	 */
+	public IntegerProperty getHeartRateProperty() {
+		return heartRate;
+	}
+	
+	/**
+	 * @return the Integer heartRate
+	 */
+	public Integer getHeartRate() {
+		return getHeartRateProperty().getValue();
+	}
+	
+	/**
+	 * @param heartRate = the Patients heartRate to set
+	 */
+	public void setHeartRate(Integer heartRate) {
+		getPatientIDProperty().setValue(heartRate);
+	}
+
+	//*********************** weightInLbs ******************************************//
+	
+	/**
+	 * @return the DoubleProperty of weightInLbs
+	 */
+	public DoubleProperty getWeightInLbsProperty() {
+		return weightInLbs;
+	}
+	
+	/**
+	 * @return the Double weightInLbs
+	 */
+	public Double getWeightInLbs() {
+		return getWeightInLbsProperty().getValue();
+	}
+	
+	/**
+	 * @param weightInLbs = the Patients weightInLbs to set
+	 */
+	public void setHeartRate(Double weightInLbs) {
+		getWeightInLbsProperty().setValue(weightInLbs);
+	}
+
+	//*********************** heightInInches ******************************************//
+	
+	/**
+	 * @return the DoubleProperty of heightInInches
+	 */
+	public DoubleProperty getHeightInInchesProperty() {
+		return heightInInches;
+	}
+	
+	/**
+	 * @return the Double heightInInches
+	 */
+	public Double getHeightInInches() {
+		return getHeightInInchesProperty().getValue();
+	}
+	
+	/**
+	 * @param heightInInches = the Patients heightInInches to set
+	 */
+	public void setHeightInInches(Double heightInInches) {
+		getHeightInInchesProperty().setValue(heightInInches);
+	}
+
+	//*********************** familyHistory ******************************************//
+	
+	/**
+	 * @return the StringProperty of familyHistory
+	 */
+	public StringProperty getFamilyHistoryProperty() {
+		return familyHistory;
+	}
+	
+	/**
+	 * @return the String familyHistory
+	 */
+	public String getFamilyHistory() {
+		return getFamilyHistoryProperty().get();
+	}
+	
+	/**
+	 * @param familyHistory = the Patient's familyHistory to set
+	 */
+	public void setFamilyHistory(String familyHistory) {
+		getFamilyHistoryProperty().set(familyHistory);
+	}
+
+	//*********************** currentIllness ******************************************//
+	
+	/**
+	 * @return the StringProperty of currentIllness
+	 */
+	public StringProperty getCurrentIllnessProperty() {
+		return currentIllness;
+	}
+	
+	/**
+	 * @return the String currentIllness
+	 */
+	public String getCurrentIllness() {
+		return getCurrentIllnessProperty().get();
+	}
+	
+	/**
+	 * @param currentIllness = the Patient's currentIllness to set
+	 */
+	public void setCurrentIllness(String currentIllness) {
+		getCurrentIllnessProperty().set(currentIllness);
+	}
+
+	//*********************** allergies ******************************************//
+	
+	/**
+	 * @return the StringProperty of allergies
+	 */
+	public StringProperty getAllergiesProperty() {
+		return allergies;
+	}
+	
+	/**
+	 * @return the String allergies
+	 */
+	public String getAllergies() {
+		return getAllergiesProperty().get();
+	}
+	
+	/**
+	 * @param allergies = the Patient's allergies to set
+	 */
+	public void setAllergies(String allergies) {
+		getAllergiesProperty().set(allergies);
+	}
+	
 	//*********************** working content methods ******************************************//
 	
 	/**
@@ -157,37 +329,26 @@ public class Patient {
 	public void addPrescription(Medication newPrescription) {
 		prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
 	} // end of addPrescription method
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Patient [name=" + name + ", patientID=" + patientID + "]";
-		} // end of toString method
-
-
-	//*********************** commented out methods ******************************************//
 
 	/**
 	 * attempts to find a prescription in the prescriptionsAwaitingVerification array, returns NOTFOUND constant if not found
 	 * @param precriptionToFind = the prescription to find
 	 * @return int = the array index number that was found, or NOTFOUND constant if the prescription was not found
 	 */
-/*private int findPrescription(Medication precriptionToFind) {
-	for (int indexNumber = 0; indexNumber < prescriptionsAwaitingVerification.length; indexNumber++) {
-		if (prescriptionsAwaitingVerification[indexNumber] == null) {
-			continue;
+	private int findPrescription(Medication precriptionToFind) {
+		for (int indexNumber = 0; indexNumber < prescriptionsAwaitingVerification.length; indexNumber++) {
+			if (prescriptionsAwaitingVerification[indexNumber] == null) {
+				continue;
+			}
+			else if (prescriptionsAwaitingVerification[indexNumber].getName().equalsIgnoreCase(precriptionToFind.getName())) {
+				return indexNumber;
+			}
+			else { 
+				continue;
+			}
 		}
-		else if (prescriptionsAwaitingVerification[indexNumber].getName().equalsIgnoreCase(precriptionToFind.getName())) {
-			return indexNumber;
-		}
-		else { 
-			continue;
-		}
-	}
-	return NOTFOUND;
-} // end of findPrescription method*/
+		return NOTFOUND;
+	} // end of findPrescription method*/
 	
 	/**
 	 * uses findPrescription() method to find and delete an prescriptionsAwaitingVerification after it is verified
@@ -195,7 +356,7 @@ public class Patient {
 	 * @param precriptionToDelete = the prescription to delete
 	 * @return boolean = true if account was found and deleted, or false if not
 	 */
-	/*private boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
+	private boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
 		int findPrescriptionResult = findPrescription(precriptionToDelete);
 		int j = 0;
 		if (findPrescriptionResult >= 0) {
@@ -215,20 +376,20 @@ public class Patient {
 			return false;
 		}
 	} // end of deletePrescriptionAwaitingVerification method
-	*/
+	
 	/**
 	 * adds a prescription to the patients activePrescriptionsVerified array 
 	 * and increments the numOfPrescriptionsVerified instance variable by 1
 	 * @param prescriptionAwaitingVerification = the prescription to verify
 	 */
-	/*public void verifyPrescription(Medication prescriptionAwaitingVerification) {
+	public void verifyPrescription(Medication prescriptionAwaitingVerification) {
 		activePrescriptionsVerified[numOfPrescriptionsVerified++] = prescriptionAwaitingVerification;
 		deletePrescriptionAwaitingVerification(prescriptionAwaitingVerification);
 	} // end of verifyPrescription method
-	*/
+	
 	/* returns a nicely formatted String representing the history of the medication given to the patient
 	 * @return a formatted String
-	 *//*
+	 */
 	public String medicationHistory() {
 		String completeString = "";
 			for (int l = 0; l < this.numOfDosesGiven; l++) {
@@ -237,6 +398,12 @@ public class Patient {
 			return completeString;
 	} // end of medicationHistory method
 	
-	*/
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Patient [name=" + name + ", patientID=" + patientID + ", primaryDoctorName=" + primaryDoctorName + "]";
+		} // end of toString method
 	
 } // end of Patient class
