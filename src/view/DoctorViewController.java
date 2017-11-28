@@ -11,6 +11,8 @@ import patientprocessing.PatientAccounts;
 
 public class DoctorViewController extends Main {
     public Main main;
+    @FXML
+    private TextField pidFieldD;    
    @FXML
     private Text nameLabel;
     @FXML
@@ -22,8 +24,13 @@ public class DoctorViewController extends Main {
     @FXML
     private Text allLabel;
     @FXML
-    private TextField pidFieldD;
-	
+    private Text bpLabel;
+    @FXML
+    private Text hrLabel;
+    @FXML
+    private Text weightLabel;
+    @FXML
+    private Text heightLabel;
     public DoctorViewController(){
     	
     }
@@ -44,6 +51,8 @@ public class DoctorViewController extends Main {
     private void showPersonDetails (Patient patient) {
     	if (patient != null) {
     		nameLabel.setText(patient.getName());
+    		//allLabel.setText(patient.getAllergies());
+    		//illLabel.setText(patient.getCurrentIllness());
     	} else {
     		nameLabel.setText("nope");
     	}

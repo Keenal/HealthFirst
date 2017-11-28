@@ -37,12 +37,12 @@ public class PatientOLD {
 	private String primaryDoctor = "";
 	private int age = 0;				//
 	private String bloodPressure = "";  //
-	private int heartRate = 0;
+	private int heartRate = 0;		//
 	private double weightInLbs = 0.0;
 	private double heightInInches = 0.0;
 	private String familyHistory = ""; //
 	private String currentIllness = ""; //
-	private String allergies = "";
+	private String allergies = "";		//
 	private Medication[] prescriptionsAwaitingVerification = null;
 	private int numOfPrescriptionsAwaitingVerification = 0;
 	private Medication[] activePrescriptionsVerified = null;

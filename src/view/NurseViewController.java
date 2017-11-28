@@ -1,7 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+//import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import main.Main;
@@ -11,16 +11,24 @@ import patientprocessing.PatientAccounts;
 
 public class NurseViewController extends Main {
     public Main main;
-   @FXML
+    @FXML
     private Text nameLabel;
     @FXML
-    private Text bmiLabel;
+    private Text ageLabel;
     @FXML
     private Text famLabel;
     @FXML
     private Text illLabel;
     @FXML
     private Text allLabel;
+    @FXML
+    private Text bpLabel;
+    @FXML
+    private Text hrLabel;
+    @FXML
+    private Text weightLabel;
+    @FXML
+    private Text heightLabel;
     @FXML
     private TextField pidFieldN;
 	

@@ -15,82 +15,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.NurseViewController">
    <children>
       <Text layoutX="129.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You're an awesome Nurse" AnchorPane.bottomAnchor="14.98828125" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="128.53515625" AnchorPane.topAnchor="569.05078125" />
-      <GridPane gridLinesVisible="true" layoutX="14.0" layoutY="156.0" prefHeight="340.0" prefWidth="223.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BMI" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Family History" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Illness" GridPane.rowIndex="4">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Allergies" GridPane.rowIndex="5">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text fx:id="bmiLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="bmihere" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text fx:id="famLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="famHisthere" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text fx:id="illLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="currentillness" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text fx:id="allLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="allergies" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-            <Text fx:id="nameLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="firstname" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Text>
-
-         </children>
-         <opaqueInsets>
-            <Insets bottom="100.0" top="100.0" />
-         </opaqueInsets>
-      </GridPane>
-      <Button layoutX="242.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleMedTracker" text="Medication Tracker" />
+      <Button layoutX="142.0" layoutY="516.0" mnemonicParsing="false" onAction="#handleMedTracker" text="Medication Tracker" />
       <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
       <TextField fx:id="pidFieldN" alignment="CENTER" focusTraversable="false" layoutX="126.0" layoutY="113.0" onInputMethodTextChanged="#initialize" onKeyReleased="#initialize">
          <cursor>
@@ -99,5 +24,107 @@
       <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#handlePatientSelect" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="34.0" layoutY="50.0" onMouseClicked="#handlePatientSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="Back" />
       <Line endX="100.0" layoutX="199.0" layoutY="88.0" startX="-100.0" AnchorPane.leftAnchor="98.5" AnchorPane.rightAnchor="100.5" />
+      <GridPane layoutX="24.0" layoutY="166.0" prefHeight="340.0" prefWidth="370.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="92.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="87.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="110.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age" textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Family History" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Illness" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Allergies" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="ageLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="agehere" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="famLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="famHisthere" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="illLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="currentillness" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="allLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="allergies" wrappingWidth="85.0" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" GridPane.vgrow="SOMETIMES">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="RIGHT" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="nameLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="firstname" wrappingWidth="65.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text layoutX="20.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bloood Pressure" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+            <Text layoutX="20.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heart Rate" textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Text fx:id="bpLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="bp" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="hrLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="heart rate" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight (Lbs)" textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="weightLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="weight lbs" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text fx:id="heightLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="height inches" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Height (Inches)" textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="100.0" top="100.0" />
+         </opaqueInsets>
+      </GridPane>
    </children>
 </AnchorPane>

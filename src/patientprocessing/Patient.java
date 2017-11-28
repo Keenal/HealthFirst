@@ -75,6 +75,7 @@ public class Patient {
 	public static void setDoctor(String doctor) {
 		Patient.doctor = doctor;
 	}
+
 	
 	public StringProperty doctorNameProperty() {
 		return doctorName;

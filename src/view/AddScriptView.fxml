@@ -97,7 +97,7 @@
       </GridPane>
       <Button layoutX="273.0" layoutY="472.0" mnemonicParsing="false" onAction="#addScript" text="Add a prescription" />
       <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
-      <TextField layoutX="126.0" layoutY="113.0" promptText="patient ID" />
+      <TextField fx:id="pid" layoutX="126.0" layoutY="113.0" promptText="patient ID" />
       <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#goBack" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="34.0" layoutY="50.0" onMouseClicked="#goBack" strokeType="OUTSIDE" strokeWidth="0.0" text="Back" />
       <Line endX="100.0" layoutX="199.0" layoutY="88.0" startX="-100.0" AnchorPane.leftAnchor="98.5" AnchorPane.rightAnchor="100.5" />
