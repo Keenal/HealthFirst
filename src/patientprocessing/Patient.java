@@ -403,7 +403,8 @@ public class Patient {
 	 */
 	@Override
 	public String toString() {
-		return "Patient [name=" + name + ", patientID=" + patientID + ", primaryDoctorName=" + primaryDoctorName + "]";
+		return "Patient [name=" + name + ", patientID=" + patientID + ", primaryDoctorName=" + primaryDoctorName + ", prescriptionsAwaitingVerification=" + numOfPrescriptionsAwaitingVerification + 
+				", numOfPrescriptionsVerified=" + numOfPrescriptionsVerified + "]";
 		} // end of toString method
 	
 } // end of Patient class
