@@ -1,5 +1,9 @@
 package users;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 import medicationprocessing.MedicationDatabaseManager;
 import medicationprocessing.MedicationList;
 //import patientprocessing.Patient;
@@ -15,8 +19,11 @@ public class HealthFirstMain {
 		medDB.processInput(medicationList);
 		new PatientAccounts();
 		
-		System.out.println(medicationList);
-		
+
+    	//System.out.println(list);
+		System.out.println(MedicationList.medications[0].getName());
+	    System.out.println(MedicationList.medications[3].getName());
+
 		Administrator admin1 = new Administrator("Nancy Lee");
 		System.out.println(admin1);
 		

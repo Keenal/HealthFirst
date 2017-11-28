@@ -24,7 +24,7 @@ public class MedicationList {
 	public static final int MEDICATION_LIST_ARRAY_SIZE = 50;
 	
 	private static int numOfElements = 0;
-	static Medication[] medications = null;
+	public static Medication[] medications = null;
 	
 	/**
 	 * Default constructor for the MedicationList class

@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import medicationprocessing.Medication;
 
 
 public class Patient {
@@ -21,7 +22,10 @@ public class Patient {
 	private static String doctor = "Phil";
 	private SimpleStringProperty familyHistory;
 	
-	// Needed for the array dosesGivenToPatient that will hold each dose of Medication given to a Patient
+	public Medication[] prescriptionsAwaitingVerification = null;
+	private int numOfPrescriptionsAwaitingVerification = 0;
+	private Medication[] activePrescriptionsVerified = null;
+	private int numOfPrescriptionsVerified = 0;
 	private PatientDose[] dosesGivenToPatient = null;
 	private int numOfDosesGiven = 0;
 	
@@ -148,9 +152,9 @@ public class Patient {
 	 * and increments the numOfPrescriptionsAwaitingVerification instance variable by 1
 	 * @param newPrescription = the new prescription to add
 	 */
-//public void addPrescription(Medication newPrescription) {
-//	prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
-//} // end of addPrescription method
+public void addPrescription(Medication newPrescription) {
+	prescriptionsAwaitingVerification[numOfPrescriptionsAwaitingVerification++] = newPrescription;
+} // end of addPrescription method
 	
 	/**
 	 * attempts to find a prescription in the prescriptionsAwaitingVerification array, returns NOTFOUND constant if not found

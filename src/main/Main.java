@@ -33,6 +33,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import medicationprocessing.MedicationDatabaseManager;
+import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import users.Administrator;
@@ -58,10 +60,14 @@ public class Main extends Application {
 	
 	
 	public static void main(String[] args) {
-		
-		//new PatientAccounts();
+		String inputFileName = "Medications.txt";
+		MedicationList medicationList = new MedicationList();
+		MedicationDatabaseManager medDB = new MedicationDatabaseManager(inputFileName);
+		medDB.openFile(inputFileName);
+		medDB.processInput(medicationList);
+		new PatientAccounts();
 
-		new Doctor("Eddy");
+		Doctor doc1 = new Doctor("Eddy");
 		new PatientAccounts();
 		Administrator admin1 = new Administrator("John");
 		
