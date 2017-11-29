@@ -61,7 +61,8 @@ public class Nurse extends User {
 		int minHoursTillDue = medicationGiven.getMinDosageTimeHours();
 		cal.add(Calendar.HOUR, minHoursTillDue);
 		Date nextDoseDue = cal.getTime();
-		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, this, doseGivenInMg);
+		
+		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, "Linda Carter", doseGivenInMg);
 		patient.addDose(dose);
 	} // end of logDose method
 	

@@ -28,7 +28,7 @@ public class PatientDose {
 	Medication medicationGiven = null;
 	Date timeDoseLogged = null;
 	Date nextDoseDue = null;
-	Nurse nurseWhoLogged = null;
+	String nurseWhoLogged = "";
 	int doseGivenInMg = 0;
 	
 	/**
@@ -38,7 +38,7 @@ public class PatientDose {
 		setMedicationGiven(null);
 		setTimeDoseLogged(null);
 		setNextDoseDue(null);
-		setNurseWhoLogged(null);
+		setNurseWhoLogged("");
 		setDoseGivenInMg(0);
 	}
 	
@@ -50,7 +50,7 @@ public class PatientDose {
 	 * @param nurseWhoLogged = The Nurse who gave the dose
 	 * @param doseGivenInMg = The amount in Mg of dose given
 	 */
-	public PatientDose(Medication medicationGiven, Date timeDoseLogged, Date nextDoseDue, Nurse nurseWhoLogged, int doseGivenInMg) {
+	public PatientDose(Medication medicationGiven, Date timeDoseLogged, Date nextDoseDue, String nurseWhoLogged, int doseGivenInMg) {
 		setMedicationGiven(medicationGiven);
 		setTimeDoseLogged(timeDoseLogged);
 		setNextDoseDue(nextDoseDue);
@@ -103,14 +103,14 @@ public class PatientDose {
 	/**
 	 * @return the nurseWhoLogged
 	 */
-	public Nurse getNurseWhoLogged() {
+	public String getNurseWhoLogged() {
 		return nurseWhoLogged;
 	}
 
 	/**
 	 * @param nurseWhoLogged the nurseWhoLogged to set
 	 */
-	public void setNurseWhoLogged(Nurse nurseWhoLogged) {
+	public void setNurseWhoLogged(String nurseWhoLogged) {
 		this.nurseWhoLogged = nurseWhoLogged;
 	}
 
@@ -134,7 +134,7 @@ public class PatientDose {
 	@Override
 	public String toString() {
 		return ("[" + medicationGiven.getName() + "]  -  "  + "Time last dose given: " + timeDoseLogged
-				+ ", Time next dose due: " + nextDoseDue + ", Given by: " + nurseWhoLogged.getName() + ", Mg given: "
+				+ ", Time next dose due: " + nextDoseDue + ", Given by: " + nurseWhoLogged + ", Mg given: "
 				+ doseGivenInMg);
 	} // end of toString method
 	
