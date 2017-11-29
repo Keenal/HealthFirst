@@ -39,6 +39,7 @@ import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import users.Administrator;
 import users.Doctor;
+import users.Pharmacist;
 import users.User;
 import view.LoginScreenController;
 import view.MedTrackController;
@@ -65,23 +66,37 @@ public class Main extends Application {
 	public static Administrator admin1 = new Administrator("John");
 
 	public static void main(String[] args) {
-	//Create Medication DB
+	
+		//Create Medication DB
 		String inputFileName = "Medications.txt";
 		MedicationList medicationList = new MedicationList();
 		MedicationDatabaseManager medDB = new MedicationDatabaseManager(inputFileName);
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
-	//Create Patients
+	
+		//Create Patients
 		new PatientAccounts();
 		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
 		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
 		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
-	//Launch Gui
-            launch(args);
+		
+		Patient patient1 = PatientAccounts.patientAccounts[0];
+		Doctor.prescribeMedication("Codeine", patient1);
+		Doctor.prescribeMedication("Tylenol", patient1);
+		Doctor.prescribeMedication("Aleve", patient1);
+		Doctor.prescribeMedication("Penicillin", patient1);
+		Pharmacist pharm1 = new Pharmacist("Donald Drug");
+		pharm1.verifyMedicaton("Codeine", patient1);
+		pharm1.verifyMedicaton("Tylenol", patient1);
+		pharm1.verifyMedicaton("Aleve", patient1);
+		pharm1.verifyMedicaton("Penicillin", patient1);
+		
+		System.out.println(patient1);
+	
+		//Launch Gui
+		launch(args);
 
-	}
-
-
+	} // end of main method
     
 	public ObservableList<Patient> getPatientData(){
 		return patientData;
