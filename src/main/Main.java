@@ -45,6 +45,7 @@ import view.LoginScreenController;
 import view.MedTrackController;
 import view.NurseViewController;
 import view.PatientViewController;
+import view.PharmaUnverifiedController;
 import view.PharmacistViewController;
 import view.AddScriptController;
 import view.AdminPatientViewController;
@@ -312,7 +313,22 @@ public class Main extends Application {
             e.printStackTrace();
         }
 	}
-
+	public void showUnverified() {
+		// Display Patient Selection stage /view/PatientSelection.fxml
+        try {
+        	// Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/PharmaUnverifiedView.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            PharmaUnverifiedController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(personOverview);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
 	public void showMedTrack() {
         try {
         	// Load person overview.

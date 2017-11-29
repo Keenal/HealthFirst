@@ -2,6 +2,7 @@ package view;
 
 import java.util.ArrayList;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -45,6 +46,8 @@ public class PharmaUnverifiedController extends Main{
     private TableColumn<Medication, String> NameColumn2;
     @FXML
     private TableColumn<Medication, String> DoseColumn2;
+	ArrayList<String> list = new ArrayList<String>();
+	
     public PharmaUnverifiedController() {
 			
 		}
@@ -58,7 +61,7 @@ public class PharmaUnverifiedController extends Main{
     	Patient pat1 = PatientAccounts.searchPatient(User.getPid());
     	
     	System.out.println(pat1.numOfPrescriptionsAwaitingVerification);
-    	ArrayList<String> list = new ArrayList<String>();
+
     	for (int i=0;i<pat1.numOfPrescriptionsAwaitingVerification;i++) {
     	list.add(PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[i].toString());
     	}
@@ -72,6 +75,24 @@ public class PharmaUnverifiedController extends Main{
         }
     
     @FXML
+    private void verifyScript() {
+    	ObservableList selectedIndices =
+    		    drugTable.getSelectionModel().getSelectedIndices();
+    	if (!selectedIndices.isEmpty()) {
+    		//String drugname = PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)].getName();
+    		//System.out.println(drugname);;
+    				
+    				PatientAccounts.searchPatient(User.getPid()).verifyPrescription(PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)]);
+    				goBack();
+    				
+    				//Wont refresh
+    				//list.remove((int)selectedIndices.get(0));
+    				
+    				
+    	}
+    }
+    
+    @FXML
     private void fillMini() {
     	
     }
@@ -81,7 +102,7 @@ public class PharmaUnverifiedController extends Main{
     
     @FXML
     private void goBack() {
-    	main.showNurse();
+    	main.showPharmacist();
     }
 
     

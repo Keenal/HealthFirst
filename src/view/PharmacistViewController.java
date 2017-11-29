@@ -77,6 +77,10 @@ public class PharmacistViewController extends Main {
     	main.showMedTrack();
     	
     }
-   
+    //Prescribed Medication
+    @FXML
+    private void handleUnverified() {
+    	main.showUnverified();
+    }
     
 }
