@@ -32,7 +32,7 @@ public class Patient {
 	// the 3 arrays needed for each Patient 
 	// 1) prescriptionsAwaitingVerification 2) activePrescriptionsVerified 3) dosesGivenToPatient
 	public Medication[] prescriptionsAwaitingVerification = null;
-	private int numOfPrescriptionsAwaitingVerification = 0;
+	public int numOfPrescriptionsAwaitingVerification = 0;
 	
 	private Medication[] activePrescriptionsVerified = null;
 	private int numOfPrescriptionsVerified = 0;

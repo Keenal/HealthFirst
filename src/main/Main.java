@@ -84,12 +84,12 @@ public class Main extends Application {
 		Doctor.prescribeMedication("Codeine", patient1);
 		Doctor.prescribeMedication("Tylenol", patient1);
 		Doctor.prescribeMedication("Aleve", patient1);
-		Doctor.prescribeMedication("Penicillin", patient1);
+		Doctor.prescribeMedication("Penicillin V", patient1);
 		Pharmacist pharm1 = new Pharmacist("Donald Drug");
 		pharm1.verifyMedicaton("Codeine", patient1);
-		pharm1.verifyMedicaton("Tylenol", patient1);
-		pharm1.verifyMedicaton("Aleve", patient1);
-		pharm1.verifyMedicaton("Penicillin", patient1);
+		//pharm1.verifyMedicaton("Tylenol", patient1);
+		//pharm1.verifyMedicaton("Aleve", patient1);
+		//pharm1.verifyMedicaton("Penicillin", patient1);
 		
 		System.out.println(patient1);
 	

@@ -29,7 +29,7 @@ import users.User;
 
 
 
-public class MedTrackController extends Main{
+public class PharmaUnverifiedController extends Main{
 	public Main main;
 	@FXML
 	private Label doctorLabel;
@@ -45,7 +45,7 @@ public class MedTrackController extends Main{
     private TableColumn<Medication, String> NameColumn2;
     @FXML
     private TableColumn<Medication, String> DoseColumn2;
-    public MedTrackController() {
+    public PharmaUnverifiedController() {
 			
 		}
     @FXML
