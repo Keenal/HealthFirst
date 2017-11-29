@@ -34,11 +34,11 @@ public class Patient {
 	public Medication[] prescriptionsAwaitingVerification = null;
 	public int numOfPrescriptionsAwaitingVerification = 0;
 	
-	private Medication[] activePrescriptionsVerified = null;
-	private int numOfPrescriptionsVerified = 0;
+	public Medication[] activePrescriptionsVerified = null;
+	public int numOfPrescriptionsVerified = 0;
 	
-	private PatientDose[] dosesGivenToPatient = null;
-	private int numOfDosesGiven = 0;
+	public PatientDose[] dosesGivenToPatient = null;
+	public int numOfDosesGiven = 0;
 	
 	//*********************** constructor ******************************************//
 	

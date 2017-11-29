@@ -14,7 +14,6 @@ import medicationprocessing.Medication;
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import users.Doctor;
-import users.Nurse;
 import users.User;
 /** Label
  *  doctorLabel 
@@ -31,12 +30,12 @@ import users.User;
 
 
 
-public class MedTrackController extends Main{
+public class NurseMedHistoryController extends Main{
 	public Main main;
 	@FXML
 	private Label doctorLabel;
 	 @FXML
-    private ListView<String> drugTable;
+    private ListView<String> historyTable;
 
 
     @FXML
@@ -47,7 +46,9 @@ public class MedTrackController extends Main{
     private TableColumn<Medication, String> NameColumn2;
     @FXML
     private TableColumn<Medication, String> DoseColumn2;
-    public MedTrackController() {
+	ArrayList<String> list = new ArrayList<String>();
+	
+    public NurseMedHistoryController() {
 			
 		}
     @FXML
@@ -57,14 +58,14 @@ public class MedTrackController extends Main{
     	
     	
     	
-    	Patient pat1 = PatientAccounts.searchPatient(User.getPid());
+    	Patient pat = PatientAccounts.searchPatient(User.getPid());
     	
-    	//System.out.println(pat1.numOfPrescriptionsAwaitingVerification);
-    	ArrayList<String> list = new ArrayList<String>();
-    	for (int i=0;i<pat1.numOfPrescriptionsVerified;i++) {
-    	list.add(PatientAccounts.searchPatient(User.getPid()).activePrescriptionsVerified[i].toString());
+    	System.out.println(PatientAccounts.searchPatient(User.getPid()).numOfDosesGiven);
+
+    	for (int i=0;i<PatientAccounts.searchPatient(User.getPid()).numOfDosesGiven;i++) {
+    	list.add(PatientAccounts.searchPatient(User.getPid()).dosesGivenToPatient[i].toString());
     	}
-    	drugTable.getItems().addAll(list);
+    	historyTable.getItems().addAll(list);
     
     }
     
@@ -74,32 +75,30 @@ public class MedTrackController extends Main{
         }
     
     @FXML
-    private void fillMini() {
-    	
-    }
-    
-    @FXML
-    private void logDose() {
+    private void verifyScript() {
     	ObservableList selectedIndices =
-    		    drugTable.getSelectionModel().getSelectedIndices();
-    	
-    	String drugname = PatientAccounts.searchPatient(User.getPid()).activePrescriptionsVerified[(int) selectedIndices.get(0)].getName();
-    	
+    		    historyTable.getSelectionModel().getSelectedIndices();
     	if (!selectedIndices.isEmpty()) {
-    		nurse1.logDose(drugname, User.getPid(), 1000);
-        	System.out.println(User.getPid());
-
+    		//String drugname = PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)].getName();
+    		//System.out.println(drugname);;
+    				
+    				PatientAccounts.searchPatient(User.getPid()).verifyPrescription(PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)]);
+    				goBack();
+    				
+    				//Wont refresh
+    				//list.remove((int)selectedIndices.get(0));
+    				
+    				
     	}
     }
+
     
-    @FXML
-    private void history() {
-    	main.showNurseHistory();
-    }
+    
+    
     
     @FXML
     private void goBack() {
-    	main.showNurse();
+    	main.showMedTrack();
     }
 
     

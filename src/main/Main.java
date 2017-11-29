@@ -39,10 +39,12 @@ import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 import users.Administrator;
 import users.Doctor;
+import users.Nurse;
 import users.Pharmacist;
 import users.User;
 import view.LoginScreenController;
 import view.MedTrackController;
+import view.NurseMedHistoryController;
 import view.NurseViewController;
 import view.PatientViewController;
 import view.PharmaUnverifiedController;
@@ -65,6 +67,7 @@ public class Main extends Application {
 	//public static Patient p1 = new ;
 	
 	public static Administrator admin1 = new Administrator("John");
+	public static Nurse nurse1 = new Nurse("Test");
 
 	public static void main(String[] args) {
 	
@@ -251,6 +254,22 @@ public class Main extends Application {
 	        }
 	    }
 
+	public void showNurseHistory() {
+		// Display Patient Selection stage /view/PatientSelection.fxml
+	        try {
+	        	// Load person overview.
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/view/NurseMedHistoryView.fxml"));
+	            AnchorPane personOverview = (AnchorPane) loader.load();
+	            NurseMedHistoryController controller = loader.getController();
+	            controller.setMainApp(this);
+	            
+	            // Set person overview into the center of root layout.
+	            rootLayout.setCenter(personOverview);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
 
 	public void showAdmin() {
         try {

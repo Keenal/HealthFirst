@@ -58,7 +58,7 @@ public class NurseViewController extends Main {
     		illLabel.setText(p.getCurrentIllness());
     		allLabel.setText(p.getAllergies());
     		bpLabel.setText(p.getBloodPressure());
-    		hrLabel.setText(""+p.getWeightInLbs());
+    		hrLabel.setText(""+p.getHeartRate());
     		weightLabel.setText(""+p.getWeightInLbs());
     		heightLabel.setText(""+p.getHeightInInches());
     	} else {
