@@ -27,7 +27,7 @@
         </columns>
       </TableView>
       <Button layoutX="259.0" layoutY="432.0" mnemonicParsing="false" onAction="#history" text="History" />
-      <Button layoutX="253.0" layoutY="462.0" mnemonicParsing="false" text="Log Dose" />
+      <Button layoutX="253.0" layoutY="462.0" mnemonicParsing="false" onAction="#logDose" text="Log Dose" />
       <ListView fx:id="drugTable" layoutX="14.0" layoutY="152.0" onMouseClicked="#fillMini" prefHeight="198.0" prefWidth="370.0" />
    </children>
 </AnchorPane>

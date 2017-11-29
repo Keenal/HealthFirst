@@ -82,10 +82,11 @@ public class MedTrackController extends Main{
     private void logDose() {
     	ObservableList selectedIndices =
     		    drugTable.getSelectionModel().getSelectedIndices();
-    	
-    	String drugname = PatientAccounts.searchPatient(User.getPid()).activePrescriptionsVerified[(int) selectedIndices.get(0)].getName();
+    	System.out.println((int) selectedIndices.get(0));
     	
     	if (!selectedIndices.isEmpty()) {
+        	String drugname = PatientAccounts.searchPatient(User.getPid()).activePrescriptionsVerified[(int) selectedIndices.get(0)].getName();
+
     		nurse1.logDose(drugname, User.getPid(), 1000);
         	System.out.println(User.getPid());
 
