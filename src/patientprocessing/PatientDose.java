@@ -133,9 +133,9 @@ public class PatientDose {
 	 */
 	@Override
 	public String toString() {
-		return "PatientDose [medicationGiven=" + medicationGiven + ", timeDoseLogged=" + timeDoseLogged
-				+ ", nextDoseDue=" + nextDoseDue + ", nurseWhoLogged=" + nurseWhoLogged + ", doseGivenInMg="
-				+ doseGivenInMg + "]";
-	}
+		return ("[" + medicationGiven.getName() + "]  -  "  + "Time last dose given: " + timeDoseLogged
+				+ ", Time next dose due: " + nextDoseDue + ", Given by: " + nurseWhoLogged.getName() + ", Mg given: "
+				+ doseGivenInMg);
+	} // end of toString method
 	
 } // end of PatientDose class

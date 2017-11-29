@@ -198,16 +198,6 @@ public class Medication {
 
 		return "[" + name + "]  -  " + " DESCRIPTION: " + description + ", DOSAGE In Mg: " + dosageInMg
 				+ ", Take every " + minDosageTimeHours + " hours, MEDICATION CLASS: " + typeMedication;
-	}
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	//@Override
-	//public String toString() {
-		//return "Medication [name=" + name + ", description=" + description + ", dosageInMg=" + dosageInMg
-				//+ ", minDosageTimeHours=" + minDosageTimeHours + ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" 
-				//+ isOverTheCounter + ", isAntibiotic=" + isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
-	//}
+	} // end of toString method
 
 } // end of Medication class
