@@ -68,6 +68,7 @@ public class AdminViewControllerCreate extends Main {
     	int hr = Integer.parseInt(hrLabel.getText());
     	Double lbs = Double.parseDouble(weightLabel.getText());
     	Double in = Double.parseDouble(heightLabel.getText());
+    	
     	PatientAccounts.searchPatient(User.getPid()).setAge(age);
     	PatientAccounts.searchPatient(User.getPid()).setHeartRate(hr);
     	PatientAccounts.searchPatient(User.getPid()).setHeightInInches(in);

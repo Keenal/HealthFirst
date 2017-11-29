@@ -56,9 +56,9 @@ public class Nurse extends User {
 	public void logDose(String medicationName, int patientID, int doseGivenInMg) {
 		Patient patient = PatientAccounts.searchPatient(patientID);
 		Medication medicationGiven = MedicationList.getMedication(medicationName);
-		Date timeDoseLogged = calendar.getTime();
-		int minHoursTillDue = medicationGiven.getMinDosageTimeHours();
 		Calendar cal = Calendar.getInstance();
+		Date timeDoseLogged = cal.getTime();
+		int minHoursTillDue = medicationGiven.getMinDosageTimeHours();
 		cal.add(Calendar.HOUR, minHoursTillDue);
 		Date nextDoseDue = cal.getTime();
 		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, this, doseGivenInMg);
