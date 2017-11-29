@@ -78,24 +78,26 @@ public class Main extends Application {
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
 	
-		//Create Patients Patient(String name, Integer patientID, String primaryDoctorName, 
-		new PatientAccounts();				//String name, Integer patientID, String primaryDoctorName, Integer age, String bloodPressure, Integer heartRate, Double weightInLbs, Double heightInInches, String familyHistory, String currentIllness, String allergies) {
-		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil",20, "200 / 50",90, 55.5, 60.2, "Lots of drugs", "flu","Pollen"));	
-		//patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
-		//patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
+		//Create Patients  
+		new PatientAccounts();			
+		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil",20, "200 / 50",90, 155.5, 70.2, "Lots of drugs", "flu","Pollen"));	
+		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy",33, "160 / 100",110, 255.6, 68.0, "Heart Disease, Diabetes", "Chest Pain","Bee Stings"));
+		patientData.add(admin1.createNewPatient("John Dough",2,"joe",56, "110 / 65",60, 137.5, 75.0, "No Issues", "Broken Wrist","None"));
 		
+		Pharmacist pharm1 = new Pharmacist("Donald Drug");
 		Patient patient1 = PatientAccounts.patientAccounts[0];
 		Doctor.prescribeMedication("Codeine", patient1);
 		Doctor.prescribeMedication("Tylenol", patient1);
 		Doctor.prescribeMedication("Aleve", patient1);
-		Doctor.prescribeMedication("Penicillin V", patient1);
-		Pharmacist pharm1 = new Pharmacist("Donald Drug");
 		pharm1.verifyMedicaton("Codeine", patient1);
-		//pharm1.verifyMedicaton("Tylenol", patient1);
-		//pharm1.verifyMedicaton("Aleve", patient1);
-		//pharm1.verifyMedicaton("Penicillin", patient1);
 		
-		System.out.println(patient1);
+		Patient patient2 = PatientAccounts.patientAccounts[1];
+		Doctor.prescribeMedication("Advil", patient2);
+		
+		Patient patient3 = PatientAccounts.patientAccounts[2];
+		Doctor.prescribeMedication("Penicillin V", patient3);
+		Doctor.prescribeMedication("Oxycodone", patient3);
+		pharm1.verifyMedicaton("Penicillin V", patient3);
 	
 		//Launch Gui
 		launch(args);
