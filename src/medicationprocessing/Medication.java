@@ -184,9 +184,30 @@ public class Medication {
 	 */
 	@Override
 	public String toString() {
-		return "Medication [name=" + name + ", description=" + description + ", dosageInMg=" + dosageInMg
-				+ ", minDosageTimeHours=" + minDosageTimeHours + ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" 
-				+ isOverTheCounter + ", isAntibiotic=" + isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
+		String typeMedication = "";
+
+		if (this.isNarcotic == true) {
+			typeMedication = "Narcotic";
+		} else if (this.isOverTheCounter == true) {
+			typeMedication = "Over The Counter";
+		} else if (this.isAntibiotic == true) {
+			typeMedication = "Antibiotic";
+		} else if (this.isAntiInflamitory == true) {
+			typeMedication = "AntiInflamitory";
+		}
+
+		return "[" + name + "]  -  " + " DESCRIPTION: " + description + ", DOSAGE In Mg: " + dosageInMg
+				+ ", Take every " + minDosageTimeHours + " hours, MEDICATION CLASS: " + typeMedication;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	//@Override
+	//public String toString() {
+		//return "Medication [name=" + name + ", description=" + description + ", dosageInMg=" + dosageInMg
+				//+ ", minDosageTimeHours=" + minDosageTimeHours + ", isNarcotic=" + isNarcotic + ", isOverTheCounter=" 
+				//+ isOverTheCounter + ", isAntibiotic=" + isAntibiotic + ", isAntiInflamitory=" + isAntiInflamitory + "]";
+	//}
 
 } // end of Medication class
