@@ -32,8 +32,7 @@ import users.User;
 
 public class NurseMedHistoryController extends Main{
 	public Main main;
-	@FXML
-	private Label doctorLabel;
+
 	 @FXML
     private ListView<String> historyTable;
 
@@ -53,7 +52,7 @@ public class NurseMedHistoryController extends Main{
 		}
     @FXML
     private void initialize() {
-    	doctorLabel.setText(""+Doctor.getDoctor());
+
     	pidFieldM.setText("Patient ID "+User.getPid());
     	
     	

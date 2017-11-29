@@ -39,8 +39,6 @@ import javafx.scene.text.Text;
 public class AddScriptController extends Main{
 	Main main;
 	@FXML
-	private Label doctorLabel;
-	@FXML
 	private TextField pid;
 	@FXML
     private ListView<String> drugList;
@@ -71,7 +69,7 @@ public class AddScriptController extends Main{
 
     	
     	//
-    	doctorLabel.setText(""+Doctor.getDoctor());
+
     }
     
     public void setMainApp(Main main) {

@@ -32,8 +32,7 @@ import users.User;
 
 public class PharmaUnverifiedController extends Main{
 	public Main main;
-	@FXML
-	private Label doctorLabel;
+
 	 @FXML
     private ListView<String> drugTable;
 
@@ -53,7 +52,7 @@ public class PharmaUnverifiedController extends Main{
 		}
     @FXML
     private void initialize() {
-    	doctorLabel.setText(""+Doctor.getDoctor());
+
     	pidFieldM.setText("Patient ID "+User.getPid());
     	
     	

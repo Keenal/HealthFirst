@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import main.Main;
 import medicationprocessing.Medication;
 import patientprocessing.Patient;
@@ -33,26 +34,21 @@ import users.User;
 
 public class MedTrackController extends Main{
 	public Main main;
-	@FXML
-	private Label doctorLabel;
+
 	 @FXML
     private ListView<String> drugTable;
 
-
+	 @FXML
+	 private Label labelAlert;
     @FXML
     private TextField pidFieldM;
-    @FXML
-    private TableView<Medication> detailTable;
-    @FXML
-    private TableColumn<Medication, String> NameColumn2;
-    @FXML
-    private TableColumn<Medication, String> DoseColumn2;
+ 
     public MedTrackController() {
 			
 		}
     @FXML
     private void initialize() {
-    	doctorLabel.setText(""+Doctor.getDoctor());
+
     	pidFieldM.setText("Patient ID "+User.getPid());
     	
     	
@@ -89,7 +85,7 @@ public class MedTrackController extends Main{
 
     		nurse1.logDose(drugname, User.getPid(), 1000);
         	System.out.println(User.getPid());
-
+        	labelAlert.setText("Dose Logged");
     	}
     }
     

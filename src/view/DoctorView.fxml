@@ -116,8 +116,7 @@
             <Insets bottom="100.0" top="100.0" />
          </opaqueInsets>
       </GridPane>
-      <Button layoutX="72.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleAddAScript" text="Add a prescription" />
-      <Button layoutX="222.0" layoutY="511.0" mnemonicParsing="false" text="View Log History" />
+      <Button layoutX="144.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleAddAScript" text="Add a prescription" />
       <Text layoutX="148.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HealthFirst Hospital" />
       <TextField fx:id="pidFieldD" layoutX="126.0" layoutY="113.0" />
       <Circle fill="WHITE" layoutX="46.0" layoutY="45.0" onMouseClicked="#handlePatientSelect" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
