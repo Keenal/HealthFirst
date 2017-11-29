@@ -37,7 +37,7 @@ public class AdminViewControllerCreate extends Main {
     }
     @FXML
     private void initialize() {
-		patientData.add(admin1.createNewPatient("New Pat",PatientAccounts.numOfElements-1,"Phil"));	
+		patientData.add(admin1.createNewPatient("New Pat",PatientAccounts.numOfElements-1,"Phil", null, null, null, null, null, null, null, null));	
 		User.setPid(PatientAccounts.numOfElements-1);
     	pid.setText("Patient ID "+User.getPid());
 	//Auto fill fields that throw error when empty

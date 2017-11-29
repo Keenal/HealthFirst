@@ -78,11 +78,11 @@ public class Main extends Application {
 		medDB.openFile(inputFileName);
 		medDB.processInput(medicationList);
 	
-		//Create Patients
-		new PatientAccounts();
-		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil"));	
-		patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
-		patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
+		//Create Patients Patient(String name, Integer patientID, String primaryDoctorName, 
+		new PatientAccounts();				//String name, Integer patientID, String primaryDoctorName, Integer age, String bloodPressure, Integer heartRate, Double weightInLbs, Double heightInInches, String familyHistory, String currentIllness, String allergies) {
+		patientData.add(admin1.createNewPatient("Jane Doe",0,"Phil",20, "200 / 50",90, 55.5, 60.2, "Lots of drugs", "flu","Pollen"));	
+		//patientData.add(admin1.createNewPatient("Johnny Boy",1,"Eddy"));
+		//patientData.add(admin1.createNewPatient("John Dough",2,"joe"));
 		
 		Patient patient1 = PatientAccounts.patientAccounts[0];
 		Doctor.prescribeMedication("Codeine", patient1);

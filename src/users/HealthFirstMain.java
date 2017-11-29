@@ -36,7 +36,7 @@ public class HealthFirstMain {
 		Nurse nurse1 = new Nurse("Pat Kline");
 		System.out.println(nurse1);
 		
-		Patient patient1 = admin1.createNewPatient("Ozzy Osborn", 123, "Dr Feelgood"); //"Jane Doe", "Robert Smith", 40, "120/80", 67, 176, 72, "Mother: none, Father: heart attack", "Cancer", "shrimp");
+		/*Patient patient1 = admin1.createNewPatient("Ozzy Osborn", 123, "Dr Feelgood"); //"Jane Doe", "Robert Smith", 40, "120/80", 67, 176, 72, "Mother: none, Father: heart attack", "Cancer", "shrimp");
 		System.out.println(patient1);
 		
 		Patient patient2 = admin1.createNewPatient("Sharon Osborn", 234, "Dr Feelgood");//"John Doe", "Robert Smith", 45, "125/85", 82, 111, 65, "Mother: cancer, Father: dibeties", "Heart Attack", "none");
@@ -49,7 +49,7 @@ public class HealthFirstMain {
 		nurse1.logDose("Codeine", patient2.getPatientID(), 600);
 		nurse1.logDose("Codeine", patient2.getPatientID(), 400);
  
-		System.out.println(patient2.medicationHistory());
+		System.out.println(patient2.medicationHistory());*/
 	}
 
 }

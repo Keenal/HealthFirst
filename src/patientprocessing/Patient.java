@@ -44,14 +44,34 @@ public class Patient {
 	
 	/**
 	 * Parameterized constructor for the Patient class
+	 * @param age TODO
+	 * @param bloodPressure TODO
+	 * @param heartRate TODO
+	 * @param weightInLbs TODO
+	 * @param heightInInches TODO
+	 * @param familyHistory TODO
+	 * @param currentIllness TODO
+	 * @param allergies TODO
 	 * @param first = The name of the Patient
 	 * @param pid = The patients identification number
 	 * @param age =The patients primary doctor
 	 */
-	public Patient(String name, Integer patientID, String primaryDoctorName) {
+	public Patient(String name, Integer patientID, String primaryDoctorName, Integer age, String bloodPressure, Integer heartRate, Double weightInLbs, Double heightInInches, String familyHistory, String currentIllness, String allergies) {
 		setName(name);
 		setPatientID(patientID);
 		setPrimaryDoctorName(primaryDoctorName);
+		setAge(age);
+		setBloodPressure(bloodPressure);
+		setHeartRate(heartRate);
+		setWeightInLbs(weightInLbs);
+		setHeightInInches(heightInInches);
+		setFamilyHistory(familyHistory);
+		setCurrentIllness(currentIllness);
+		setAllergies(allergies);
+		
+		
+		
+		
 		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
 		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
