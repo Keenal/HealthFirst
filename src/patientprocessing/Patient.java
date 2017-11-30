@@ -41,6 +41,7 @@ public class Patient {
 	public int numOfDosesGiven = 0;
 	
 	//*********************** constructor ******************************************//
+
 	
 	/**
 	 * Parameterized constructor for the Patient class

@@ -26,7 +26,8 @@ public class User {
 	
 	// default constructor
 	public User() {
-		
+//		name = "";
+//		pid = 0; 
 	}
 	
 	// parameterized constructor
