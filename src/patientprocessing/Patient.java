@@ -42,6 +42,9 @@ public class Patient {
 	
 	//*********************** constructor ******************************************//
 
+	public Patient() {
+		
+	}
 	
 	/**
 	 * Parameterized constructor for the Patient class

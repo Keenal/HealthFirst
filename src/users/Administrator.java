@@ -64,7 +64,7 @@ public class Administrator extends User {
 		Patient patient = new Patient( name,  patientID,  primaryDoctorName,  age,  bloodPressure,  heartRate,  weightInLbs,  heightInInches,  familyHistory,  currentIllness,  allergies);
 		PatientAccounts.addPatient(patient);
 		return patient;
-	} // end createNewPatient method
+	} // end createNewPatient method"
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
