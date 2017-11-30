@@ -101,6 +101,7 @@ public class AdminViewControllerEdit extends Main {
     	PatientAccounts.searchPatient(User.getPid()).setHeightInInches(in);
     	PatientAccounts.searchPatient(User.getPid()).setWeightInLbs(lbs);
     //Strings
+    	PatientAccounts.searchPatient(User.getPid()).setName(nameLabel.getText());   	
     	PatientAccounts.searchPatient(User.getPid()).setFamilyHistory(famLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setCurrentIllness(illLabel.getText());
     	PatientAccounts.searchPatient(User.getPid()).setAllergies(allLabel.getText());
