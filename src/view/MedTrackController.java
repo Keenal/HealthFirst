@@ -99,5 +99,9 @@ public class MedTrackController extends Main{
     	main.showNurse();
     }
 
+     @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
     
 }

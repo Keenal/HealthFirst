@@ -70,9 +70,13 @@ public class AdminViewController extends Main {
     private void adminEdit() {
     	main.showAdminEdit();
     }
+     @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
     
     @FXML
-    private void handlePatientSelect() {
+    private void goBack() {
         //dialogStage.close();
      main.showAdminPatientSelection();
     }

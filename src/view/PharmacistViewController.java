@@ -67,11 +67,15 @@ public class PharmacistViewController extends Main {
     }
     
     @FXML
-    private void handlePatientSelect() {
+    private void goBack() {
         //dialogStage.close();
      main.showPatientSelection();
     }
-
+ @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
+    
     @FXML
     private void handleMedTracker() {
     	main.showMedTrack();

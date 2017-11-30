@@ -59,7 +59,15 @@ public class AdminViewControllerCreate extends Main {
     private void adminReturn() {
     	main.showAdmin();
     }
-
+     @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
+     @FXML
+    private void goBack() {
+    	main.showAdmin();
+    }
+    
 
    
     @FXML

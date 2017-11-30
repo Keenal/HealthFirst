@@ -67,10 +67,15 @@ public class DoctorViewController extends Main {
     }
     
     @FXML
-    private void handlePatientSelect() {
+    private void goBack() {
         //dialogStage.close();
      main.showPatientSelection();
     }
+     @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
+    
     @FXML
     private void handleAddAScript() {
         //dialogStage.close();

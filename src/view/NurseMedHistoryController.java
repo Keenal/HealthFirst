@@ -99,6 +99,10 @@ public class NurseMedHistoryController extends Main{
     private void goBack() {
     	main.showMedTrack();
     }
-
+ @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
+    
     
 }

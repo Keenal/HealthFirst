@@ -92,9 +92,13 @@ public class PatientViewController extends Main{
      * handle user select switches the view back to user selection
      */
     @FXML
-    private void handleUserSelect() {
+    private void goBack() {
         //dialogStage.close();
       hft.showUserSelection();;
+    }
+     @FXML
+    private void goHome() {
+    	hft.showUserSelection();
     }
     
     

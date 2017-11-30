@@ -39,6 +39,7 @@ public class LoginScreenController extends Main {
     	healthFirstTester.showPatientSelection();
 
     }
+
     
     @FXML
     private void handlePharmacist() {

@@ -98,6 +98,10 @@ public class PharmaUnverifiedController extends Main{
     
     
     
+     @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
     
     @FXML
     private void goBack() {

@@ -80,17 +80,20 @@ public class AddScriptController extends Main{
     private void goBack() {
     	main.showDoctor();
     }
+    @FXML
+    private void goHome() {
+    	main.showUserSelection();
+    }
     
     @FXML
     private void addScript() {
     	ObservableList selectedIndices =
     		    drugList.getSelectionModel().getSelectedIndices();
     	if (!selectedIndices.isEmpty()) {
-	    	System.out.println(MedicationList.medications[(int) selectedIndices.get(0)].getName());
+	    	//System.out.println(MedicationList.medications[(int) selectedIndices.get(0)].getName());
 	    	Doctor.prescribeMedication(MedicationList.medications[(int) selectedIndices.get(0)].getName(),PatientAccounts.searchPatient(User.getPid()));
 	    	confirmText.setText("Prescription "+MedicationList.medications[(int) selectedIndices.get(0)].getName()+" Added");
     	}
-    	System.out.println(PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[0]);
     	
     }
     
