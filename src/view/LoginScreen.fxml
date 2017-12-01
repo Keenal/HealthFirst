@@ -33,7 +33,7 @@
             <Font name="Cambria" size="16.0" />
          </font>
       </Button>
-      <ImageView fitHeight="85.0" fitWidth="400.0" opacity="0.35" pickOnBounds="true">
+      <ImageView fitHeight="85.0" fitWidth="400.0" opacity="0.75" pickOnBounds="true">
          <image>
             <Image url="@/heartGif.gif" />
          </image>
@@ -41,7 +41,7 @@
             <GaussianBlur radius="0.2" />
          </effect>
       </ImageView>
-      <Text fill="#574242" layoutX="56.0" layoutY="55.0" lineSpacing="2.0" strokeLineJoin="ROUND" strokeMiterLimit="3.0" strokeWidth="0.5" text="HealthFirst Hospital" textAlignment="CENTER">
+      <Text fill="#ddd1d1" layoutX="56.0" layoutY="55.0" lineSpacing="2.0" strokeLineJoin="ROUND" strokeMiterLimit="3.0" strokeWidth="0.5" text="HealthFirst Hospital" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="31.0" />
          </font>
@@ -54,7 +54,7 @@
             </LinearGradient>
          </stroke>
          <effect>
-            <Reflection topOffset="-10.0" />
+            <Reflection fraction="0.63" topOffset="-10.0" topOpacity="0.2" />
          </effect>
       </Text>
    </children>
