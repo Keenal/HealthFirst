@@ -5,36 +5,36 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import patientprocessing.Patient;
-import users.Doctor;
 import users.Nurse;
+import users.Pharmacist;
 
-class NurseTest {
-	
-	// create an object of Nurse class
-		Nurse nurse = new Nurse();
+class PharmTest {
+
+// create an object of Nurse class
+		Pharmacist pharm = new Pharmacist();
 		Patient patient = new Patient();
-
 		
 	/*
 	 * NOTCompleted, but it's a void method, so how do we test it?
 	 * 
 	 * There is a way to test void methods if the methods have got "side effects" 
 	 * 
-	// test logging a dose 
+	// test verifying a medication
 	@Test
-	void test_logDose() {
+	void test_verifyMedication() {
 		
 		
 	}
 	
 	*/
 		
-	// test toString method
+		
+// test toString method
 		@Test
 		void test_toString_returnsDoctorName() {
 			
-			String result = nurse.toString();
-			assertTrue(result.contains("Doctor [name = " + nurse.getName() + "]"));
+			String result = pharm.toString();
+			assertTrue(result.contains("Doctor [name = " + pharm.getName() + "]"));
 			
 		}
 
