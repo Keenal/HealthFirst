@@ -64,7 +64,7 @@ public class Nurse extends User {
 		
 		PatientDose dose = new PatientDose(medicationGiven, timeDoseLogged, nextDoseDue, "Linda Carter", doseGivenInMg);
 		patient.addDose(dose);
-	} // end of logDose method
+	}
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
