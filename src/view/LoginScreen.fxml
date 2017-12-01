@@ -13,19 +13,35 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginScreenController">
    <children>
-      <Button layoutX="304.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleDoctor" text="Doctor" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <Button layoutX="307.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleNurse" text="Nurse" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <Button layoutX="294.0" layoutY="204.0" mnemonicParsing="false" onAction="#handlePharmacist" text="Pharmacist" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <Button layoutX="286.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleAdministrator" text="Administrator" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <ImageView fitHeight="85.0" fitWidth="400.0" opacity="0.45" pickOnBounds="true">
+      <Button layoutX="151.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleDoctor" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #cf3a1a; -fx-border-color: #ffffff;" text="Doctor" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="151.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleNurse" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #cf3a1a; -fx-border-color: #ffffff;" text="Nurse" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="150.0" layoutY="322.0" mnemonicParsing="false" onAction="#handlePharmacist" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #cf3a1a; -fx-border-color: #ffffff;" text="Pharmacist" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="151.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleAdministrator" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #cf3a1a; -fx-border-color: #ffffff;" text="Administrator" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="Cambria" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="85.0" fitWidth="400.0" opacity="0.35" pickOnBounds="true">
          <image>
-            <Image url="@/headerHeart.jpeg" />
+            <Image url="@/heartGif.gif" />
          </image>
          <effect>
-            <GaussianBlur radius="0.5" />
+            <GaussianBlur radius="0.2" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="56.0" layoutY="55.0" lineSpacing="2.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="HealthFirst Hospital" textAlignment="CENTER">
+      <Text fill="#574242" layoutX="56.0" layoutY="55.0" lineSpacing="2.0" strokeLineJoin="ROUND" strokeMiterLimit="3.0" strokeWidth="0.5" text="HealthFirst Hospital" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="31.0" />
          </font>
