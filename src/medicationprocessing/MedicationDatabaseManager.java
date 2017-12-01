@@ -28,9 +28,8 @@ public class MedicationDatabaseManager {
 	private Scanner fileIn = null; // default empty
 	private String fileName = "";
 	
-	/**
-	 * Default constructor for the MedicationDatabaseManager class
-	 */
+	
+	// default constructor
 	public MedicationDatabaseManager() {
 		setFileName("");
 	} // end of default constructor
