@@ -43,7 +43,7 @@ class PatientTest {
 	public void testSetPatientID() {
 		
 		patient.setPatientID(6);
-		assertEquals("PID", "6", patient.getPatientID());
+		assertEquals(6, patient.getPatientIDProperty());
 		
 	}
 	
