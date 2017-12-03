@@ -34,7 +34,7 @@ class NurseTest {
 		void test_toString_returnsDoctorName() {
 			
 			String result = nurse.toString();
-			assertTrue(result.contains("Doctor [name = " + nurse.getName() + "]"));
+			assertTrue(result.contains("Nurse [name = " + nurse.getName() + "]"));
 			
 		}
 

@@ -34,7 +34,7 @@ class PharmTest {
 		void test_toString_returnsDoctorName() {
 			
 			String result = pharm.toString();
-			assertTrue(result.contains("Doctor [name = " + pharm.getName() + "]"));
+			assertTrue(result.contains("Pharmacist [name = " + pharm.getName() + "]"));
 			
 		}
 
