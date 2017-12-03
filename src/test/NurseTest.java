@@ -31,10 +31,10 @@ class NurseTest {
 		
 	// test toString method
 		@Test
-		void test_toString_returnsDoctorName() {
+		void test_toString_returnsNurseName() {
 			
 			String result = nurse.toString();
-			assertTrue(result.contains("Doctor [name = " + nurse.getName() + "]"));
+			assertTrue(result.contains("Nurse [name = " + nurse.getName() + "]"));
 			
 		}
 
