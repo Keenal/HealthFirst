@@ -54,6 +54,7 @@ public class AdminPatientViewController extends Main{
       */
         patientTable.getSelectionModel().setCellSelectionEnabled(true);
         ObservableList<?> selectedCells = patientTable.getSelectionModel().getSelectedCells();
+        User.setPid( Integer.MAX_VALUE);
         selectedCells.addListener(new ListChangeListener<Object>() {
             @Override
             public void onChanged(Change<?> c) {
@@ -114,8 +115,8 @@ public class AdminPatientViewController extends Main{
    private void handleUser() { 
    	
    	user = userType.getName();
-   	System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
-   	if(user == "Admin")
+   	
+   	if(user == "Admin" && User.getPid() !=  Integer.MAX_VALUE)
    		hft.showAdmin();
 	
    }

@@ -4,12 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import medicationprocessing.MedicationList;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import org.junit.jupiter.api.Test;
 import patientprocessing.Patient;
-import patientprocessing.PatientDose;
 
 class PatientTest {
 

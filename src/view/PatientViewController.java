@@ -47,7 +47,7 @@ public class PatientViewController extends Main{
 
 
        // showPatientDetails(null);
-        
+        User.setPid(Integer.MAX_VALUE);
         
      /*
       * *****The following code catches user selection in a table and gets the row number
@@ -112,6 +112,7 @@ public class PatientViewController extends Main{
    	
    	user = userType.getName();
    	//System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
+   	if(User.getPid() !=  Integer.MAX_VALUE) {
    	if(user == "Doctor")
    		hft.showDoctor();
    	if(user == "Nurse")
@@ -120,6 +121,7 @@ public class PatientViewController extends Main{
    		hft.showAdmin();
    	if(user == "Pharma")
    		hft.showPharmacist();	
+   }
    }
    
 
