@@ -39,18 +39,10 @@ public class Administrator extends User {
 	} // end of parameterized constructor
 	
 	/**
-	 * Allows the Administrator creates new patients
+	 * Allows the Administrator creates new patients and add the patient to the patientAccounts array
 	 * @param name = The name of the Patient
 	 * @param patientID = The Patients ID number
-	 * @param string4 
-	 * @param string3 
-	 * @param string2 
-	 * @param e 
-	 * @param d 
-	 * @param j 
-	 * @param string 
-	 * @param i 
-	 * @param primaryDoctor = the patients primary doctor
+	 * @param primaryDoctorName = the patients primary doctors name
 	 * @param age = The age of the patient
 	 * @param bloodPressure = The patients blood pressure
 	 * @param heartRate = The patients heart rate

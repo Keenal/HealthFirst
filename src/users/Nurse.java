@@ -29,7 +29,6 @@ File Name: Nurse.java
 */
 
 public class Nurse extends User {
-	private static GregorianCalendar calendar = new GregorianCalendar();
 	
 	/**
 	 * Default constructor for the Nurse class
@@ -73,4 +72,4 @@ public class Nurse extends User {
 	public String toString() {
 		return "Nurse [name = " + super.getName() + "]";
 	}
-}
+} // end of Nurse class
