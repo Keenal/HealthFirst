@@ -83,7 +83,7 @@ public class MedTrackController extends Main{
     	if (!selectedIndices.isEmpty()) {
         	String drugname = PatientAccounts.searchPatient(User.getPid()).activePrescriptionsVerified[(int) selectedIndices.get(0)].getName();
 
-    		nurse1.logDose(drugname, User.getPid(), 1000);
+    		nurse1.logDose(drugname, User.getPid(), 600);
         	System.out.println(User.getPid());
         	labelAlert.setText("Dose Logged");
     	}
