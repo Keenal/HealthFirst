@@ -25,11 +25,11 @@ File Name: PatientDose.java
 */
 
 public class PatientDose {
-	Medication medicationGiven = null;
-	Date timeDoseLogged = null;
-	Date nextDoseDue = null;
-	String nurseWhoLogged = "";
-	int doseGivenInMg = 0;
+	Medication medicationGiven 	= null;
+	Date timeDoseLogged 		= null;
+	Date nextDoseDue 			= null;
+	String nurseWhoLogged 		= "";
+	int doseGivenInMg 			= 0;
 	
 	/**
 	 * Default constructor for the PatientDose class
@@ -50,7 +50,12 @@ public class PatientDose {
 	 * @param nurseWhoLogged = The Nurse who gave the dose
 	 * @param doseGivenInMg = The amount in Mg of dose given
 	 */
-	public PatientDose(Medication medicationGiven, Date timeDoseLogged, Date nextDoseDue, String nurseWhoLogged, int doseGivenInMg) {
+	public PatientDose(	Medication medicationGiven,
+						Date timeDoseLogged,
+						Date nextDoseDue,
+						String nurseWhoLogged,
+						int doseGivenInMg) {
+		
 		setMedicationGiven(medicationGiven);
 		setTimeDoseLogged(timeDoseLogged);
 		setNextDoseDue(nextDoseDue);

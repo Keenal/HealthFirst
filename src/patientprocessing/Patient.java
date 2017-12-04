@@ -8,7 +8,24 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import medicationprocessing.Medication;
 
+/**
+This program:
+HealthFirst allows doctors, nurses, and pharmacists to prescribe, review, distribute, 
+and track patient medications simultaneously. This would reduce the confusion that might 
+come from the use of paper records/logs, and reduce the risk of potential over/under 
+dosage and conflicts with other medications.
 
+
+@author Timothy McWatters
+@author Keenal Shah
+@author Chris Ault
+@author Jimmy Le
+
+@version 1.0
+
+CEN3031    "HealthFirst" SE1-Afternoon Group 1's class project
+File Name: Patient.java
+*/
 public class Patient {
 	
 	// Constant Variables
@@ -17,17 +34,17 @@ public class Patient {
 	private static final int NOTFOUND = -1;
 	
 	// Instance Variables
-	private StringProperty name = new SimpleStringProperty();
-	private IntegerProperty patientID = new SimpleIntegerProperty();
-	private StringProperty primaryDoctorName = new SimpleStringProperty();	
-	private IntegerProperty age = new SimpleIntegerProperty();	
-	private StringProperty bloodPressure = new SimpleStringProperty();  
-	private IntegerProperty heartRate = new SimpleIntegerProperty();		
-	private DoubleProperty weightInLbs = new SimpleDoubleProperty();
-	private DoubleProperty heightInInches = new SimpleDoubleProperty();
-	private StringProperty familyHistory = new SimpleStringProperty(); 
-	private StringProperty currentIllness = new SimpleStringProperty(); 
-	private StringProperty allergies = new SimpleStringProperty();
+	private StringProperty 	name = 			new SimpleStringProperty();
+	private IntegerProperty patientID = 	new SimpleIntegerProperty();
+	private StringProperty 	primaryDoctorName = new SimpleStringProperty();	
+	private IntegerProperty age = 			new SimpleIntegerProperty();	
+	private StringProperty 	bloodPressure = new SimpleStringProperty();  
+	private IntegerProperty heartRate = 	new SimpleIntegerProperty();		
+	private DoubleProperty 	weightInLbs = 	new SimpleDoubleProperty();
+	private DoubleProperty 	heightInInches = 	new SimpleDoubleProperty();
+	private StringProperty 	familyHistory = 	new SimpleStringProperty(); 
+	private StringProperty 	currentIllness = 	new SimpleStringProperty(); 
+	private StringProperty 	allergies =		 new SimpleStringProperty();
 	
 	// the 3 arrays needed for each Patient 
 	// 1) prescriptionsAwaitingVerification 2) activePrescriptionsVerified 3) dosesGivenToPatient
@@ -48,37 +65,37 @@ public class Patient {
 	
 	/**
 	 * Parameterized constructor for the Patient class
-	 * @param age TODO
-	 * @param bloodPressure TODO
-	 * @param heartRate TODO
-	 * @param weightInLbs TODO
-	 * @param heightInInches TODO
-	 * @param familyHistory TODO
-	 * @param currentIllness TODO
-	 * @param allergies TODO
+	 * @param age 
+	 * @param bloodPressure 
+	 * @param heartRate
+	 * @param weightInLbs
+	 * @param heightInInches
+	 * @param familyHistory
+	 * @param currentIllness
+	 * @param allergies
 	 * @param first = The name of the Patient
 	 * @param pid = The patients identification number
 	 * @param age =The patients primary doctor
 	 */
 	public Patient(String name, Integer patientID, String primaryDoctorName, Integer age, String bloodPressure, Integer heartRate, Double weightInLbs, Double heightInInches, String familyHistory, String currentIllness, String allergies) {
-		setName(name);
-		setPatientID(patientID);
-		setPrimaryDoctorName(primaryDoctorName);
-		setAge(age);
+		setName(name); //tested
+		setPatientID(patientID); // tested
+		setPrimaryDoctorName(primaryDoctorName); //tested
+		setAge(age);  //tested
 		setBloodPressure(bloodPressure);
-		setHeartRate(heartRate);
-		setWeightInLbs(weightInLbs);
-		setHeightInInches(heightInInches);
-		setFamilyHistory(familyHistory);
-		setCurrentIllness(currentIllness);
-		setAllergies(allergies);
+		setHeartRate(heartRate); //tested
+		setWeightInLbs(weightInLbs); //tested 
+		setHeightInInches(heightInInches); //tested
+		setFamilyHistory(familyHistory); // tested
+		setCurrentIllness(currentIllness); //tested
+		setAllergies(allergies); //tested
 		
 		
 		
 		
-		dosesGivenToPatient = new PatientDose[DOSE_GIVEN_LIST_SIZE];
+		dosesGivenToPatient = 				new PatientDose[DOSE_GIVEN_LIST_SIZE];
 		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
-		activePrescriptionsVerified = new Medication[PRESCRIPTION_LIST_SIZE];
+		activePrescriptionsVerified = 		new Medication[PRESCRIPTION_LIST_SIZE];
 	} // end of constructor method
 
 	//*********************** name ******************************************//
@@ -89,14 +106,12 @@ public class Patient {
 	public StringProperty getNameProperty() {
 		return name;
 	}
-	
 	/**
 	 * @return the String name
 	 */
 	public String getName() {
 		return getNameProperty().get();
 	}
-	
 	/**
 	 * @param name = the Patient's name to set
 	 */
@@ -112,14 +127,12 @@ public class Patient {
 	public StringProperty getPrimaryDoctorNameProperty() {
 		return primaryDoctorName;
 	}
-	
 	/**
 	 * @return the String primaryDoctorName
 	 */
 	public String getPrimaryDoctorName() {
 		return getPrimaryDoctorNameProperty().get();
 	}
-	
 	/**
 	 * @param primaryDoctorName = the Patient's primary doctors name to set
 	 */
@@ -135,14 +148,12 @@ public class Patient {
 	public IntegerProperty getAgeProperty() {
 		return age;
 	}
-	
 	/**
 	 * @return the Integer age
 	 */
 	public Integer getAge() {
 		return getAgeProperty().getValue();
 	}
-	
 	/**
 	 * @param age = the Patients age to set
 	 */
@@ -158,14 +169,12 @@ public class Patient {
 	public IntegerProperty getPatientIDProperty() {
 		return patientID;
 	}
-	
 	/**
 	 * @return the Integer patientID
 	 */
 	public final Integer getPatientID() {
 		return getPatientIDProperty().getValue();
 	}
-	
 	/**
 	 * @param patientID = the Patients ID to set
 	 */
@@ -181,14 +190,12 @@ public class Patient {
 	public StringProperty getBloodPressureProperty() {
 		return bloodPressure;
 	}
-	
 	/**
 	 * @return the String bloodPressure
 	 */
 	public String getBloodPressure() {
 		return getBloodPressureProperty().get();
 	}
-	
 	/**
 	 * @param bloodPressure = the Patient's bloodPressure to set
 	 */
@@ -204,14 +211,12 @@ public class Patient {
 	public IntegerProperty getHeartRateProperty() {
 		return heartRate;
 	}
-	
 	/**
 	 * @return the Integer heartRate
 	 */
 	public Integer getHeartRate() {
 		return getHeartRateProperty().getValue();
 	}
-	
 	/**
 	 * @param heartRate = the Patients heartRate to set
 	 */
@@ -227,14 +232,12 @@ public class Patient {
 	public DoubleProperty getWeightInLbsProperty() {
 		return weightInLbs;
 	}
-	
 	/**
 	 * @return the Double weightInLbs
 	 */
 	public Double getWeightInLbs() {
 		return getWeightInLbsProperty().getValue();
 	}
-	
 	/**
 	 * @param weightInLbs = the Patients weightInLbs to set
 	 */
@@ -250,14 +253,12 @@ public class Patient {
 	public DoubleProperty getHeightInInchesProperty() {
 		return heightInInches;
 	}
-	
 	/**
 	 * @return the Double heightInInches
 	 */
 	public Double getHeightInInches() {
 		return getHeightInInchesProperty().getValue();
 	}
-	
 	/**
 	 * @param heightInInches = the Patients heightInInches to set
 	 */
@@ -273,14 +274,12 @@ public class Patient {
 	public StringProperty getFamilyHistoryProperty() {
 		return familyHistory;
 	}
-	
 	/**
 	 * @return the String familyHistory
 	 */
 	public String getFamilyHistory() {
 		return getFamilyHistoryProperty().get();
 	}
-	
 	/**
 	 * @param familyHistory = the Patient's familyHistory to set
 	 */
@@ -296,14 +295,12 @@ public class Patient {
 	public StringProperty getCurrentIllnessProperty() {
 		return currentIllness;
 	}
-	
 	/**
 	 * @return the String currentIllness
 	 */
 	public String getCurrentIllness() {
 		return getCurrentIllnessProperty().get();
 	}
-	
 	/**
 	 * @param currentIllness = the Patient's currentIllness to set
 	 */
@@ -319,14 +316,12 @@ public class Patient {
 	public StringProperty getAllergiesProperty() {
 		return allergies;
 	}
-	
 	/**
 	 * @return the String allergies
 	 */
 	public String getAllergies() {
 		return getAllergiesProperty().get();
 	}
-	
 	/**
 	 * @param allergies = the Patient's allergies to set
 	 */

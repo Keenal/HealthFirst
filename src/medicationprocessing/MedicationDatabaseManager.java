@@ -26,7 +26,7 @@ File Name: MedicationDatabaseManager.java
 public class MedicationDatabaseManager {
 
 	private Scanner fileIn = null; // default empty
-	private String fileName = "";
+	private String 	fileName = "";
 	
 	
 	// default constructor

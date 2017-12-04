@@ -21,14 +21,14 @@ File Name: Medication.java
 
 public class Medication {
 	
-	private String name = "";
-	private String description = "";
-	private int dosageInMg = 0;
-	private int minDosageTimeHours = 0;
-	private boolean isNarcotic = false;
-	private boolean isOverTheCounter = false;
-	private boolean isAntibiotic = false;
-	private boolean isAntiInflamitory = false;
+	private String 		name = "";
+	private String 		description = "";
+	private int 		dosageInMg = 0;
+	private int 		minDosageTimeHours = 0;
+	private boolean 	isNarcotic = false;
+	private boolean 	isOverTheCounter = false;
+	private boolean 	isAntibiotic = false;
+	private boolean 	isAntiInflamitory = false;
 	
 	/**
 	 * Default constructor for the Medication class
@@ -82,7 +82,7 @@ public class Medication {
 	}
 
 	/**
-	 * @return the discription
+	 * @return the description
 	 */
 	public String getDescription() {
 		return description;

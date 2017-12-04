@@ -23,9 +23,14 @@ CEN3031    "HealthFirst" SE1-Afternoon Group 1's class project
 File Name: PatientDatabaseManager.java
 */
 
+
+/**
+ * This Class Patient Database Manager is for later development producing and requesting
+ * patient information from flat files for use in HealthFirst Systems.
+ */
 public class PatientDatabaseManager {
 
-	private Scanner fileIn = null; // default empty
+	 
 	private String fileName = "";
 	
 	/**
@@ -62,9 +67,12 @@ public class PatientDatabaseManager {
 	 * @param patientFileName = the file name of the patient database
 	 */
 	public void openFile(String patientFileName) {
+		
 		try {
 			// Attempt to open the file
+			Scanner fileIn ; // default empty
 			fileIn = new Scanner(new FileInputStream(patientFileName));
+			fileIn.close();
 		}
 		catch (FileNotFoundException e)
 		{
