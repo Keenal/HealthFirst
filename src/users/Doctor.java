@@ -24,16 +24,8 @@ File Name: Doctor.java
 
 public class Doctor extends User {
 
-	static String doctor ="";
+	static String doctor = "";
 	
-	public static String getDoctor() {
-		return doctor;
-	}
-
-	public static void setDoctor(String doctor) {
-		Doctor.doctor = doctor;
-	}
-
 	/**
 	 * Default constructor for the Doctor class
 	 */
@@ -46,8 +38,24 @@ public class Doctor extends User {
 	 * @param name = The name of the Doctor
 	 */
 	public Doctor(String name) {
-			Doctor.doctor = name;
+		Doctor.doctor = name;
 	} // end of parameterized constructor
+	
+	/**
+	 * returns the doctors name
+	 * @return doctor = The name of the Doctor
+	 */
+	public static String getDoctor() {
+		return doctor;
+	} // end of getDoctor method
+
+	/**
+	 * sets the doctors name
+	 * @param doctor = The name of the Doctor
+	 */
+	public static void setDoctor(String doctor) {
+		Doctor.doctor = doctor;
+	} // end of setDoctor method
 	
 	/**
 	 * Adds a new prescription to a patient

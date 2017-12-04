@@ -10,7 +10,6 @@ and track patient medications simultaneously. This would reduce the confusion th
 come from the use of paper records/logs, and reduce the risk of potential over/under 
 dosage and conflicts with other medications.
 
-
 @author Timothy McWatters
 @author Keenal Shah
 @author Chris Ault

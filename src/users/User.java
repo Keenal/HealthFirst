@@ -24,32 +24,43 @@ public class User {
 	static String name = "";
 	static int pid = 0;
 	
-	// default constructor
+	/**
+	 * Default constructor for the User class
+	 */
 	public User() {
-//		name = "";
-//		pid = 0; 
-	}
+	} // end of default constructor
 	
-	// parameterized constructor
-	
+	/**
+	 * parameterized constructor for the User class
+	 */
 	public User(String name) {
 		this.name = name;
-	}
+	} // end of parameterized constructor
 	
-	// getters and setters
-	
+	/**
+	 * @return the String name
+	 */
 	public static String getName() {
 		return name;
 	}
 	
-	public static int getPid() {
-		return pid;
-	}
-	
+	/**
+	 * @param name = the name to set
+	 */
 	public void setName(String name) {
 		User.name = name;
 	}
 	
+	/**
+	 * @return the int pid = patient identification number
+	 */
+	public static int getPid() {
+		return pid;
+	}
+	
+	/**
+	 * @param pid = the patient identification number
+	 */
 	public static void setPid(int pid) {
 		User.pid = pid;
 	}
