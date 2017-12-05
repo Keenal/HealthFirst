@@ -86,7 +86,7 @@ public class PatientDatabaseManager {
 	 * Patient objects stored in the file to populate the Patient Accounts) 
 	 */
 	public void processInput() {
-		// finish code
+		// this feature not written for prototype
 	}
 	
 	/**
@@ -94,7 +94,7 @@ public class PatientDatabaseManager {
 	 * Patient objects in the file for Patient database) 
 	 */
 	public void processOutput() {
-		// finish code
+		// this feature not written for prototype
 	}
 	
 } // end of PatientDatabaseManager class
