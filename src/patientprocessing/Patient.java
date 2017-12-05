@@ -60,7 +60,21 @@ public class Patient {
 	//*********************** constructor ******************************************//
 
 	public Patient() {
-		
+		setName(""); 
+		setPatientID(0); 
+		setPrimaryDoctorName("");
+		setAge(0);  
+		setBloodPressure("");
+		setHeartRate(0); 
+		setWeightInLbs(0.0); 
+		setHeightInInches(0.0); 
+		setFamilyHistory(""); 
+		setCurrentIllness(""); 
+		setAllergies(""); 
+
+		dosesGivenToPatient = 				new PatientDose[DOSE_GIVEN_LIST_SIZE];
+		prescriptionsAwaitingVerification = new Medication[PRESCRIPTION_LIST_SIZE];
+		activePrescriptionsVerified = 		new Medication[PRESCRIPTION_LIST_SIZE];
 	}
 	
 	/**

@@ -1,16 +1,22 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import medicationprocessing.Medication;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 import patientprocessing.Patient;
+import patientprocessing.PatientDose;
 
 class PatientTest {
-
 
 	Patient patient = new Patient();
 	
@@ -89,7 +95,14 @@ class PatientTest {
 		
 	}
 	
-
+	@Test 
+	public void addDoseTest() {
+		PatientDose patientDose = new PatientDose(null, null, null, "testNurse", 500);
+		Patient patient = new Patient();
+		patient.addDose(patientDose);	
+		assertEquals(patientDose, patient.dosesGivenToPatient[patient.numOfDosesGiven-1]);
+	}
+	
 	
 	/**
 	
