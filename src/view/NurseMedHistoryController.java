@@ -57,7 +57,6 @@ public class NurseMedHistoryController extends Main{
     	
     	
     	
-    	Patient pat = PatientAccounts.searchPatient(User.getPid());
     	
     	System.out.println(PatientAccounts.searchPatient(User.getPid()).numOfDosesGiven);
 
@@ -75,7 +74,7 @@ public class NurseMedHistoryController extends Main{
     
     @FXML
     private void verifyScript() {
-    	ObservableList selectedIndices =
+    	ObservableList<Integer> selectedIndices =
     		    historyTable.getSelectionModel().getSelectedIndices();
     	if (!selectedIndices.isEmpty()) {
     		//String drugname = PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)].getName();

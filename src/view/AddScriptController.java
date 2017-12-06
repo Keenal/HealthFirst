@@ -87,7 +87,7 @@ public class AddScriptController extends Main{
     
     @FXML
     private void addScript() {
-    	ObservableList selectedIndices =
+    	ObservableList<Integer> selectedIndices =
     		    drugList.getSelectionModel().getSelectedIndices();
     	if (!selectedIndices.isEmpty()) {
 	    	//System.out.println(MedicationList.medications[(int) selectedIndices.get(0)].getName());

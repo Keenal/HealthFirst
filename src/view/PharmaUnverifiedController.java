@@ -75,7 +75,7 @@ public class PharmaUnverifiedController extends Main{
     
     @FXML
     private void verifyScript() {
-    	ObservableList selectedIndices =
+    	ObservableList<Integer> selectedIndices =
     		    drugTable.getSelectionModel().getSelectedIndices();
     	if (!selectedIndices.isEmpty()) {
     		//String drugname = PatientAccounts.searchPatient(User.getPid()).prescriptionsAwaitingVerification[(int)selectedIndices.get(0)].getName();

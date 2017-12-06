@@ -76,7 +76,7 @@ public class MedTrackController extends Main{
     
     @FXML
     private void logDose() {
-    	ObservableList selectedIndices =
+    	ObservableList<Integer> selectedIndices =
     		    drugTable.getSelectionModel().getSelectedIndices();
     	System.out.println((int) selectedIndices.get(0));
     	
@@ -85,7 +85,7 @@ public class MedTrackController extends Main{
 
     		nurse1.logDose(drugname, User.getPid(), 600);
         	System.out.println(User.getPid());
-        	labelAlert.setText("Dose Logged");
+        	labelAlert.setText(drugname+" Logged");
     	}
     }
     
