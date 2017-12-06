@@ -113,15 +113,15 @@ public class PatientViewController extends Main{
    	user = userType.getName();
    	//System.out.println("User Type is :"+user+" userType.getName returns:"+patient);
    	if(User.getPid() !=  Integer.MAX_VALUE) {
-   	if(user == "Doctor")
-   		hft.showDoctor();
-   	if(user == "Nurse")
-   		hft.showNurse();
-   	if(user == "Admin")
-   		hft.showAdmin();
-   	if(user == "Pharma")
-   		hft.showPharmacist();	
-   }
+	   	if(user == "Doctor")
+	   		hft.showDoctor();
+	   	if(user == "Nurse")
+	   		hft.showNurse();
+	   	if(user == "Admin")
+	   		hft.showAdmin();
+	   	if(user == "Pharma")
+	   		hft.showPharmacist();	
+	   }
    }
    
 
