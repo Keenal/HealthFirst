@@ -5,7 +5,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
@@ -36,7 +35,6 @@
                      </columnResizePolicy>
                   </TableView>
                   <Button layoutX="303.0" layoutY="112.0" mnemonicParsing="false" onAction="#createNew" text="Create Patient" />
-                  <TextField layoutX="125.0" layoutY="113.0" promptText="Search" />
                   <ImageView fitHeight="85.0" fitWidth="400.0" opacity="0.45" pickOnBounds="true">
                      <image>
                         <Image url="@/headerHeart.jpeg" />
