@@ -92,6 +92,12 @@ public class Main extends Application {
 		Doctor.prescribeMedication("Penicillin V", patient3);
 		Doctor.prescribeMedication("Oxycodone", patient3);
 		pharm1.verifyMedicaton("Penicillin V", patient3);
+		
+		
+		
+		System.out.println(patient3);
+		System.out.println(PatientAccounts.searchPatient("John Dough"));
+		
 	
 		//Launch Gui
 		launch(args);

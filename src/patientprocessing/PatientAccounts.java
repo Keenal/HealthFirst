@@ -48,6 +48,24 @@ public class PatientAccounts {
 	
 	/**
 	 * Overloaded method
+	 * searches for, and returns, the patient object associated with the patients name in the 
+	 * patientAccounts Array, or returns null if that name does not exist.
+	 * @param patientName = the patientName of patient object to get
+	 * @return Patient = the Patient object or null if the Patient is not found
+	 */
+	public static Patient searchPatient(String patientName) {
+		for (int i = 0; i < numOfElements; i++) {
+			if (patientAccounts[i].getName().compareToIgnoreCase(patientName) == 0) {
+				return patientAccounts[i];
+			} else {
+				continue;
+			}
+		}
+		return null;
+	} // end of searchPatient method
+	
+	/**
+	 * Overloaded method
 	 * searches for, and returns, the Patient object associated with the parameter patientID in the 
 	 * patientAccounts Array, or returns null if that patientID does not exist.
 	 * @param patientID = the patientID of Patient object to get
@@ -62,24 +80,6 @@ public class PatientAccounts {
 			}
 		}
 		System.out.println("No Patient Found");
-		return null;
-	} // end of searchPatient method
-	
-	/**
-	 * Overloaded method
-	 * searches for, and returns, the patient object associated with the patients name in the 
-	 * patientAccounts Array, or returns null if that name does not exist.
-	 * @param patientName = the patientName of patient object to get
-	 * @return Patient = the Patient object or null if the Patient is not found
-	 */
-	public static Patient searchPatient(String patientName) {
-		for (int i = 0; i < numOfElements; i++) {
-			if ((patientAccounts[i].getName().equalsIgnoreCase(patientName))) {
-				return patientAccounts[i];
-			} else {
-				continue;
-			}
-		}
 		return null;
 	} // end of searchPatient method
 

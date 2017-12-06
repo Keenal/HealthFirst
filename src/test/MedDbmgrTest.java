@@ -27,7 +27,7 @@ class MedDbmgrTest {
 		@Test
 		public void testOpeningFile() {
 			
-			File file = new File("c:/Medications.txt");
+			File file = new File("Medications.txt");
 			assertTrue(file.exists());
 			
 		}
