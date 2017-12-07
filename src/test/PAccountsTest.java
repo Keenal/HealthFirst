@@ -8,7 +8,7 @@ import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 
 class PAccountsTest {
-
+	
 	@Test
 	void addPatientTest() {
 		Patient patient = new Patient();

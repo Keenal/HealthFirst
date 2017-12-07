@@ -96,7 +96,7 @@ public class Main extends Application {
 		
 		
 		System.out.println(patient3);
-		System.out.println(PatientAccounts.searchPatient("John Dough"));
+		System.out.println(PatientAccounts.searchPatient(0));
 		
 	
 		//Launch Gui
