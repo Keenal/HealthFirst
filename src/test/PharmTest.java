@@ -1,41 +1,33 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import patientprocessing.Patient;
-import users.Nurse;
+import users.Doctor;
 import users.Pharmacist;
 
 class PharmTest {
 
-// create an object of Nurse class
-		Pharmacist pharm = new Pharmacist();
-		Patient patient = new Patient();
+	Pharmacist pharm = new Pharmacist();
+	Patient patient = new Patient();
 		
-	/*
-	 * NOTCompleted, but it's a void method, so how do we test it?
-	 * 
-	 * There is a way to test void methods if the methods have got "side effects" 
-	 * 
 	// test verifying a medication
 	@Test
 	void test_verifyMedication() {
+		Doctor.prescribeMedication("advil", patient);
+		int numPresAwaitVer = patient.numOfPrescriptionsAwaitingVerification;
+		int numPresVer = patient.numOfPrescriptionsVerified;
+		pharm.verifyMedicaton("advil", patient);
+		// Typically only one assert per test method, but this is really a single action being tested
+		// and all of the tutorials say we can do it this way that i have read/watched
+		assertEquals(numPresAwaitVer, patient.numOfPrescriptionsAwaitingVerification);
+		assertEquals(numPresVer + 1, patient.numOfPrescriptionsVerified);
+	} // end of test_verifyMedication method
 		
-		
-	}
-	
-	*/
-		
-		
-// test toString method
-		@Test
-		void test_toString_returnsDoctorName() {
-			
-			String result = pharm.toString();
-			assertTrue(result.contains("Pharmacist [name = " + pharm.getName() + "]"));
-			
-		}
-
+	// test toString method
+	@Test
+	void test_toString_returnsDoctorName() {
+		String result = pharm.toString();
+		assertTrue(result.contains("Pharmacist [name = " + pharm.getName() + "]"));
+	}  // end of test_toString_returnsDoctorName method
 }

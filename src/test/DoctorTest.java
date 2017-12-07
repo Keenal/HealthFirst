@@ -1,11 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import medicationprocessing.Medication;
-import medicationprocessing.MedicationList;
 import patientprocessing.Patient;
 import users.Doctor;
 
@@ -19,10 +15,9 @@ class DoctorTest {
 	@Test
 	void testSetDoctor() {
 		doctor.setName("John");
-		assertEquals("John", doctor.getName());
+		assertEquals("John", Doctor.getName());
 	} // end of testSetDoctor method
 	
-
 	// test prescribing a medication method
 	@Test
 	void test_PrescribeMedication() {
@@ -31,13 +26,11 @@ class DoctorTest {
 		assertEquals(resultShouldBe, result);
 	} // end of test_PrescribeMedication method
 
-	
 	// test toString method
 	@Test
 	void test_toString_returnsDoctorName() {
 		String result = doctor.toString();
 		assertTrue(result.contains("Doctor [name = " + doctor.getName() + "]"));
 	} // end of test_toString_returnsDoctorName method
-
 }
 

@@ -41,9 +41,8 @@ public class PatientAccounts {
 	public static void addPatient(Patient patient) {
 		patientAccounts[numOfElements] = patient;
 		patientAccounts[numOfElements].setPatientID(numOfElements);
-		//System.out.println("Patient ID:" + patientAccounts[numOfElements].getPatientID());
-		numOfElements++;
 		System.out.println("Patient: "+patient+" added to position:"+numOfElements);
+		numOfElements++;
 	} // end of addPatient method
 	
 	/**
@@ -63,7 +62,7 @@ public class PatientAccounts {
 		}
 		return null;
 	} // end of searchPatient method
-	
+
 	/**
 	 * Overloaded method
 	 * searches for, and returns, the Patient object associated with the parameter patientID in the 
