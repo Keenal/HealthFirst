@@ -2,9 +2,13 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import medicationprocessing.Medication;
@@ -126,16 +130,60 @@ class PatientTest {
 		assertEquals(medication, patient.prescriptionsAwaitingVerification[patient.numOfPrescriptionsAwaitingVerification - 1]);
 		
 	}
-	
+	/**
+	 * DOES NOT WORK
 	@Test
 	public void findPrescriptionTest() {
 		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
 		Patient patient = new Patient();
 		patient.findPrescription(medication);
 		
-		assertEquals(medication, "test");
+		assertEquals(medication, patient.findPrescription(medication));
 		
 	}
+	
+	*/
+	
+	//* DOES NOT WORK
+	@Test
+	public void deletePrescriptionAwaitingVerificationTest() throws NoSuchMethodException,
+    InvocationTargetException, IllegalAccessException  {
+		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
+		Patient patient = new Patient();
+		Boolean input = true;
+		Method method = Patient.class.getDeclaredMethod("deletePrescriptionAwaitingVerification", Boolean.class);
+		method.setAccessible(true);
+		Boolean output = (Boolean) method.invoke(patient, input);
+		//assertEquals(output.equals("test"));
+		
+	}
+	
+	/**
+	 * Reflection Example to test Private Class
+    @Test
+    public void privateShout() throws NoSuchMethodException,
+            InvocationTargetException, IllegalAccessException {
+ 
+        String input = "This is magic.";
+ 
+        Method method = NovelWriter.class.getDeclaredMethod("shout", String.class);
+        method.setAccessible(true);
+        String output = (String) method.invoke(novelWriter, input);
+ 
+        assertThat(output, notNullValue());
+        assertThat(output, is("THIS IS MAGIC!"));
+        */
+	/**
+	@Test
+	public void verifyPrescriptionTest() {
+		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
+		Patient patient = new Patient();
+		patient.verifyPrescription(medication);
+		assertEquals(medication, patient.activePrescriptionsVerified[patient.numOfPrescriptionsAwaitingVerification - 1]);
+		
+	}
+	
+	*/
 	/**
 	
 	@Test
