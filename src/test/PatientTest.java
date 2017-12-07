@@ -129,6 +129,11 @@ class PatientTest {
 	
 	@Test
 	public void findPrescriptionTest() {
+		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
+		Patient patient = new Patient();
+		patient.findPrescription(medication);
+		
+		assertEquals(medication, "test");
 		
 	}
 	/**
