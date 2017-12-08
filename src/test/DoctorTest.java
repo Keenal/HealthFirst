@@ -30,7 +30,7 @@ class DoctorTest {
 	@Test
 	void test_toString_returnsDoctorName() {
 		String result = doctor.toString();
-		assertTrue(result.contains("Doctor [name = " + doctor.getName() + "]"));
+		assertTrue(result.contains("Doctor [name = " + Doctor.getName() + "]"));
 	} // end of test_toString_returnsDoctorName method
 }
 

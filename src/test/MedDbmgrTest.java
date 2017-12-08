@@ -2,12 +2,7 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.io.File;
-
 import org.junit.jupiter.api.Test;
-
-
 import medicationprocessing.MedicationDatabaseManager;
 import medicationprocessing.MedicationList;
 
@@ -36,5 +31,4 @@ class MedDbmgrTest {
 			db.processInput(medicationList);
 			assertNotNull(MedicationList.medications[0]);
 		} // end of testProcessInput method
-
 }

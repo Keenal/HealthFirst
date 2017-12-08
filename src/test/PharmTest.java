@@ -7,7 +7,6 @@ import users.Doctor;
 import users.Pharmacist;
 
 class PharmTest {
-
 	Pharmacist pharm = new Pharmacist();
 	Patient patient = new Patient();
 		

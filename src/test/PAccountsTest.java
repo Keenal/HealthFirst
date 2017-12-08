@@ -3,7 +3,6 @@ package test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
-
 import patientprocessing.Patient;
 import patientprocessing.PatientAccounts;
 
@@ -28,7 +27,6 @@ class PAccountsTest {
 		PatientAccounts.addPatient(patient3);
 		Patient patientFound = PatientAccounts.searchPatient("mufasa");
 		assertEquals(patient3, patientFound);
-	}
-
+	} // end of searchPatientFirstTest method
 }
 

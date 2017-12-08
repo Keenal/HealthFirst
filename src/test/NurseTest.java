@@ -11,7 +11,6 @@ import users.Nurse;
 import users.Pharmacist;
 
 class NurseTest {
-
 	Nurse nurse = new Nurse();
 
 	// test logging a dose 
