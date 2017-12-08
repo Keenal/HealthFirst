@@ -239,21 +239,18 @@ class PatientTest {
 	}
 	
 	
-	/**
-	//* DOES NOT WORK
+	
+
 	@Test
 	public void deletePrescriptionAwaitingVerificationTest() throws NoSuchMethodException,
     InvocationTargetException, IllegalAccessException  {
 		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
 		Patient patient = new Patient();
-		Boolean input = true;
-		Method method = Patient.class.getDeclaredMethod("deletePrescriptionAwaitingVerification", Boolean.class);
-		method.setAccessible(true);
-		Boolean output = (Boolean) method.invoke(patient, input);
-		//assertEquals(output.equals("test"));
+		boolean deleted = patient.deletePrescriptionAwaitingVerification(medication);
 		
+		assertEquals(false, deleted);
 	}
-	*/
+	
 	/**
 	 * Reflection Example to test Private Class
     @Test
