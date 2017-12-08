@@ -54,20 +54,8 @@ public class MedicationList {
 	 * adds a Medication to the medication list medications array and increments the numOfElements instance variable by 1
 	 * @param medication = a Medication to add
 	 */
-	public void addMedication(Medication medication) {
+	public static void addMedication(Medication medication) {
 		medications[numOfElements++] = medication;
 	} // end of addMedication method
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		String completeString = "";
-			for (int l = 0; l < numOfElements; l++) {
-				completeString += medications[l].toString() + "\n";
-			} 
-			return completeString;
-	}
 	
 } // end of MedicationList class
