@@ -59,16 +59,18 @@ public class MedicationDatabaseManager {
 	/**
 	 * attempts to open the file to process, and throws an exception if it can't
 	 */
-	public void openFile(String medicationFileName) {
+	public boolean openFile(String medicationFileName) {
 		try {
 			// Attempt to open the file
 			fileIn = new Scanner(new FileInputStream(medicationFileName));
+			return true;
 		}
 		catch (FileNotFoundException e)
 		{
 			System.out.println("File not found");
 			System.exit(0);
 		}
+		return false;
 	} // end of openFile method
 	
 	/**

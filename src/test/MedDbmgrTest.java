@@ -9,33 +9,32 @@ import org.junit.jupiter.api.Test;
 
 
 import medicationprocessing.MedicationDatabaseManager;
+import medicationprocessing.MedicationList;
 
 class MedDbmgrTest {
-	
 	MedicationDatabaseManager db = new MedicationDatabaseManager();
 
 	// test user name
 		@Test
 		public void testFileName() {
-			
 			db.setFileName("med");
-			assertEquals("fileName", "med", db.getFileName());
-			
-		}
+			assertEquals("fileName", "med", db.getFileName());	
+		} // end of testFileName method
 		
 	// test opening the file
 		@Test
 		public void testOpeningFile() {
-			
-			File file = new File("Medications.txt");
-			assertTrue(file.exists());
-			
-		}
+			boolean didOpen = db.openFile("Medications.txt");
+			assertEquals(true, didOpen);
+		} // end of testOpeningFile method
 		
 	// test input
 		@Test
 		public void testProcessInput() {
-			
-		}
+			MedicationList medicationList = new MedicationList();
+			db.openFile("Medications.txt");
+			db.processInput(medicationList);
+			assertNotNull(MedicationList.medications[0]);
+		} // end of testProcessInput method
 
 }
