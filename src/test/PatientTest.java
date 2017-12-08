@@ -29,8 +29,8 @@ class PatientTest {
 		Patient patient = new Patient();
 		StringProperty stringP = new SimpleStringProperty("test");
 		patient.setName("test");
-		assertEquals(patient.getName(), stringP.getValue());
 		
+		assertEquals(patient.getName(), stringP.getValue());
 	}
 	
 	
@@ -38,22 +38,34 @@ class PatientTest {
 	public void setNameTest() {
 		Patient patient = new Patient();
 		patient.setName("test");
+	
 		assertEquals("test", patient.getName());
 	}
 	
 	@Test
-	public void getPrimaryDoctorNameProperty() {
+	public void getPrimaryDoctorNamePropertyTest() {
 		Patient patient = new Patient();
 		StringProperty stringP = new SimpleStringProperty("test");
 		patient.setPrimaryDoctorName("test");
 		
 		assertEquals(patient.getPrimaryDoctorName(), stringP.getValue());
 	}
+	
 	@Test
 	public void setPrimaryDoctorNameTest() {
 		Patient patient = new Patient();
 		patient.setPrimaryDoctorName("test");
+		
 		assertEquals("test", patient.getPrimaryDoctorName());
+	}
+	
+	@Test
+	public void getAgePropertyTest() {
+		Patient patient = new Patient();
+		IntegerProperty intP = new SimpleIntegerProperty(0);
+		patient.setAge(0);
+		
+		assertEquals(patient.getAge(), intP.getValue());
 	}
 	
 	@Test
@@ -61,8 +73,17 @@ class PatientTest {
 		IntegerProperty intP = new SimpleIntegerProperty(21);
 		Patient patient = new Patient();
 		patient.setAge(intP.getValue());
+		
 		assertEquals(patient.getAge(), intP.getValue().intValue(),0);
 
+	}
+	@Test
+	public void getPatientIDPropertyTest() {
+		Patient patient = new Patient();
+		IntegerProperty intP = new SimpleIntegerProperty(0);
+		patient.setPatientID(0);
+		
+		assertEquals(patient.getPatientID(), intP.getValue());
 	}
 	
 	@Test
@@ -70,8 +91,16 @@ class PatientTest {
 		IntegerProperty intP = new SimpleIntegerProperty(1);
 		Patient patient = new Patient();
 		patient.setPatientID(intP.getValue());
+		
 		assertEquals(patient.getPatientID(), intP.getValue().intValue(),0);
-
+	}
+	@Test
+	public void getBloodPressurePropertyTest() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setBloodPressure("test");
+		
+		assertEquals(patient.getBloodPressure(), stringP.getValue());
 	}
 	
 	@Test
@@ -82,12 +111,29 @@ class PatientTest {
 	}
 	
 	@Test
+	public void getHeartRatePropertyTest() {
+		Patient patient = new Patient();
+		IntegerProperty intP = new SimpleIntegerProperty(0);
+		patient.setHeartRate(0);
+		
+		assertEquals(patient.getHeartRate(), intP.getValue());
+	}
+	
+	@Test
 	public void setHeartRateTest() {
 		IntegerProperty intP = new SimpleIntegerProperty(90);
 		Patient patient = new Patient();
 		patient.setHeartRate(intP.getValue());
 		assertEquals(patient.getHeartRate(), intP.getValue().intValue(),0);
 
+	}
+	@Test
+	public void getWeightInLbsPropertyTest() {
+		Patient patient = new Patient();
+		DoubleProperty doubleP = new SimpleDoubleProperty(0.0);
+		patient.setWeightInLbs(0.0);
+		
+		assertEquals(patient.getWeightInLbs(), doubleP.getValue());
 	}
 	
 	@Test 
@@ -101,6 +147,15 @@ class PatientTest {
 	}
 	
 	@Test
+	public void getHeightInInchesPropertyTest() {
+		Patient patient = new Patient();
+		DoubleProperty doubleP = new SimpleDoubleProperty(0.0);
+		patient.setHeightInInches(0.0);
+		
+		assertEquals(patient.getHeightInInches(), doubleP.getValue());
+	}
+	
+	@Test
 	public void setHeightInInchesTester() {
 		DoubleProperty doubleP = new SimpleDoubleProperty(64.3);
 		Patient patient = new Patient();
@@ -108,15 +163,37 @@ class PatientTest {
 		assertEquals(patient.getHeightInInches(), doubleP.getValue().doubleValue(), 0);
 	}
 
-	
+	@Test
+	public void getFamilyHistoryProperty() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setFamilyHistory("test");
+		
+		assertEquals(patient.getFamilyHistory(), stringP.getValue());
+	}
 	@Test
 	public void setFamilyHistoryTest() {
 		Patient patient = new Patient();
 		patient.setFamilyHistory("test");
-		assertEquals("test", patient.getFamilyHistory());
 		
+		assertEquals("test", patient.getFamilyHistory());
 	}
-	
+	@Test
+	public void getCurrentIllnessPropertyTest() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setCurrentIllness("test");
+		
+		assertEquals(patient.getCurrentIllness(), stringP.getValue());
+	}
+	@Test
+	public void getAllergiesPropertyTest() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setAllergies("test");
+		
+		assertEquals(patient.getAllergies(), stringP.getValue());
+	}
 	@Test
 	public void setCurrentIllnessTest() {
 		Patient patient = new Patient();
