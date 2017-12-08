@@ -143,7 +143,6 @@ class PatientTest {
 		
 	}
 	
-	// * DOES NOT WORK
 	@Test
 	public void findPrescriptionTest() {
 		Medication medication = new Medication("test", "test", 0, 0, false, false, false, false);
@@ -185,7 +184,7 @@ class PatientTest {
         assertThat(output, notNullValue());
         assertThat(output, is("THIS IS MAGIC!"));
         */
-	
+	/**
 	@Test
 	public void verifyPrescriptionTest() {
 		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
@@ -194,7 +193,13 @@ class PatientTest {
 		assertEquals(medication, patient.activePrescriptionsVerified[patient.numOfPrescriptionsAwaitingVerification - 1]);
 		
 	}
-	
+	*/
+	@Test
+	public void medicationHistoryTest() {
+		Patient patient = new Patient();
+		assertEquals("", patient.medicationHistory());
+		
+	}
 	//Special assert to find equalities objects
 	
 	/**
