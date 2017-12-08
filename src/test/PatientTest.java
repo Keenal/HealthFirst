@@ -23,17 +23,17 @@ import patientprocessing.Patient;
 import patientprocessing.PatientDose;
 
 class PatientTest {
-	/**
+	
 	@Test
 	void getNamePropertyTest() {
 		Patient patient = new Patient();
 		StringProperty stringP = new SimpleStringProperty("test");
 		patient.setName("test");
-		assertEquals(stringP, patient.getNameProperty());
+		assertEquals(patient.getName(), stringP.getValue());
 		
 	}
 	
-	*/
+	
 	@Test
 	public void setNameTest() {
 		Patient patient = new Patient();
@@ -41,6 +41,14 @@ class PatientTest {
 		assertEquals("test", patient.getName());
 	}
 	
+	@Test
+	public void getPrimaryDoctorNameProperty() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setPrimaryDoctorName("test");
+		
+		assertEquals(patient.getPrimaryDoctorName(), stringP.getValue());
+	}
 	@Test
 	public void setPrimaryDoctorNameTest() {
 		Patient patient = new Patient();
@@ -74,7 +82,7 @@ class PatientTest {
 	}
 	
 	@Test
-	public void setHeartRate() {
+	public void setHeartRateTest() {
 		IntegerProperty intP = new SimpleIntegerProperty(90);
 		Patient patient = new Patient();
 		patient.setHeartRate(intP.getValue());
@@ -203,12 +211,13 @@ class PatientTest {
 	//Special assert to find equalities objects
 	
 	/**
+	 * DOES NOT WORK
 	@Test
 	public void toStringTest() {
-		
+		Patient patient = new Patient();
 		String result = patient.toString();
-		assertTrue(result.contains("Patient [name=" + patient.getName() + ", patientID=" + patient.getPatientID() + ", primaryDoctorName=" + patient.getPrimaryDoctorName() + ", prescriptionsAwaitingVerification=" + patient.getNumOfPrescriptionsAwaitingVerification() + 
-				", numOfPrescriptionsVerified=" + numOfPrescriptionsVerified + "]"));
+		assertTrue(result.contains("Patient [name=" + patient.getName() + ", patientID=" + patient.getPatientID() + ", primaryDoctorName=" + patient.getPrimaryDoctorName() + ", prescriptionsAwaitingVerification=" + patient.numOfPrescriptionsAwaitingVerification + 
+				", numOfPrescriptionsVerified=" + patient.numOfPrescriptionsVerified + "]"));
 		
 	}
 	*/
