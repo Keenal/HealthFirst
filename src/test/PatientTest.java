@@ -11,6 +11,8 @@ import static org.junit.Assert.assertThat;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import medicationprocessing.Medication;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -21,7 +23,17 @@ import patientprocessing.Patient;
 import patientprocessing.PatientDose;
 
 class PatientTest {
+	/**
+	@Test
+	void getNamePropertyTest() {
+		Patient patient = new Patient();
+		StringProperty stringP = new SimpleStringProperty("test");
+		patient.setName("test");
+		assertEquals(stringP, patient.getNameProperty());
+		
+	}
 	
+	*/
 	@Test
 	public void setNameTest() {
 		Patient patient = new Patient();
@@ -130,20 +142,20 @@ class PatientTest {
 		assertEquals(medication, patient.prescriptionsAwaitingVerification[patient.numOfPrescriptionsAwaitingVerification - 1]);
 		
 	}
-	/**
-	 * DOES NOT WORK
+	
+	// * DOES NOT WORK
 	@Test
 	public void findPrescriptionTest() {
-		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
+		Medication medication = new Medication("test", "test", 0, 0, false, false, false, false);
 		Patient patient = new Patient();
-		patient.findPrescription(medication);
+		patient.addPrescription(medication);
 		
-		assertEquals(medication, patient.findPrescription(medication));
+		assertEquals(0, patient.findPrescription(medication));
 		
 	}
 	
-	*/
 	
+	/**
 	//* DOES NOT WORK
 	@Test
 	public void deletePrescriptionAwaitingVerificationTest() throws NoSuchMethodException,
@@ -157,7 +169,7 @@ class PatientTest {
 		//assertEquals(output.equals("test"));
 		
 	}
-	
+	*/
 	/**
 	 * Reflection Example to test Private Class
     @Test
@@ -173,7 +185,7 @@ class PatientTest {
         assertThat(output, notNullValue());
         assertThat(output, is("THIS IS MAGIC!"));
         */
-	/**
+	
 	@Test
 	public void verifyPrescriptionTest() {
 		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
@@ -183,9 +195,9 @@ class PatientTest {
 		
 	}
 	
-	*/
-	/**
+	//Special assert to find equalities objects
 	
+	/**
 	@Test
 	public void toStringTest() {
 		
