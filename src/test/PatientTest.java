@@ -250,39 +250,24 @@ class PatientTest {
 		
 		assertEquals(false, deleted);
 	}
+
 	
-	/**
-	 * Reflection Example to test Private Class
-    @Test
-    public void privateShout() throws NoSuchMethodException,
-            InvocationTargetException, IllegalAccessException {
- 
-        String input = "This is magic.";
- 
-        Method method = NovelWriter.class.getDeclaredMethod("shout", String.class);
-        method.setAccessible(true);
-        String output = (String) method.invoke(novelWriter, input);
- 
-        assertThat(output, notNullValue());
-        assertThat(output, is("THIS IS MAGIC!"));
-        */
-	/**
 	@Test
 	public void verifyPrescriptionTest() {
-		Medication medication = new Medication("test", "test", 500, 4, false, false, false, false);
+		Medication medication = new Medication();
 		Patient patient = new Patient();
 		patient.verifyPrescription(medication);
-		assertEquals(medication, patient.activePrescriptionsVerified[patient.numOfPrescriptionsAwaitingVerification - 1]);
 		
+		assertEquals(medication, patient.activePrescriptionsVerified[patient.numOfPrescriptionsAwaitingVerification]);
 	}
-	*/
+	
 	@Test
 	public void medicationHistoryTest() {
 		Patient patient = new Patient();
-		assertEquals("", patient.medicationHistory());
 		
+		assertEquals("", patient.medicationHistory());		
 	}
-	//Special assert to find equalities objects
+
 	
 	/**
 	 * DOES NOT WORK
