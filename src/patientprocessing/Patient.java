@@ -389,7 +389,7 @@ public class Patient {
 	 * @param precriptionToDelete = the prescription to delete
 	 * @return boolean = true if account was found and deleted, or false if not
 	 */
-	private boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
+	public boolean deletePrescriptionAwaitingVerification(Medication precriptionToDelete) {
 		int findPrescriptionResult = findPrescription(precriptionToDelete);
 		int j = 0;
 		if (findPrescriptionResult >= 0) {
